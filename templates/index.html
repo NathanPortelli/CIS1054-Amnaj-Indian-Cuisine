@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <link href="resources/css/index.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Amnaj Indian Cuisine{% endblock %}
+
+{% block content %}
+    <h2 id="above-title">Welcome to</h2>
+    <img src="resources/images/index-logo.png" alt="Amnaj Logo" id="logo-img">
+    <h1 id="title">Amnaj Indian Cuisine</h1>
+    <h2 class="text-title">Our Story...</h2>
+    <p class="text-box">
+        {{ourstory}}
+    </p>
+    <h2 class="text-title">Our Promise...</h2>
+    <p class="text-box">
+        {{ourpromise}}
+    </p>
+    {% if welcome_message != "" %}
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <p>{{welcome_message | striptags('<br><i></i>') | raw}}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="resources/scripts/modal.js" async defer></script>
+{% endblock %}
+

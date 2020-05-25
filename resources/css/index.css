@@ -1,0 +1,118 @@
+#title{
+	font-size: 9rem;
+	padding-bottom: 15px;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+#above-title{
+	padding-top: 20px;
+	font-size: 9rem;
+	text-align: center;
+	margin-top: 100px;
+}
+
+#title, #above-title, .text-title{
+	line-height: 60px;
+	font-family: 'Dancing Script', cursive;
+	position: relative;
+	color: #fff;
+	line-height: 100px;
+	text-shadow: 2px 2px #708090;
+}
+
+#logo-img{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 150px;
+  	height: 150px;
+}
+
+body{
+	background: url('../images/pic1.jpg');
+	background-color: #fe6b40;
+	background-size: 140rem;
+}
+
+.text-title{
+	font-size: 3rem;
+	margin-left: 10px;
+	line-height: 10px;
+	padding-left: 0.5%;
+}
+
+.text-box{
+	font-family: 'PT Serif', serif;
+	font-size: 26px;
+	color: black;
+	position: relative;
+	padding-right: .5%;
+	padding-left: .5%;
+	text-align: justify;
+    background-color: #fff;
+    border: 20px solid #fff;
+	box-shadow: 0 0 5px 5px #fff;
+	margin-bottom: 100px;
+	line-height: 34px;
+}
+
+.modal {
+	position: fixed;
+	z-index: 5;
+	margin-top: 30vh;
+	top: 0;
+	width: 100%;
+	overflow: auto;
+}
+  
+/* Modal Content */
+.modal-content {
+	background-color: #fe6b40;
+	margin: auto;
+	padding: 0px 20px;
+	border: 2px solid white;
+	width: 50%;
+	text-align: center;
+	font-family: 'PT Serif', serif;
+	font-size: 30px;
+	opacity: 95%;
+}
+  
+/* The Close Button */
+.close {
+	color: white;
+	float: right;
+	font-size: 40px;
+	font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+	color: #000;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px){
+	#title, #above-title{
+		font-size: 4rem;
+	}
+
+	.text-title{
+		font-size: 2.5rem;
+	}
+
+	#title, #above-title, .text-title{
+		line-height: 50px;
+	}
+
+	.modal{
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 2600px){
+  	#above-title{
+    	padding-top: 60px;
+  	}
+}

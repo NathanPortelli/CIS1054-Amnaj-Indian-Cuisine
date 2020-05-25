@@ -1,0 +1,102 @@
+h2.favourites{
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+img.favourites{
+    height: 125px;
+    border: 1px solid #929292; /*Adds a border around the image*/
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
+}
+
+h1.favourites{
+    font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
+    font-size: 46px;
+    text-align: center;
+}
+
+.favourites-container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 100px auto;
+}
+
+.favourites-entry{
+    display: flex;
+    align-items: center;
+    font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
+}
+
+.favourites-box{
+    box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
+    border-radius: 5px; /*Makes corners of container rounded*/
+    font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
+    border: 1px solid #929292; /*Adds a border around the inputs*/
+    margin: 20px 0;
+    padding: 20px;
+    width: 90%;
+    margin-right: 15px;
+}
+
+.removeimage{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.removeBtn{
+    border: 0;
+    padding: 0;
+    background: #fff;
+    float: right;
+}
+
+.form-container{
+    margin: 0 auto;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.form-element{
+    font-family: 'PT Serif', serif; /*Sets fonts for the text inside the input and button*/
+    font-size: 25px; /*Sets the font size of text inside the input and button*/
+    width: 100%;
+    border: 1px solid #929292; /*Adds a border around the inputs*/
+    border-radius: 5px; /*Makes the corners of the input and button rounded*/
+    padding: 5px; /*Adds some spacing around the text inside the input*/
+    background-color: #f2f4f5; /*Sets background colour of inputs*/
+    margin-bottom: 10px;
+}
+
+button.form-element:hover{
+    background-color: #dddedf; /*Sets the colour of the button when the user is hovering over it*/
+}
+
+@media only screen and (max-width: 1200px){
+    .favourites-container{
+        width: 90%;
+    }
+
+    .favourites-box{
+        font-size: 16px;
+    }
+
+    h2.favourites{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .favourites-box{
+        font-size: 16px;
+    }
+
+    h2.favourites{
+        font-size: 20px;
+    }
+}

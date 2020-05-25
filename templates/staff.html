@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Meet the Staff{% endblock %}
+
+{% block head %}
+    <link href="resources/css/staff.css" type="text/css" rel="stylesheet">
+{% endblock head %}
+
+{% block pagetitle %}Meet the Staff{% endblock %}
+
+{% block content %}
+    <div class="main-div">
+        {% for member in result %}
+            <h2 class="staff">{{member.role}} ({{member.name}})</h2>
+            <div class="container">
+                <div class="sub-container">
+                    <p class="staff">{{member.description}}</p>
+                </div>
+                <div class="sub-container">
+                    <img class="staff-member" src="{{member.photo}}" alt="Picture of {{member.role}}">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

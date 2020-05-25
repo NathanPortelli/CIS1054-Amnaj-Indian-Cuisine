@@ -1,0 +1,78 @@
+.input-section{
+    background-color: white; /*Sets background colour of container to white*/
+    width: 41%; /*Sets the width of the container*/
+    margin: 10% auto; /*Adds some space from header and footer and aligns input section to the middle*/
+    border-radius: 5px; /*Makes corners of container rounded*/
+    padding: 25px; /*Adds some spacing for inputs inside the container*/
+    box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
+    text-align: center; /*Centres button*/
+}
+
+.input-line{
+    width: 95%; /*Sets widths of inputs*/
+    font-family: 'Open Sans', sans-serif; /*Sets fonts for the placeholder text inside inputs*/
+    background-color: #f2f4f5; /*Sets background colour of inputs*/
+    padding: 5px; /*Adds some spacing around the text inside the inputs*/
+    border-radius: 5px; /*Makes the corners of the inputs rounded*/
+    border: 1px solid #929292; /*Adds a border around the inputs*/
+    font-size: 30px; /*Sets the font size of text inside the inputs*/
+}
+
+.form-div{
+    padding: 20px; /*Spaces out the inputs from the sides of the container and the other inputs*/
+}
+
+h1.forms{
+    font-family: 'Open Sans', sans-serif; /*Sets the font for the header to Ubuntu*/
+    font-size: 36px; /*Sets the font size for the header*/
+    letter-spacing: 0.5px; /*Spaces out the letters of the text*/
+}
+
+textarea.input-line{
+    resize: none; /*Disallows the user to resize the text area*/
+}
+
+.form-button{
+    padding: 10px; /*Gives the text of the button some spacing*/
+    width: 200px; /*Sets the width of the button*/
+    font-family: 'Ubuntu', sans-serif; /*Sets the font of the SUBMIT text to Ubuntu*/
+    font-size: 30px; /*Sets the font size of the SUBMIT text*/
+    background-color: #f2f4f5; /*Sets the background colour of the button*/
+    border-radius: 5px; /*Rounds the corners of the button*/
+}
+
+.form-button:hover{
+    background-color: #dddedf; /*Sets the colour of the button when the user is hovering over it*/
+}
+
+p.forms{
+    font-family: 'Open Sans', sans-serif; /*Sets font for any paragraph used in forms*/
+    color: #ed2939;
+}
+
+.error{
+    font-family: 'Open Sans', sans-serif;
+    color: #ed2939;
+    font-size: 25px; /*Sets the font size for the header*/
+    letter-spacing: 0.5px; /*Spaces out the letters of the text*/
+}
+
+a.forms{
+    color: #fe6b40; /*Sets color for any links used in forms*/
+}
+
+@media only screen and (max-width: 450px){
+    .input-section{
+        width: 80%; /*Sets the width of the input section for small phones*/
+    }
+
+    .input-line{
+	    font-size: 20px; /*Sets the font size of text to be smaller on mobiles so that the placeholders will show on phones*/
+    }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 768px){
+    .input-section{
+        width: 60%; /*Sets the width of the input section for tablets*/
+    }
+}

@@ -1,0 +1,66 @@
+.middle-div{
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+label{
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    font-size: 30px;
+    margin-top: 25px;
+    display: block;
+}
+
+.password-div > .input-line{
+    margin-top: 15px;
+}
+
+.input-line{
+    width: 100%;
+}
+
+.password-div{
+    margin-bottom: 30px;
+}
+
+h2.profile{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+}
+
+.top-div{
+    margin-bottom: 15px;
+}
+
+.password-div > :nth-child(2){
+    margin-top: 0;
+}
+
+.favourites-button {
+    background-color: #fe6b40;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 75px;
+    margin-top: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+@media only screen and (max-width: 640px){
+    label{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .middle-div{
+        width: 90%;
+    }
+}

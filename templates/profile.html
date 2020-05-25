@@ -1,0 +1,42 @@
+{% extends "formslayout.html" %}
+
+{% block title %}Your Profile{% endblock %}
+
+{% block head %}
+    {{ parent ()}}
+    <link rel="stylesheet" href="resources/css/profile.css" type="text/css">
+{% endblock %}
+
+{% block pagetitle %}Your Profile{% endblock %}
+
+{% block content %}
+    <div class="middle-div">
+        <form action="./resources/includes/profilechange.php" method="POST">
+            <div class="input-div">
+                <div class="top-div">
+                    <label for="new-name"><span>Your current name: </span>{{name}}</label>
+                    <input class="input-line" type="text" id="new-name" name="new-name" placeholder="Enter new name">
+                    <label for="new-surname"><span>Your current surname: </span>{{surname}}</label>
+                    <input class="input-line" type="text" id="new-surname" name="new-surname" placeholder="Enter new surname">
+                    <label for="new-email"><span>Your current email: </span>{{email}}</label>
+                    <input class="input-line" type="email" id="new-email" name="new-email" placeholder="Enter new email">
+                </div>
+                
+                <div class="password-div">
+                    <h2 class="profile">Change Your Password</h2>
+                    <p class="error">{{error}}</p>
+                    <input id="oldpass" class="input-line" type="password" name="passold" placeholder="Enter your old password" aria-label="Enter your old password">
+                    <input id="password" class="input-line" type="password" name="passnew" placeholder="Enter a new password" aria-label="Enter a new password">
+                    <input id="confirmpassword" class="input-line" type="password" name="passconf" placeholder="Confirm new password" aria-label="Confirm new password">
+                </div>
+                <button class="form-button" name="submit" type="submit">Save</button>
+            </div>
+        </form>
+        <button onclick="window.location = 'favourites.php'" class="favourites-button">Your Favourites</button>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{parent()}}
+    <script src="resources/scripts/confpassword.js" async defer></script>
+{% endblock %}

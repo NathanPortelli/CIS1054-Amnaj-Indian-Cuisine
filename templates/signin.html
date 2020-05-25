@@ -1,0 +1,22 @@
+{% extends "formslayout.html" %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block content %}
+    <form action="resources/includes/login.inc.php" method="POST">
+        <div class="input-section"> 
+            <h1 class="forms">SIGN IN</h1>
+            <p class="error">{{error}}</p>
+            <div class="form-div">
+                <input class="input-line" aria-label="Email" type="text" name="email" placeholder="Email*">
+            </div>
+            <div class="form-div">
+                <input class="input-line" aria-label="Password" type="password" name="password" placeholder="Password*">
+            </div>
+            <div class="form-div">
+                <button class="form-button" type="submit" name="login">Sign In</button>
+                <p class="forms">Don't have an account? <a class="forms" href="signup.php">Sign up</a></p> 
+            </div>
+        </div>
+    </form>
+{% endblock %}

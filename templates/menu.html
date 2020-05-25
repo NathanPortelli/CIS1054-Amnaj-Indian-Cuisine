@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Menu{% endblock %}
+
+{% block head %}
+    <link href="resources/css/menu.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block pagetitle %}Our Menu{% endblock %}
+
+{% block content %}
+    <div class="menu-cat">
+        {% for entry in menutypes %}
+            <a href="menu.php?type={{entry.type}}"><img src="{{entry.typeimg}}" alt="{{entry.type}} Icon" class="menuicons"></a>
+        {% endfor %}
+    </div>
+
+    <div class="entry-list">
+        {% for menudetail in menudetails %}
+            <div onclick="window.location = 'menudetails.php?dish={{ menudetail.dishid }}'"class="blockitem">
+                <h3 class="dishname">{{ menudetail.dishname }}</h3>
+                <h3 class="dishallergies">{{menudetail.allergies}}</h3>
+                <img class="dishimg" src="{{ menudetail.dishphoto }}" alt="{{ menudetail.dishname }} Image">
+                <h3 class="dishprice">{{ menudetail.price }}</h3> 
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

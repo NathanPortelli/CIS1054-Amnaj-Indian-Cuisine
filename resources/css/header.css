@@ -1,0 +1,186 @@
+nav ul li {
+    list-style-type: none; /*Ensures the list-item bullets are not shown*/
+    font-family: 'Ubuntu', sans-serif; /*Sets font of the element as sans-serif from 'Ubuntu'*/
+    font-weight: bold; 
+}
+
+.main-title{
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 46px;
+    margin-top: 100px; /*Moves the header down on larger screens because of the header*/
+}
+
+/*Changes the Style of a contents when user is hovering mouse over item*/
+.menu-wrap a:hover {
+    background-color: #fff;
+    color: #fe6b40;
+}
+
+.menu-wrap a {
+    text-decoration: none;
+    color: #fff;
+    display: block; /*Displays element as a block element [starts on a new line and takes the whole width]*/
+}
+
+.menu-wrap, nav{
+    background-color: #fe6b40; /*Sets Header's background colour*/
+    z-index: 1; /*Ensures header remains on top of elements*/
+}
+
+body{
+    margin: 0;
+}
+
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1079px or less*/
+@media only screen and (max-width: 1079px) {
+    .menu-wrap {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 59px;
+        top: 0;
+    }
+    
+    .menu-wrap .toggler {
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        width: 70px;
+        height: 50px;
+        opacity: 0;
+    }
+    
+    .menu-wrap .hamburger {
+        position: absolute;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding-left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Hamburger Line */
+    .menu-wrap .hamburger > div {
+        position: relative;
+        flex: none;
+        width: 80%;
+        height: 4px; /*thickness of middle line of the hamburger*/
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    
+    /* Hamburger Lines - Top & Bottom */
+    .menu-wrap .hamburger > div::before,
+    .menu-wrap .hamburger > div::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -12px;
+        width: 100%;
+        height: 4px; /*thickness of the top and bottom line of the hamburger*/
+        background: inherit;
+    }
+    
+    /* Moves Line Down */
+    .menu-wrap .hamburger > div::after {
+        top: 12px;
+    }
+    
+    /* Toggler Animation */
+    .menu-wrap .toggler:checked + .hamburger > div {
+        transform: rotate(225deg) rotateY(360deg);
+    }
+
+    /* Turns Lines Into X */
+    .menu-wrap .toggler:checked + .hamburger > div:before,
+    .menu-wrap .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    /* Show Menu */
+    .menu-wrap .toggler:checked ~ .background .menu {
+        visibility: visible;
+    }
+    
+    .menu-wrap .menu {
+        height: 100%; /*SideBar keeps going down till end of screen*/
+        width: 200px; /*SideNav is "hidden", therefore it has no width*/
+        position: fixed; /*Positioned relative to viewport [stays in the same position no matter if user scrolls]*/
+        overflow: auto; /*A scrollbar is provided if the sideNav doesn't fit completely in the screen*/
+        padding-top: 40px; /*Space between sideNav contents and top border*/
+        display: inline-block;
+        visibility: hidden;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-wrap .background
+    {
+        visibility: hidden;
+        background-color: #fe6b40; /*Sets Header's background colour*/
+        height: 100%; /*SideBar keeps going down till end of screen*/
+        width: 250px;
+        position: fixed; /*Positioned relative to viewport [stays in the same position no matter if user scrolls]*/
+        overflow: auto; /*A scrollbar is provided if the sideNav doesn't fit completely in the screen*/
+        padding-top: 20px; /*Space between sideNav contents and top border*/
+    }
+
+    /* Show Background */
+    .menu-wrap .toggler:checked ~ .background {
+        visibility: visible;
+    }
+    
+    .menu-wrap .toggler:checked ~ .background{
+        opacity: 1;
+        transition:  opacity 0.4s ease 0.4s;
+    }
+
+    .menu-wrap a{
+        padding: 8px 8px 20px 32px; /*Set padding for the block element*/
+        font-size: 25px;
+    }
+}
+
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1080px or more*/
+@media only screen and (min-width:1080px) {
+    nav {
+        font-size: 18px; /*Sets the font size of the text in header*/
+        width: 100%; /*Header keeps going till horizontal end of screen*/
+        position: fixed; /*Positioned relative to viewport [stays in the same position no matter if user scrolls]*/
+        top: 0; /*Affects the vertical position of Header*/
+    }
+    
+    nav ul {
+        padding: 0; /*Removes stock ul padding and margin*/
+        margin: 0;
+    }
+
+    nav ul li {
+        float: left; /*Moves to the left of the container*/
+    }
+
+    nav ul li a {
+        padding: 1.05em 1.8em;
+    }
+   
+    li.login {
+        float: right; /*Moves the items of 'login' to the right of the nav*/
+    }
+}
+
+@media only screen and (min-width: 2600px) {
+    nav {
+        font-size: 36px; /*Increases nav size on larger screens*/
+    }
+
+    .main-title{
+        margin-top: 150px; /*Increases space from top so that title doesn't get hidden with the larger header*/
+    }
+}

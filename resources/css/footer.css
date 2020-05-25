@@ -1,0 +1,81 @@
+body#footer_body{
+    margin: 0px; /*Removes stock white border around footer*/
+}
+
+h2.footer{
+    font-weight: bold; /*Makes CONTACT, ABOUT and OPENING HOURS bold*/
+    border-bottom: 2px solid black; /*Creates line under section headers*/
+    width: 75%; /*Used to make the line shorter than the whole section header*/
+    font-size: 26px; /*Sets font size of section headers*/
+    font-family: 'Ubuntu', sans-serif; /*Sets the Ubuntu font for CONTACT, ABOUT and OPENING HOURS*/
+}
+
+p.footer{
+    border-top: 1px solid black; /*Creates black line above the copyright details*/
+    width: 70%; /*Sets width of black line*/
+    margin: 0 auto; /*Centers paragraph within sub-footer*/
+    text-align: center; /*Centers copyright details within paragraph*/
+}
+
+#footer{
+    background-color: #ff7950; /*Sets footer background colour*/
+    padding-bottom: 20px; /*Creates some space between the footer and sub-footer*/
+    padding-top: 20px; /*Creates some space between the footer text and the footer end*/
+}
+
+.footer, #sub-footer, #location{
+    font-family: 'PT Serif', serif; /*Sets the PT Serif font to all text*/
+}
+
+table.footer, #location{
+    font-size: 18px; /*Sets the text size for the address and tabular data*/
+}
+
+#footer-main{
+    display: table;
+    width: 90%; /*Decreases width slightly in the footer*/
+    margin: 0 auto; /*Centers footer main in the footer*/
+}
+
+.footer-section{
+    display: table-cell;
+    width: 30%; /*Sets with for the footer sections*/
+    padding: 10px; /*Spaces out the footer sections slightly apart*/
+}
+
+#sub-footer{
+    background-color: #fe6b40; /*Sets colour for the sub-footer*/
+    height: 120px; /*Sets the sub-footer's height*/
+}
+
+#footer-row{
+    display: table-row;
+}
+
+@media only screen and (max-width: 1200px){
+    .footer-section{
+        display: block; /*Allows footer sections to be display under each other on smaller screens*/
+        width: 90%; /*Increases the width of the individual sections from 30%*/
+        padding: 2%; /*Allows spacing from the sides of the browser*/
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .footer-section{
+        width: 96%;
+    }
+
+    /*Above rule makes sure footer displays well on very small screens*/
+}
+
+#footer-logo{
+    height: 70px; /*Sets logo height*/
+    width: 70px; /*Sets logo width*/
+    display: block; /*Allows image to be centered*/
+    margin: auto; /*Allows image to be centered*/
+    padding: 10px 0px; /*Spaces out image from the paragraph and top of sub-footer*/
+}
+
+.firstcol{
+    padding-right: 10px; /*Creates some space between opening hours table columns*/
+}

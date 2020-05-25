@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}Oops!{% endblock %}
+
+{% block head %}
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="resources/css/error.css" type="text/css">
+{% endblock %}
+
+{% block content %}
+	<h1 class="errorpage">SOMETHING WENT WRONG</h1>
+	<p class="errorpage">
+		If you were messing with the site then this problem is on you. If you were not, we are terribly sorry, but you must have activated
+			some part of the site Kyle was working on. We'll make sure to keep him away from any sort of code in future projects.<br><br>
+		Here's an image of a one of our team member's cat to make up for your troubles. Her name is <b>Peanut</b>.
+	</p>
+	<img src="resources/images/cat.jpg" alt="Picture of a cat" class="errorimage"><br>
+	<button type="button" onclick="window.location = 'index.php'" class="button">I'm done from the cat.<br>Take me back.</button>
+{% endblock %}

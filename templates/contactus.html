@@ -1,0 +1,27 @@
+{% extends "formslayout.html" %}
+
+{% block title %}Contact Us!{% endblock %}
+
+{% block content %}
+    <form action="./mail.php" method="POST">
+        <div class="input-section">
+            <h1 class="forms">CONTACT US</h1>
+            <p class="error">{{error}}</p>
+            <div class="form-div">
+                <input class="input-line" aria-label="Name" type="text" name="name" placeholder="Name" autocomplete="name" required>
+            </div>
+            <div class="form-div">
+                <input class="input-line" aria-label="Subject" type="text" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-div">
+                <input class="input-line" aria-label="Email" type="email" name="email" placeholder="Email" required autocomplete="email">
+            </div>
+            <div class="form-div">
+                <textarea class="input-line" aria-label="Message" type="text" name="message" placeholder="Message" rows=4 required></textarea>
+            </div>
+            <div class="form-div">
+                <button class="form-button" type="submit" name="submit">SUBMIT</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

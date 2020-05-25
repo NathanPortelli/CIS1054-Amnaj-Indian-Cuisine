@@ -1,0 +1,33 @@
+.admin-div{
+	margin: 0 auto;
+	text-align: center;
+	width: 60%;
+}
+
+.form-div{
+	padding: 5px;
+}
+
+.form-button{
+	width: 280px;
+	margin: 20px;
+}
+
+hr{
+	background: url(../images/hrpattern.png) top center;
+	background-size: 38px 17px;
+	height: 17px;
+	width: 75%;
+	margin: 50px auto;
+	border: none;
+}
+
+@media only screen and (max-width: 1200px){
+	.admin-div{
+	 	 width: 90%;
+  	}
+	
+  	hr{
+	  	width: 100%;
+  	}
+}

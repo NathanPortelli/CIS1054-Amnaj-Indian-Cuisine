@@ -1,0 +1,76 @@
+h1.staff, h2.staff, p.staff{
+    font-family: 'PT Serif', serif; /*Sets font for all text used in the page*/
+}
+
+h1.staff, h2.staff{
+    text-align: center; /*Aligns headers to the centre horizontally*/
+    font-weight: bold; /*Makes headers bold*/
+    font-size: 40px;
+}
+
+h1.staff{
+    font-size: 46px; /*Sets font size for the header*/
+}
+
+p.staff{
+    text-align: justify; /*Makes description text justified*/
+    font-size: 22px; /*Sets size of description text*/
+}
+
+.sub-container{
+    padding: 0px 4%; /*Adds some padding to the text and images to make it look less like a table*/
+    width: 50%; /*Sets the width of the sub-containers to be equal*/
+    display: flex;
+    align-items: center; /*Centres content in the row horizontally*/
+    justify-content: center; /*Centres content in the row vertically*/
+}
+
+.container{
+    display: flex;
+    align-items: center; /*Centres sub-containers in the row horizontally*/
+    justify-content: center; /*Centres sub-containers in the row vertically*/
+    margin-bottom: 100px; /*Spaces out rows*/
+}
+
+:nth-child(4n){
+    flex-direction: row-reverse; /*Reverses order of sub-containers every row, so they alternate*/
+}
+
+.main-div{
+    display: flex; /*Makes divs act like a table*/
+    width: 80%; /*Sets width of whole thing*/
+    margin: 0 auto; /*Centres whole thing in page*/
+    flex-direction: column; /*Makes staff rows appear under each other*/
+}
+
+img.staff-member{
+    border-radius: 50%; /*Makes images circle*/
+    border: 1px solid black; /*Sets images' borders*/
+    height: 350px; /*Sets height of the images*/
+}
+
+@media only screen and (min-width: 1300px){
+    p.staff{
+        font-size: 30px; /*Changes font size for larger screens*/
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    img.staff-member{
+        height: 250px; /*Decreases the size of images on smaller screens*/
+    }
+
+    .container{
+        flex-direction: column; /*Makes sub-containers appear under each other to better suit smaller screens*/
+    }
+
+    .sub-container{
+        margin-top: 50px; /*Centres images and text on smaller screens*/
+        margin-bottom: 50px; /*Centres images and text on smaller screens*/
+        width: 100%; /*Makes contain0ers span 90% of the width of the page to better suit smaller screens*/
+    }
+
+    .main-div{
+        width: 90%; /*Increases the width of the main content to better suit smaller screens*/
+    }
+}

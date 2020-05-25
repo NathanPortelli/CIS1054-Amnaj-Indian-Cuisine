@@ -1,0 +1,44 @@
+<footer>
+    <div id="footer">
+        <div id="footer-main">
+            <div id="footer-row">
+                <div class="footer-section">
+                    <h2 class="footer">CONTACT</h2>
+                    <table class="footer">
+                        <tr>
+                            <td>Telephone: </td><td>{{details.telephone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile: </td><td>{{details.mobile}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email: </td><td>{{details.email_address}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer">LOCATION</h2>
+                    <p id="location">
+                        {{address|striptags('<br>')|raw}}
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer">OPENING HOURS</h2>
+                    <table class="footer">
+                        {% for entry in openingHours %}
+                            <tr>
+                                <td class="firstcol footer">{{entry.dayrange}}</td><td>{{entry.hourrange}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sub-footer">
+        <div id="sub-footer-cell">
+            <img src="resources/images/index-logo.png" id="footer-logo" alt="Logo">
+            <p class="footer">Amnaj Indian Cuisine © {{year}}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

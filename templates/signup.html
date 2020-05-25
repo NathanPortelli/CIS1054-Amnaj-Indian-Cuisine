@@ -1,0 +1,34 @@
+{% extends "formslayout.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <form action="resources/includes/signup.inc.php" method="POST">
+        <div class="input-section"> 
+            <h1 class="forms">SIGN UP</h1>
+            <p class="error">{{error}}</p>
+            <div class="form-div">
+                <input class="input-line" aria-label="First Name" type="text" name="name" placeholder="First Name*" autocomplete="name" required>
+            </div>
+            <div class="form-div">
+                <input class="input-line" aria-label="Last Name" type="text" name="surname" placeholder="Last Name*" autocomplete="family-name" required>
+            </div>
+            <div class="form-div">
+                <input class="input-line" aria-label="Email" type="text" name="email" placeholder="Email Address*" autocomplete="email" required>
+            </div>
+            <div class="form-div">
+                <input id="password" class="input-line" aria-label="Password" type="password" name="password" placeholder="Password*" autocomplete="new-password" required>
+            </div>
+            <div class="form-div">
+                <input id="confirmpassword" class="input-line" aria-label="Confirm Password" type="password" name="confirmpassword" placeholder="Confirm Password*" autocomplete="new-password" required>
+            </div>
+            <div class="form-div">
+                <button class="form-button" type="submit" name="signup">Sign Up</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script src="resources/scripts/confpassword.js" async defer></script>
+{% endblock %}
