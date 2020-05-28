@@ -31,9 +31,13 @@
                         <img class="allergyicons" src="{{allergy.allergyicon}}" alt="Allergy Icon">      
                     {% endfor %}
                 </div>
-                <form method="POST" action="./resources/includes/favourites.inc.php">
+                <form method="POST" action="menudetails.php">
                     <input name="menuid" type="hidden" value="{{dishID}}">
-                    <button name="favBtn" id="favouritesBtn" type="submit" class="menudetails-fav">Add to Favourites</button>
+                    {% if isAdded == true %}
+                        <button name="favBtn" id="favouritesBtn" type="submit" disabled>Add to Favourites</button>
+                    {% else %}
+                    <button name="favBtn" id="favouritesBtn" type="submit">Add to Favourites</button>
+                    {% endif %}
                 </form>
             </div>
         </div>

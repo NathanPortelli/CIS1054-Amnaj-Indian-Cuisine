@@ -10,26 +10,39 @@
 
 {% block content %}
     <div class="favourites-container">
+        {% if isEmpty == true %}
+            <p class="noItems">You do not currently have any items in your Favourites List.</p>
+        {% endif %}
         {% for entry in result %}
-            <div class=favourites-entry>
-                <div class=favourites-box>
-                    <form action="./favourites.php" method="POST">
-                        <input name="menuid" type="hidden" value="{{entry.dishid}}">
-                        <button name="removeItem" href="{{removeFav}}" class="removeBtn"><img src="resources/images/closemenu2.png" alt='Remove Item' class="removeimage  "></button> 
-                    </form>
-                    <h2 class=favourites>{{entry.dishname}}</h2>
-                    {{entry.dishdesc}}
-                </div>
-                <img src="{{entry.dishphoto}}" alt='Image of dish' class="favourites">
+            <div class="favourites-entry">  
+                    <div class="favourites-box" onclick="window.location = 'menudetails.php?dish={{entry.dishid}}'">
+                        <form action="./favourites.php" method="POST">
+                            <input name="menuid" type="hidden" value="{{entry.dishid}}">
+                            <button name="removeItem" href="{{removeFav}}" class="removeBtn"><img src="resources/images/closemenu2.png" alt='Remove Item' class="removeimage  "></button> 
+                        </form>
+                        <h2 class=favourites>{{entry.dishname}}</h2>
+                        <p class=favourites>{{entry.dishdesc}}</p>
+                      </div>
+                <a class="dishlink" href="./menudetails.php?dish={{entry.dishid}}">
+                    <img src="{{entry.dishphoto}}" alt='Image of dish' class="favourites">
+                </a>               
             </div>
         {% endfor %}
     </div>
-
     <form action="./favourites.mail.php" method="POST">
         <div class="form-container">
-            <input name="menuid" type="hidden" value="{{entry.dishid}}">
-            <input class="form-element" type="email" aria-label="Email" placeholder="Email" name="email">
-            <button class="form-element" type="submit" name="submit">Send List To Email Above</button>
+            {% for items in result %}
+                <input name="menuname" type="hidden" value="{{items.dishname}}">
+                <input name="menudesc" type="hidden" value="{{items.dishdesc}}">
+                <input name="menuingr" type="hidden" value="{{items.ingredients}}">
+                <input name="menupric" type="hidden" value="{{items.price}}">
+            {% endfor %}
+            <input class="form-element" type="email" aria-label="Email" placeholder="Email*" name="email">
+            {% if isEmpty == true %}
+                <button class="form-element" type="submit" name="submit" disabled>Email Favourites List</button>
+            {% else %}
+                <button class="form-element" type="submit" name="submit">Email Favourites List</button>
+            {% endif %}
         </div>
     </form>
 {% endblock %}

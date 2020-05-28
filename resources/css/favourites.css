@@ -47,6 +47,7 @@ h1.favourites{
 }
 
 .favourites-box{
+    cursor: pointer;
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
     border-radius: 5px; /*Makes corners of container rounded*/
     font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/

@@ -7,7 +7,10 @@
 
     if(isset($_GET['dish'])){
         
-        $isAdded = false;
+        $isAdded = true;
+        $isMin = true;
+        $isMax = true;
+        
         if(isset($_SESSION['id']))
         {
             $favmenuID = $db->quote($_GET['dish']);
@@ -17,12 +20,8 @@
             $query = $db->select($sel);
 
             //If it does already exist within the user's Favourites List
-            if (count($query) > 0) 
+            if (!count($query) > 0) 
             {        
-                $isAdded = true;
-            }
-            else
-            {
                 $isAdded = false;
             }
         }
