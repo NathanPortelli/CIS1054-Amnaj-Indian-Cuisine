@@ -11,37 +11,26 @@ if($_SESSION['usergroup'] == 1){
 	$himg = new HandleImages();
 	
 	if($_SERVER['REQUEST_METHOD'] === 'POST'){
-		$name = $_POST["eTeamName"];
-		$role = $_POST["eTeamRole"];
-		$desc = $_POST["eTeamDescription"];
-		$photo = $_FILES["eTeamPhoto"];
-		$id = $_POST['eTeamId'];
-		$photoCheck = true;
+		$name = $_POST["aTeamName"];
+		$role = $_POST["aTeamRole"];
+		$desc = $_POST["aTeamDescription"];
+		$photo = $_FILES["aTeamPhoto"];
 		$validations = array();
 		$formvalues = array();
 
-		$vid = $val->validateInt($id, 3);
-		$idCheck = $db->select("SELECT teamid FROM team_details WHERE teamid = ".$db->quote($id));
-		// echo "name: ".$name;
-		if($id != $vid){
-			$validations['id'] = $vid;
-		}else if(!in_array($id, $idCheck)){
-			$validations['id'] = "Please enter an existing id";
-		}
-
-		$vname = $val->validateString($name, 100);
+		$vname = $val->validateString($name, 40);
 		// echo "name: ".$name;
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
 
-		$vdesc = $val->validateArea($desc, 200);
+		$vdesc = $val->validateArea($desc, 1000);
 		// echo "desc: ".$desc;
 		if($desc != $vdesc){
 			$validations['desc'] = $vdesc;
 		}
 
-		$vrole = $val->validateString($role, 100);
+		$vrole = $val->validateString($role, 40);
 		// echo "name: ".$name;
 		if($role != $vrole){
 			$validations['role'] = $vrole;
@@ -60,7 +49,7 @@ if($_SESSION['usergroup'] == 1){
 				$validations['photo'] = "Upload Error";
 			}
 		}else{
-			$photoCheck = false;
+			$validations['photo'] = "Please upload a photo";
 		}
 
 		if(!empty($validations)){
@@ -68,24 +57,19 @@ if($_SESSION['usergroup'] == 1){
 			$formvalues['desc'] = $desc;
 			$formvalues['role'] = $role;
 			$formvalues['photo'] = $photo;
-			$formvalues['id'] = $id;
 
-			echo $twig->render("editmember.html", ['validations' => $validations, 'formvalues' => $formvalues]);
+			echo $twig->render("addmember.html", ['validations' => $validations, 'formvalues' => $formvalues]);
 		}else{
-
-			if($photoCheck === true){
-				$sql = $db->query("UPDATE team_details SET name =".$db->quote($name).", role=".$db->quote($role).", description=".$db->quote($desc).", photo=".$db->quote($upload)." WHERE teamid=".$db->quote($id));
 			
-			}else{
-				$sql = $db->query("UPDATE team_details SET name =".$db->quote($name).", role=".$db->quote($role).", description=".$db->quote($desc)." WHERE teamid=".$db->quote($id));
-			}
+			$sql = $db->query("INSERT INTO team_details (name, role, description, photo) VALUES (".$db->quote($name).", ".$db->quote($role).", ".$db->quote($desc).", ".$db->quote($upload).")");
 			
-			header("Location: viewmembers.php?success=true");
+			
+			header("Location: addmember.php?success=true");
 			exit();
 		}
 
 	}else{
-		echo $twig->render("editmember.html");
+		echo $twig->render("addmember.html");
 	}
 }else{
 	header("Location: index.php");

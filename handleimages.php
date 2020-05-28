@@ -9,7 +9,7 @@ class HandleImages{
 
 		if(in_array($pExt, $allowedExts)){
 			if($pError === 0){
-				if($pSize < 1000000){
+				if($pSize < 1024*1024*1024){
 					$dest = __DIR__.'./resources/images/'.$pName;
 					$uCheck = move_uploaded_file($pTempName, $dest);
 					if(!$uCheck){

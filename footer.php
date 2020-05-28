@@ -28,7 +28,7 @@
 
         /*will contain the hours that correspond to the day ranges in the dayrange array
           Currently contains for example Hours: ([0] => 10:00 - 22:00, [1] => 11:00 - 21:00, [2] => 11:00 - 23:00, [3] => 14:00 - 24:00)*/
-        $hours[] = $dayoftheweek['hours']; //
+        $hours[] = $dayoftheweek['hours'];
     }
 
     //A function which returns the corresponding date number according to the day (to compare days)

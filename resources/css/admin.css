@@ -1,16 +1,97 @@
+.wrap
+{
+    margin-bottom: 100px;
+}
+
+.mem-container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.mem-entry{
+    display: flex;
+    align-items: center;
+    font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
+}
+
+.mem-box{
+    box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
+    border-radius: 5px; /*Makes corners of container rounded*/
+    font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
+    border: 1px solid #929292; /*Adds a border around the inputs*/
+    margin: 20px 0;
+    padding: 20px;
+    width: 90%;
+    margin-right: 15px;
+}
+
+h2.member{
+    margin-bottom: 15px;
+	margin-top: 0px;
+}
+
+img.member{
+    height: 190px;
+    border: 1px solid #929292; /*Adds a border around the image*/
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
+}
+
 .admin-div{
 	margin: 0 auto;
 	text-align: center;
 	width: 60%;
 }
 
-.form-div{
-	padding: 5px;
+.section{
+    background-color: white; /*Sets background colour of container to white*/
+    width: 100%; /*Sets the width of the container*/
+    margin: 10% auto; /*Adds some space from header and footer and aligns input section to the middle*/
+    border-radius: 5px; /*Makes corners of container rounded*/
+    padding: 25px; /*Adds some spacing for inputs inside the container*/
+    box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
+    text-align: center; /*Centres button*/
 }
 
-.form-button{
-	width: 280px;
-	margin: 20px;
+.admin-button
+{
+	margin: 10px;
+	background-color: #ff7950;
+    border: grey;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.admin-button:hover{
+    background-color: #dddedf; /*Sets the colour of the button when the user is hovering over it*/
+}
+
+#form-button{
+    margin-bottom: 25px;
+    margin-top: 25px;
+	width: 500px;
+	font-size: 30px;
+}
+
+#edit-button
+{
+    display: block;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    float: right;
+}
+
+p.title
+{
+	font-size: 30px;
+	font-family: 'PT Serif', serif;
+	font-weight: bold;
 }
 
 hr{
@@ -20,14 +101,35 @@ hr{
 	width: 75%;
 	margin: 50px auto;
 	border: none;
-}
+}	
 
 @media only screen and (max-width: 1200px){
 	.admin-div{
-	 	 width: 90%;
-  	}
-	
-  	hr{
-	  	width: 100%;
-  	}
+		width: 90%;
+	}
+  
+	hr{
+		width: 100%;
+	}
+    .mem-container{
+        width: 90%;
+    }
+
+    .mem-box{
+        font-size: 16px;
+    }
+
+    h2.member{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .mem-box{
+        font-size: 16px;
+    }
+
+    h2.member{
+        font-size: 20px;
+    }
 }

@@ -11,11 +11,17 @@ if($_SESSION['usergroup'] == 1){
 
 
 			switch($choice){
-				case "aTeamMember":
-					header("Location: addteammember.php");
+				case "aDish":
+					header("Location: adddish.php");
 					break;
-				case "eTeamMember":
-					header("Location: editteammember.php");
+				case "vDish":
+					header("Location: viewdishes.php");
+					break;
+				case "aTeamMember":
+					header("Location: addmember.php");
+					break;
+				case "vTeamMember":
+					header("Location: viewmembers.php");
 					break;
 				case "eRestDets":
 					header("Location: editdetails.php");
@@ -23,8 +29,8 @@ if($_SESSION['usergroup'] == 1){
 				case "aDishType":
 					header("Location: adddishtype.php");
 					break;
-				case "eDishType":
-					header("Location: editdishtype.php");
+				case "vDishType":
+					header("Location: viewdishtypes.php");
 					break;
 
 		}

@@ -21,7 +21,7 @@
                 <img class="menudetails" src="{{row.dishphoto}}" alt="{{row.dishname}} Image">
                 <div class="allergy-div">
                     {% for allergy in resultallergy %}
-                        <img class="allergyicons" src="{{allergy.allergyicon}}" alt="{{allergy.name}} Icon" title="{{allergy.name}} Icon"> 
+                        <img class="allergyicons" src="{{allergy.allergyicon}}" alt="{{allergy.name}} Icon" title="{{allergy.name}}"> 
                     {% endfor %}
                 </div>
                 <form method="POST" action="menudetails.php">

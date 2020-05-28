@@ -11,7 +11,7 @@
 {% block content %}
     <div class="main-div">
         {% for member in result %}
-            <h2 class="staff">{{member.role}} ({{member.name}})</h2>
+            <h2 class="staff">{{member.name}} ({{member.role}})</h2>
             <div class="container">
                 <div class="sub-container">
                     <p class="staff">{{member.description}}</p>

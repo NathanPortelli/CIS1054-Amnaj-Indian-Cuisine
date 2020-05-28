@@ -1,8 +1,8 @@
 {% extends "formslayout.html" %}
 
-{% block title %}View Team{% endblock %}
+{% block title %}View Team Members{% endblock %}
 
-{% block pagetitle %}TEAM MEMBERS{% endblock %}
+{% block pagetitle %}Team Members{% endblock %}
 
 {% block head %}
 	{{ parent ()}}
@@ -10,19 +10,21 @@
 {% endblock %}
 
 {% block content %}
-	<table>
-		<tr>
-			<th>ID</th>
-			<th>Name</th>
-		</tr>
+	<div class="wrap">
 		{% for member in members %}
-		<form action="./viewmembers.php" method="POST">
-            <tr>
-               <td>{{member.teamid}}</td>
-               <td>{{member.name}}</td> 
-               <td><button class="form-button"type="submit" name="submit{{member.teamid}}">Edit Member</button></td>	
-            </tr>
-        </form>
-        {% endfor %}
-	</table>
+		<div class="mem-container">
+			<div class="mem-entry">  
+				<div class="mem-box" >
+					<form action="./viewmembers.php" method="POST">
+						<p class="member">Member No.:&nbsp{{member.teamid}}</p>
+						<h2 class="member">{{member.name}}</h2>
+						<button class="admin-button" id="delete-button" type="submit" name="delete{{member.teamid}}">Delete Member</button>
+						<button class="admin-button" id="edit-button" type="submit" name="submit{{member.teamid}}">Edit Member</button>
+					</form>
+				</div>
+				<img src="{{member.photo}}" alt='Image of Team Member' class="member">
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 {% endblock %}
