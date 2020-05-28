@@ -1,0 +1,27 @@
+{% extends "formslayout.html" %}
+
+{% block title %}View Team{% endblock %}
+
+{% block pagetitle %}TEAM MEMBERS{% endblock %}
+
+{% block head %}
+{{ parent ()}}<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+		</tr>
+		{% for member in members %}
+		<form action="./viewmembers.php" method="POST">
+            <tr>
+               <td>{{member.teamid}}</td>
+               <td>{{member.name}}</td> 
+               <td><button class="form-button"type="submit" name="submit{{member.teamid}}">Edit Member</button></td>	
+            </tr>
+        </form>
+        {% endfor %}
+	</table>
+{% endblock %}

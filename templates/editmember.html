@@ -1,0 +1,31 @@
+{% extends "formslayout.html" %}
+
+{% block title %}Add Team Member{% endblock %}
+{% block head %}
+{{ parent ()}}<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+   <div class="admin-div">
+        <form action="./resources/includes/admin.inc.php" method="POST" enctype="multipart/form-data">
+            <h1 class="forms">EDIT TEAM MEMBER</h1>
+            <div class="form-div">
+                <p class="error">{{validations.name}}</p>
+                <input class="input-line" aria-label="Enter name" type="text" name="eTeamName" value="{{member.name}}">
+            </div>
+            <div class="form-div">
+                <p class="error">{{validations.role}}</p>
+                <input class="input-line" aria-label="Enter role" type="text" name="eTeamRole" value="{{member.role}}">
+            </div>
+            <div class="form-div">
+                 <p class="error">{{validations.desc}}</p>
+                <textarea class="input-line" aria-label="Enter description" type="text" name="eTeamDescription" rows="10">{{member.description}}</textarea>
+            </div>
+            <div class="form-div">
+                 <p class="error">{{validations.photo}}</p>
+                <input class="input-line" aria-label="Enter photo" type="file" name="eTeamPhoto" placeholder="Enter photo">
+            </div>
+            <button class="form-button"type="submit" name="eTeamSubmit">Edit Team Member</button>
+        </form>
+    </div>
+{% endblock %}

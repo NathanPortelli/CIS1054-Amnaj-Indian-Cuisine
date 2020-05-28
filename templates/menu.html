@@ -11,7 +11,10 @@
 {% block content %}
     <div class="menu-cat">
         {% for entry in menutypes %}
-            <a href="menu.php?type={{entry.type}}"><img src="{{entry.typeimg}}" alt="{{entry.type}} Icon" class="menuicons"></a>
+            <div class="tooltip">
+                <a href="menu.php?type={{entry.typeid}}"><img src="{{entry.typeimg}}" alt="{{entry.type}} Icon" class="menuicons"></a>
+                <span class="tooltiptext">{{entry.type}}</span>
+            </div>
         {% endfor %}
     </div>
 

@@ -1,0 +1,58 @@
+{% extends "formslayout.html" %}
+
+{% block title %}Add Team Member{% endblock %}
+{% block head %}
+{{ parent ()}}<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="admin-div">
+        <form action="./adddish.php" method="POST" enctype="multipart/form-data">
+            <h1 class="forms">ADD DISH</h1>
+            <div class="form-div">
+                <p class="error">{{validations.name}}</p>
+                <input class="input-line" type="text" value="{{formvalues.name}}" placeholder="Enter name" aria-label="Enter name" name="aDishName" required>
+            </div>
+            <div class="form-div">
+                <p class="error">{{validations.type}}</p>
+               <select name="typeSelect" class="input-line" aria-label="Select dish type" autofocus="{{formvalues.type}}" required>
+                <option value="">Select Type</option>
+                {% for type in types %}
+                <option value="{{type.type}}">{{type.type}}</option>
+                {% endfor %}
+                
+            </select>
+            </div>
+            <div class="form-div">
+                <p class="error">{{validations.desc}}</p> 
+                <textarea class="input-line" aria-label="Enter description" type="text" name="aDishDescription" placeholder="Enter description" rows=4 required>{{formvalues.desc}}</textarea>
+            </div> 
+            <div class="form-div">
+                <p class="error">{{validations.price}}</p>
+                <input class="input-line" type="text" value="{{formvalues.price}}" placeholder="Enter price" aria-label="Enter price" name="aDishPrice" required>
+            </div>
+            <div class="form-div">
+                <p class="error">{{validations.ing}}</p>
+                <textarea class="input-line" aria-label="Enter ingredients" type="text" name="aDishIngredients" placeholder="Enter ingredients" rows=4 required>{{formvalues.ing}}</textarea> 
+            </div>
+            <div class="form-div">
+                <p class="error">{{validations.serving}}</p>
+                <input class="input-line" type="text" value="{{formvalues.serving}}" placeholder="Enter serving" aria-label="Enter serving" name="aDishServing" required>
+            </div>
+            <div class="form-div">
+                <p class="error">{{validations.allergies}}</p>
+               <select name="allSelect[]" class="input-line" aria-label="allSelect" multiple="multiple" autofocus="" required>
+                <option value="none">None</option>
+                {% for allergy in allergies %}
+                    <option value="{{allergy.allergyid}}">{{allergy.name}}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-div">
+                <p class="error">{{validations.photo}}</p>
+                <input class="input-line" type="file" value="{{formvalues.photo}}" aria-label="Enter photo" name="aDishPhoto" required>
+            </div>
+            
+            <button class="form-button"type="submit" name="aDishSubmit">Add Dish</button>
+        </form>
+{% endblock %}

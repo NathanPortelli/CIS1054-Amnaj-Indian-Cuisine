@@ -30,6 +30,8 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="resources/scripts/modal.js" async defer></script>
+    {% if welcome_message != "" %}
+        <script type="text/javascript" src="resources/scripts/modal.js" async defer></script>
+    {% endif %}
 {% endblock %}
 

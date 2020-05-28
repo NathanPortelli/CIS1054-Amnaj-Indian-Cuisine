@@ -13,7 +13,7 @@
 				$errorMessage = "Database failed to update";
 			}
 		}
-		echo $twig->render('profile.html', ['name' => $_SESSION['name'], 'surname' => $_SESSION['surname'], 'email' => $_SESSION['email'], 'error' => $errorMessage]);
+		echo $twig->render('profile.html', ['name' => $_SESSION['name'], 'surname' => $_SESSION['surname'], 'email' => $_SESSION['email'], 'error' => $errorMessage, 'usergroup' => $_SESSION['usergroup']]);
 	} else {
 		header("Location: signin.php");
 	}

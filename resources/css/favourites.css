@@ -3,8 +3,12 @@ h2.favourites{
     margin-top: 0px;
 }
 
+p.favourites{
+    margin-right: 20px;
+}
+
 img.favourites{
-    height: 125px;
+    height: 145px;
     border: 1px solid #929292; /*Adds a border around the image*/
     border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
@@ -16,11 +20,24 @@ h1.favourites{
     text-align: center;
 }
 
+.dishlink
+{
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .favourites-container{
     display: flex;
     flex-direction: column;
     width: 70%;
     margin: 100px auto;
+}
+
+.noItems
+{
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 25px;
 }
 
 .favourites-entry{

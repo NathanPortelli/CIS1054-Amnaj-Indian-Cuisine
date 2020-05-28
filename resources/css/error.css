@@ -10,7 +10,7 @@ img.errorimage{
     display: block;
     margin: 0 auto;
     border-radius: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .button {
@@ -22,11 +22,16 @@ img.errorimage{
     font-size: 30px;
     margin: 4px 2px;
     cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.button:hover{
+    background-color: #e64616;
 }
 
 h1.errorpage{
     margin-bottom: 50px;
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 46px;
 }
 
@@ -36,4 +41,10 @@ p.errorpage{
     margin: 0 auto;
     margin-bottom: 50px;
     text-align: justify;
+}
+
+@media only screen and (max-width: 1200px){
+    p.errorpage{
+        width: 90%;
+    }
 }

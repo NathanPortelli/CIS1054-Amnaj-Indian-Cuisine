@@ -5,11 +5,7 @@
     
     if (isset($_SESSION['id'])){
         $firstButton = strtoupper($_SESSION['name']);
-        if ($_SESSION['usergroup'] == 1){
-            $firstLink = "admin.php";
-        } else {
-            $firstLink = "profile.php";
-        }
+        $firstLink = "profile.php";
         $secondButton = "LOGOUT";
         $secondLink = "resources/includes/logout.inc.php";
     } else {

@@ -38,19 +38,25 @@ h2.profile{
     margin-top: 0;
 }
 
-.favourites-button {
+.favourites-button{
     background-color: #fe6b40;
-    border: none;
-    color: white;
+    border: grey;
+    color: #fff;
     padding: 20px;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
     margin-bottom: 75px;
     margin-top: 25px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     letter-spacing: 1.5px;
+    width: 250px;
+    font-weight: bold;
+}
+
+.favourites-button:hover{
+    background-color: #e64616;
 }
 
 @media only screen and (max-width: 640px){

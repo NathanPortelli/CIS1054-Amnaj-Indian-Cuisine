@@ -1,10 +1,31 @@
 <?php
     require_once "bootstrap.php";
     require_once "dbwrapper.php";
+    require_once 'header.php';
+
+    $db = new Db();
 
     if(isset($_GET['dish'])){
-        $db = new Db();
         
+        $isAdded = false;
+        if(isset($_SESSION['id']))
+        {
+            $favmenuID = $db->quote($_GET['dish']);
+            $currUser = $_SESSION['id'];
+
+            $sel = "SELECT dishID FROM favourites WHERE dishID=".$favmenuID." AND userID=".$currUser;
+            $query = $db->select($sel);
+
+            //If it does already exist within the user's Favourites List
+            if (count($query) > 0) 
+            {        
+                $isAdded = true;
+            }
+            else
+            {
+                $isAdded = false;
+            }
+        }
         //quotes dish id to prevent SQL injection
         $dishIDquoted = $db->quote($_GET['dish']);
 
@@ -32,13 +53,38 @@
 
                 require_once 'header.php';
 
-                echo $twig->render('menudetails.html', ['result' => $result, 'resultallergy' => $resultallergy, 'largestID' => $largestID, 'dishID' => $dishID]);
+                echo $twig->render('menudetails.html', ['result' => $result, 'resultallergy' => $resultallergy, 'largestID' => $largestID, 'dishID' => $dishID, 'isAdded' => $isAdded]);
 
                 require_once 'footer.php';
             }
         } else {
             header("Location: menu.php?error=invalidID");
         }
-    } else {
-        echo $twig->render('404.html');
+    }
+    if(isset($_POST['favBtn']))
+    {
+        if(isset($_SESSION['id']))
+        {
+            $favmenuID = $_POST['menuid'];
+            $currUser = $_SESSION['id'];
+
+            $sel = "SELECT dishID FROM favourites WHERE dishID=".$favmenuID." AND userID=".$currUser."";
+            $query = $db->query($sel);
+
+            //If it does not already exist within the user's Favourites List
+            if (!$query->num_rows > 0) 
+            {        
+                $sql = $db->query("INSERT INTO favourites(userID, dishID) VALUES ($currUser, $favmenuID)");
+            }
+            else
+            {
+                echo $twig->render('404.html');
+            }
+            header("Location: menudetails.php?dish=$favmenuID");
+        }    
+        else
+        {
+            //User is not logged in and therefore cannot access items in 'My Favourites'
+            echo $twig->render('404.html');
+        }
     }

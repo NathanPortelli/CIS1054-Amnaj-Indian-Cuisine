@@ -11,7 +11,7 @@
 	$ourstory = $result[0]['ourstory'];
 
 	if(!isset($_COOKIE['visited'])){
-		$expiryDate = 60 * 60 * 24 * 90 + time(); //will expire in 3 months
+		$expiryDate = 60 * 60 * 24 + time(); //will expire in 3 months
 		setcookie('visited', true, $expiryDate);
 	} else {
 		$welcome_message = "";

@@ -19,14 +19,27 @@
 
 #favouritesBtn{
     background-color: #fe6b40;
-    border: grey;
-    color: white;
+    border: none;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
     cursor: pointer;
-    margin-bottom: 30px;
-    height: 50px;
-    width: 200px;
-    font-family: 'PT Serif', serif;
-    font-size: 20px;
+    margin-bottom: 75px;
+    margin-top: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+#favouritesBtn:hover{
+    background-color: #e64616;
+}
+
+#favouritesBtn:disabled{
+    background-color: grey;
+    font-weight: lighter;
+    color: black;
+    cursor: default;
 }
 
 p.menudetails{
@@ -46,9 +59,21 @@ p.menudetails{
     font-size: 30px;
 }
 
+.menu-details-fav
+{
+    cursor: pointer;
+    background-color: #fe6b40;
+    border: grey; /*To differentiate between clickable and non-clickable buttons*/
+    color: white;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+}
+
 .menudetails-dir:disabled{
     background-color: grey;
     color: black;
+    cursor: default;
 }
 
 img.menudetails{

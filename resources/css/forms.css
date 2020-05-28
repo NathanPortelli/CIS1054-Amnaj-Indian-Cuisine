@@ -45,14 +45,12 @@ textarea.input-line{
     background-color: #dddedf; /*Sets the colour of the button when the user is hovering over it*/
 }
 
-p.forms{
-    font-family: 'Open Sans', sans-serif; /*Sets font for any paragraph used in forms*/
-    color: #ed2939;
+p.forms, .error{
+    font-family: 'Open Sans', sans-serif;/*Sets font for any text used in forms*/
+    color: #ed2939; /*Sets font color for any text used in forms*/
 }
 
 .error{
-    font-family: 'Open Sans', sans-serif;
-    color: #ed2939;
     font-size: 25px; /*Sets the font size for the header*/
     letter-spacing: 0.5px; /*Spaces out the letters of the text*/
 }

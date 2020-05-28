@@ -18,7 +18,7 @@ p.footer{
 }
 
 #footer{
-    background-color: #ff7950; /*Sets footer background colour*/
+    background-color: #fe6b40; /*Sets footer background colour*/
     padding-bottom: 20px; /*Creates some space between the footer and sub-footer*/
     padding-top: 20px; /*Creates some space between the footer text and the footer end*/
 }
@@ -44,12 +44,25 @@ table.footer, #location{
 }
 
 #sub-footer{
-    background-color: #fe6b40; /*Sets colour for the sub-footer*/
-    height: 120px; /*Sets the sub-footer's height*/
+    background-color: #ff521d; /*Sets colour for the sub-footer*/
+    height: 140px; /*Sets the sub-footer's height*/
+    padding-top: 20px;
 }
 
 #footer-row{
     display: table-row;
+}
+
+#footer-logo{
+    height: 70px; /*Sets logo height*/
+    width: 70px; /*Sets logo width*/
+    display: block; /*Allows image to be centered*/
+    margin: auto; /*Allows image to be centered*/
+    padding: 10px 0px; /*Spaces out image from the paragraph and top of sub-footer*/
+}
+
+.firstcol{
+    padding-right: 10px; /*Creates some space between opening hours table columns*/
 }
 
 @media only screen and (max-width: 1200px){
@@ -66,16 +79,4 @@ table.footer, #location{
     }
 
     /*Above rule makes sure footer displays well on very small screens*/
-}
-
-#footer-logo{
-    height: 70px; /*Sets logo height*/
-    width: 70px; /*Sets logo width*/
-    display: block; /*Allows image to be centered*/
-    margin: auto; /*Allows image to be centered*/
-    padding: 10px 0px; /*Spaces out image from the paragraph and top of sub-footer*/
-}
-
-.firstcol{
-    padding-right: 10px; /*Creates some space between opening hours table columns*/
 }
