@@ -2,6 +2,7 @@
     require_once "bootstrap.php";
     require_once "dbwrapper.php";
 
+    session_start();
     $db = new Db();
 
     if(isset($_GET['dish'])){
@@ -15,7 +16,7 @@
             $query = $db->select($sel);
 
             //If it does already exist within the user's Favourites List
-            if (!count($query) > 0){        
+            if (!(count($query) > 0)){     
                 $isAdded = false;
             }
         }
@@ -41,9 +42,9 @@
             $result[0]['price'] = '€'.number_format($result[0]['price'], 2, ".", ",");
 
             require_once 'header.php';
-
+            
             echo $twig->render('menudetails.html', ['result' => $result, 'resultallergy' => $resultallergy, 'isAdded' => $isAdded]);
-
+            
             require_once 'footer.php';
         } else {
             header("Location: menu.php?error=invalidID");
@@ -55,7 +56,7 @@
             $favmenuID = $_POST['menuid'];
             $currUser = $_SESSION['id'];
 
-            $sel = "SELECT dishID FROM favourites WHERE dishID=".$favmenuID." AND userID=".$currUser."";
+            $sel = "SELECT dishID FROM favourites WHERE dishID=".$favmenuID." AND userID=".$currUser;
             $query = $db->query($sel);
 
             //If it does not already exist within the user's Favourites List
