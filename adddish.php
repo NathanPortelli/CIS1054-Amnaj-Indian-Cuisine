@@ -26,7 +26,7 @@ if($_SESSION['usergroup'] == 1){
 		$formvalues = array();
 		$typeId = "";
 
-		$vname = $val->validateStringR($name, 100);
+		$vname = $val->validateString($name, 100);
 		// echo "name: ".$name;
 		if($name != $vname){
 			$validations['name'] = $vname;
@@ -105,7 +105,7 @@ if($_SESSION['usergroup'] == 1){
 				}
 			}
 
-			header("Location: adddish.php?success=true");
+			header("Location: menu.php?success=true");
 			exit();
 		}
 

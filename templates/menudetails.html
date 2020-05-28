@@ -11,39 +11,29 @@
         <div class="main-div">
             <h1 class="main-title">{{row.dishname}}</h1>
             
-            <div class="button-div">
-                <button onclick="window.location='menuDetails.php?dish={{row.id-1}}'" id="back-button" class="menudetails-dir" minimum-id="1"><</button>
-                <button onclick="window.location='menuDetails.php?dish={{row.id+1}}'" id="forw-button" class="menudetails-dir" maximum-id="{{largestID}}">></button>
-            </div>
-            
-            <p id="placeholder" style="display: none">{{dishID}}</p>
-            
             <div class="details-container">
                 <p class="menudetails">
-                    <b>Description:</b>&nbsp;{{row.dishdesc}}<br>
-                    <b>Ingredients:</b>&nbsp;{{row.ingredients}}<br>
+                    <b>Description:</b>&nbsp;{{row.dishdesc}}<br><br>
+                    <b>Ingredients:</b>&nbsp;{{row.ingredients}}<br><br>
                     <b>Price:</b>&nbsp;{{row.price}}<br>
                     <b>Serving:</b>&nbsp;{{row.serving}}
                 </p>
                 <img class="menudetails" src="{{row.dishphoto}}" alt="{{row.dishname}} Image">
                 <div class="allergy-div">
                     {% for allergy in resultallergy %}
-                        <img class="allergyicons" src="{{allergy.allergyicon}}" alt="Allergy Icon">      
+                        <img class="allergyicons" src="{{allergy.allergyicon}}" alt="{{allergy.name}} Icon" title="{{allergy.name}} Icon"> 
                     {% endfor %}
                 </div>
                 <form method="POST" action="menudetails.php">
-                    <input name="menuid" type="hidden" value="{{dishID}}">
+                    <input name="menuid" type="hidden" value="{{row.id}}">
                     {% if isAdded == true %}
-                        <button name="favBtn" id="favouritesBtn" type="submit" disabled>Add to Favourites</button>
+                        <button name="favBtn" id="favouritesBtn" class="menudetails" type="submit" disabled>Add to Favourites</button>
                     {% else %}
-                    <button name="favBtn" id="favouritesBtn" type="submit">Add to Favourites</button>
+                        <button name="favBtn" id="favouritesBtn" class="menudetails" type="submit">Add to Favourites</button>
                     {% endif %}
                 </form>
+                <button onclick="window.location='menu.php?type={{row.dishtypeid}}'" class="menudetails returnbutton">Return to Menu</button>
             </div>
         </div>
     {% endfor %}
-{% endblock %}
-
-{% block scripts %}
-    <script src="resources/scripts/menudetails.js" async defer></script>
 {% endblock %}

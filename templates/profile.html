@@ -32,9 +32,9 @@
                 <button class="form-button" name="submit" type="submit">Save</button>
             </div>
         </form>
-        <button onclick="window.location='favourites.php'" class="favourites-button">Your Favourites</button>
+        <button onclick="window.location = 'favourites.php'" class="favourites-button">Your Favourites</button>
         {% if usergroup == 1 %}
-            <button style="margin-top: 0;" onclick="window.location = 'admin.php'" class="favourites-button">Admin Page</button>
+            <button onclick="window.location = 'admin.php'" class="favourites-button adminbutton">Admin Page</button>
         {% endif %}
     </div>
 {% endblock %}

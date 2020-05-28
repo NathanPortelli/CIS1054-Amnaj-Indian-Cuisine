@@ -20,8 +20,7 @@ h1.favourites{
     text-align: center;
 }
 
-.dishlink
-{
+.dishlink{
     color: inherit;
     text-decoration: inherit;
 }
@@ -33,8 +32,7 @@ h1.favourites{
     margin: 100px auto;
 }
 
-.noItems
-{
+.noItems{
     text-align: center;
     font-family: 'PT Serif', serif;
     font-size: 25px;

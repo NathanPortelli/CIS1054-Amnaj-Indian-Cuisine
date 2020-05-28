@@ -40,7 +40,7 @@ h2.profile{
 
 .favourites-button{
     background-color: #fe6b40;
-    border: grey;
+    border: none;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -50,9 +50,7 @@ h2.profile{
     margin-top: 25px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    letter-spacing: 1.5px;
-    width: 250px;
-    font-weight: bold;
+    width: 275px;
 }
 
 .favourites-button:hover{
@@ -68,5 +66,13 @@ h2.profile{
 @media only screen and (max-width: 1200px){
     .middle-div{
         width: 90%;
+    }
+
+    .favourites-button{
+        margin-bottom: 0px;
+    }
+
+    .adminbutton{
+        margin-bottom: 75px;
     }
 }

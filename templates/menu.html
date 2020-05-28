@@ -20,7 +20,7 @@
 
     <div class="entry-list">
         {% for menudetail in menudetails %}
-            <div onclick="window.location = 'menudetails.php?dish={{ menudetail.dishid }}'"class="blockitem">
+            <div onclick="window.location = 'menudetails.php?dish={{ menudetail.dishid }}'" class="blockitem">
                 <h3 class="dishname">{{ menudetail.dishname }}</h3>
                 <h3 class="dishallergies">{{menudetail.allergies}}</h3>
                 <img class="dishimg" src="{{ menudetail.dishphoto }}" alt="{{ menudetail.dishname }} Image">

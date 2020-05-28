@@ -19,8 +19,8 @@ class Validate{
 
 	public function validateString($string, $length){
 		if(strlen($string) <= $length){
-			if(!empty(trim($string))){
-				if (preg_match("/^[a-zA-z]*$/", $string)) {
+			if(!empty($string)){
+				if (preg_match("/^[a-zA-z ]*$/", $string)) {
 					return $string;
 				}else{
 					return "Invalid characters entered";
