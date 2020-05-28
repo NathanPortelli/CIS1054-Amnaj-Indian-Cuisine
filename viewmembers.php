@@ -22,7 +22,6 @@ if($_SESSION['usergroup'] == 1){
 				$isEdit = true;
 				break;
 			}else if(isset($_POST['delete'.$i])){
-				
 				$selectedMemberId = $i;
 				$isDelete = true;
 				break;
@@ -39,7 +38,6 @@ if($_SESSION['usergroup'] == 1){
 
 		if($isEdit === true){	
 			echo $twig->render("editmember.html",['member' => $member]);
-
 		}else if($isDelete === true){
 			$sql = $db->query("DELETE FROM team_details WHERE teamid = ".$db->quote($member['id']));
 			header("Location: admin.php?success=true");

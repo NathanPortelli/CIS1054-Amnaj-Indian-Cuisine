@@ -72,7 +72,6 @@ if($_SESSION['usergroup'] == 1){
 
 			echo $twig->render("editmember.html", ['validations' => $validations, 'formvalues' => $formvalues]);
 		}else{
-
 			if($photoCheck === true){
 				$sql = $db->query("UPDATE team_details SET name =".$db->quote($name).", role=".$db->quote($role).", description=".$db->quote($desc).", photo=".$db->quote($upload)." WHERE teamid=".$db->quote($id));
 			

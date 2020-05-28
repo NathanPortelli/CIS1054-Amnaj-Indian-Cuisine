@@ -9,7 +9,6 @@ if($_SESSION['usergroup'] == 1){
 	$db = new Db();
 	$val = new Validate();
 	$himg = new HandleImages();
-	
 
 	$types = $db->select("SELECT * FROM types");
 	$allergies = $db->select("SELECT * FROM allergies");
@@ -57,7 +56,7 @@ if($_SESSION['usergroup'] == 1){
 		}
 		
 		if($photo['size'] !== 0){
-			$upload = $himg->upload($photo['name'], $photo['tmp_name'], $photo['size'], $photo['error']);
+			$upload = $himg->upload($photo['name'], $photo['tmp_name'], $photo['size'], $photo['error'], 'dishes');
 
 			if($upload === 0){
 				$validations['photo'] = "Invalid file extension";
@@ -77,7 +76,6 @@ if($_SESSION['usergroup'] == 1){
 		}else{
 			$typeId = $db->select("SELECT typeid FROM types WHERE type = ".$db->quote($type));
 		}
-		
 
 		if(!empty($validations)){
 			$formvalues['name'] = $name;
@@ -88,20 +86,15 @@ if($_SESSION['usergroup'] == 1){
 			$formvalues['ing'] = $ing;
 			$formvalues['photo'] = $photo;
 
-
 			echo $twig->render("adddish.html", ['types' => $types, 'allergies' => $allergies, 'validations' => $validations, 'formvalues' => $formvalues]);
 		}else{
 			$sql = $db->query("INSERT INTO menu (dishtype, dishname, dishdesc, price, dishphoto, ingredients, serving) VALUES (".$db->quote($typeId[0]['typeid']).", ".$db->quote($name).", ".$db->quote($desc).", ".$db->quote($price).", ".$db->quote($upload).", ".$db->quote($ing).", ".$db->quote($serving).")");
 
 			if($all[0] != "None"){
-
 				$dishIdS = $db->select("SELECT  MAX(dishid) AS dishid FROM menu");
-
 		
 				for($i = 0; $i<sizeof($all); $i++){
 					$createAllergy = $db->query("INSERT INTO hasallergies (allerID, dishID) VALUES (".$db->quote($all[$i]).", ".$db->quote($dishIdS[0]['dishid']).")");
-					
-					
 				}
 			}
 
@@ -118,4 +111,3 @@ if($_SESSION['usergroup'] == 1){
 }
 
 require_once 'footer.php';
-?>

@@ -37,7 +37,7 @@ if($_SESSION['usergroup'] == 1){
 		}
 		
 		if($photo['size'] !== 0){
-			$upload = $himg->upload($photo['name'], $photo['tmp_name'], $photo['size'], $photo['error']);
+			$upload = $himg->upload($photo['name'], $photo['tmp_name'], $photo['size'], $photo['error'], 'staffimages');
 
 			if($upload === 0){
 				$validations['photo'] = "Invalid file extension";
@@ -60,9 +60,7 @@ if($_SESSION['usergroup'] == 1){
 
 			echo $twig->render("addmember.html", ['validations' => $validations, 'formvalues' => $formvalues]);
 		}else{
-			
 			$sql = $db->query("INSERT INTO team_details (name, role, description, photo) VALUES (".$db->quote($name).", ".$db->quote($role).", ".$db->quote($desc).", ".$db->quote($upload).")");
-			
 			
 			header("Location: addmember.php?success=true");
 			exit();
