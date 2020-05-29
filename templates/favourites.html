@@ -37,7 +37,7 @@
                 <input name="menuingr" type="hidden" value="{{items.ingredients}}">
                 <input name="menupric" type="hidden" value="{{items.price}}">
             {% endfor %}
-            <input class="form-element" type="email" aria-label="Email" placeholder="Email*" name="email">
+            <input class="form-element" name="email" type="email" aria-label="Email" placeholder="Email*" autocomplete="email" required>
             {% if isEmpty == true %}
                 <button class="form-element" type="submit" name="submit" disabled>Email Favourites List</button>
             {% else %}

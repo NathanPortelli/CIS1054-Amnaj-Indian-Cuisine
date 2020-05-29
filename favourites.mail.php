@@ -19,8 +19,7 @@
                 $result[$i]['price'] = '€'.number_format($result[$i]['price'], 2, ".", ",");
             }
 
-            foreach($result as $details)
-            {
+            foreach($result as $details){
                 $dname = $details['dishname'];
                 $ddesc = $details['dishdesc'];
                 $dpric = $details['price'];
@@ -30,15 +29,19 @@
                 $message .= $currItem;  
             }            
 
-            $email = $_POST['email'];
-            $subject = "Favourites List (Amnaj Indian Cuisine)";
+            if (strlen($message) > 0){
+                $email = $_POST['email'];
+                $subject = "Favourites List (Amnaj Indian Cuisine)";
+    
+                $mailFrom = "amnajcuisine@gmail.com";
+                $headers = "From: ".$mailFrom;
+                $txt = "Dear Sir/Madam, \n\nBelow is your list of menu favourites from Amnaj Indian Cuisine.\n\n" . $message;
 
-            $mailFrom = "amnajcuisine@gmail.com";
-            $headers = "From: ".$mailFrom;
-            $txt = "Dear Sir/Madam, \n\nBelow is your list of menu favourites from Amnaj Indian Cuisine.\n\n" . $message;
-
-            if(mail($email, $subject, $txt, $headers)){
-                header("Location: favourites.php?mailsend");
+                if(mail($email, $subject, $txt, $headers)){
+                    header("Location: favourites.php?mailsend");
+                } else {
+                    header("Location: favourites.php?mailfail");
+                }
             } else {
                 header("Location: favourites.php?mailfail");
             }
