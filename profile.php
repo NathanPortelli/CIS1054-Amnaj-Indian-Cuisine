@@ -8,6 +8,8 @@
 	$val = new Validate();
 
 	if (isset($_SESSION['id'])){
+		$validations = array();
+
     	if (isset($_POST['submit'])){
 			$name = $_POST['new-name'];
 			$surname = $_POST['new-surname'];
@@ -82,6 +84,8 @@
             }
 		}
 		
+		require 'header.php';
+
 		echo $twig->render('profile.html', ['name' => $_SESSION['name'], 'surname' => $_SESSION['surname'], 'email' => $_SESSION['email'], 'usergroup' => $_SESSION['usergroup'], 'validations' => $validations]);
     } else {
 		header("Location: signin.php");

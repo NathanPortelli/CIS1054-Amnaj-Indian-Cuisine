@@ -3,6 +3,8 @@
     
     require_once "bootstrap.php";
     
+    ini_set("display_errors", FALSE);
+
     if (isset($_SESSION['id'])){
         $firstButton = strtoupper($_SESSION['name']);
         $firstLink = "profile.php";
