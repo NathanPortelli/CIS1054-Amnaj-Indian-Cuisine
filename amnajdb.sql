@@ -1,17 +1,26 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
 CREATE TABLE `allergies` (
   `allergyid` int(3) NOT NULL,
   `allergy` varchar(5) NOT NULL,
-  `allergyicon` varchar(100) NOT NULL
+  `allergyicon` varchar(100) NOT NULL,
+  `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `allergies` (`allergyid`, `allergy`, `allergyicon`) VALUES
-(1, '[V]', 'resources/images/allergies/vegallergyicon.png'),
-(2, '[S]', 'resources/images/allergies/spiallergyicon.png'),
-(3, '[L]', 'resources/images/allergies/lacallergyicon.png'),
-(4, '[GF]', 'resources/images/allergies/gluallergyicon.png'),
-(5, '[HF]', 'resources/images/allergies/halallergyicon.png'),
-(6, '[N]', 'resources/images/allergies/nutallergyicon.png'),
-(7, '[KF]', 'resources/images/allergies/kosallergyicon.png');
+INSERT INTO `allergies` (`allergyid`, `allergy`, `allergyicon`, `name`) VALUES
+(1, '[V]', 'resources/images/allergies/vegallergyicon.png', 'Vegan'),
+(2, '[S]', 'resources/images/allergies/spiallergyicon.png', 'Spicy'),
+(3, '[L]', 'resources/images/allergies/lacallergyicon.png', 'Lactose'),
+(4, '[GF]', 'resources/images/allergies/gluallergyicon.png', 'Gluten'),
+(5, '[HF]', 'resources/images/allergies/halallergyicon.png', 'Halal'),
+(6, '[N]', 'resources/images/allergies/nutallergyicon.png', 'Nuts'),
+(7, '[KF]', 'resources/images/allergies/kosallergyicon.png', 'Kosher');
 
 CREATE TABLE `favourites` (
   `userID` int(3) NOT NULL,
@@ -19,14 +28,12 @@ CREATE TABLE `favourites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `favourites` (`userID`, `dishID`) VALUES
-(6, 2),
-(6, 3);
+(6, 19);
 
 CREATE TABLE `hasallergies` (
   `allerID` int(3) NOT NULL,
   `dishID` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 INSERT INTO `hasallergies` (`allerID`, `dishID`) VALUES
 (1, 1),
@@ -56,7 +63,15 @@ INSERT INTO `hasallergies` (`allerID`, `dishID`) VALUES
 (3, 13),
 (6, 15),
 (3, 16),
-(6, 16);
+(6, 16),
+(1, 19),
+(2, 19),
+(3, 19),
+(4, 19),
+(5, 19),
+(6, 19),
+(7, 19),
+(2, 20);
 
 CREATE TABLE `menu` (
   `dishid` int(3) NOT NULL,
@@ -68,7 +83,6 @@ CREATE TABLE `menu` (
   `ingredients` varchar(250) NOT NULL,
   `serving` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 INSERT INTO `menu` (`dishid`, `dishtype`, `dishname`, `dishdesc`, `price`, `dishphoto`, `ingredients`, `serving`) VALUES
 (1, 1, 'Vegetable Kofta', 'Fried balls mixed with spices and besan, deep fried till crisp', 9, 'resources/images/dishes/Starter1.png', 'Chopped Carrots, Green Peas, Potatoes, Cauliflower, Green beans, Green Chilli, Cilantro, Red Chili Powder, Garam Masala, Chaat Masala, Besan', 3),
@@ -100,8 +114,8 @@ INSERT INTO `opening_hours` (`day`, `hours`, `id`) VALUES
 ('Wednesday', '10:00 - 22:00', 3),
 ('Thursday', '10:00 - 22:00', 4),
 ('Friday', '10:00 - 22:00', 5),
-('Saturday', '9:00 - 18:00', 6),
-('Sunday', '9:00 - 16:00', 7);
+('Saturday', '9:00 - 16:00', 6),
+('Sunday', '9:00 - 18:00', 7);
 
 CREATE TABLE `restaurant_details` (
   `welcome_message` varchar(200) DEFAULT NULL,
@@ -115,7 +129,7 @@ CREATE TABLE `restaurant_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `restaurant_details` (`welcome_message`, `address`, `email_address`, `telephone`, `mobile`, `ourstory`, `ourpromise`, `id`) VALUES
-(NULL, 'Amnaj Indian Cuisine,Triq Alfred Pirel,Blue Grotto,Qrendi', 'info@amnajcuisine.com', '+35621337246', '+35699456293', 'Mr. Baljeet Amnaj was a fisherman from Gujarat who was always fond of his local traditions and more especially the cuisine, and one day wondered, \"Why not introduce other countries to our regional diets and flavours?\" Having a very small capital, he started selling street food in India until he had saved enough money to commit to his dream and open \"Amnaj\'s Indian Cuisine\" in Malta, so that this tiny nation could taste the wonders of Gujarat\'s delicacies too. After 30 years of successful operation, the restaurant was passed down to Amnaj\'s son Faisal, who operates the restaurant to this day.', 'We promise you, our highly esteemed customers, an exceptional service with a smile that will keep you coming back for every new dishes that we introduce to our menu on a seasonal basis, such as the Paneer Manchurian and the well sought after Gulab Jamun.     We promise you, that every item on the menu is prepared in the same fashion as is prepared and served back in Gujarat, thanks to our highly qualified cooks and waiting staff. We also promise you, that our menu will always have something for everyone, whether you\'re seeking healthier alternatives or wanting to abide by a vegetarian diet, as well as for many other dietary and religious restrictions, to ensure that the every person can be well catered with a dish that matches exactly with their expectations.', 1);
+('Welcome to Amnaj Indian Cuisine\'s online website<br>All you need is just a click away!<br><i>Website is updated on a frequent basis</i>', 'Amnaj Indian Cuisine,Triq Alfred Pirel,Blue Grotto,Qrendi', 'info@amnajcuisine.com', '+35621337246', '+35699456293', 'Mr. Baljeet Amnaj was a fisherman from Gujarat who was always fond of his local traditions and more especially the cuisine, and one day wondered, \"Why not introduce other countries to our regional diets and flavours?\" Having a very small capital, he started selling street food in India until he had saved enough money to commit to his dream and open \"Amnaj\'s Indian Cuisine\" in Malta, so that this tiny nation could taste the wonders of Gujarat\'s delicacies too. After 30 years of successful operation, the restaurant was passed down to Amnaj\'s son Faisal, who operates the restaurant to this day.', 'We promise you, our highly esteemed customers, an exceptional service with a smile that will keep you coming back for every new dishes that we introduce to our menu on a seasonal basis, such as the Paneer Manchurian and the well sought after Gulab Jamun.     We promise you, that every item on the menu is prepared in the same fashion as is prepared and served back in Gujarat, thanks to our highly qualified cooks and waiting staff. We also promise you, that our menu will always have something for everyone, whether you\'re seeking healthier alternatives or wanting to abide by a vegetarian diet, as well as for many other dietary and religious restrictions, to ensure that the every person can be well catered with a dish that matches exactly with their expectations.', 1);
 
 CREATE TABLE `team_details` (
   `teamid` int(3) NOT NULL,
@@ -126,10 +140,10 @@ CREATE TABLE `team_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `team_details` (`teamid`, `name`, `role`, `description`, `photo`) VALUES
-(1, 'Faisal Amnaj', 'Owner', 'When he was younger, he always showed a passion for his father\'s business.  He used to help him with the paperwork, until one day, the restaurant was his to manage. One of his life goals is to continue to develop, expand and grow his father\'s business whilst providing top-notch service to the clients. He is very appreciated by his employees, as they always have words of praise and appreciation about him. He currently takes care of the restaurant\'s finances, accounts, and strives to keep his clients satisfied.', 'resources/images/ownerguy.jpg'),
-(2, 'Bashir Babu', 'Head Chef', 'He studied in one of the top institutions in India and is a hard working person, because he does his job with a passion. He has 15 years of experience in this role. He has worked for very famous Michelin star restaurants around the globe. He keeps the kitchen under control, whilst ensuring the best quality dishes are prepared by him and his assistant chef. His main responsibility is to ensure that the food bought is fresh and to co-ordinate the other chefs and cook at the restaurant. He is very co-operative towards his boss and always tries to suggest new ideas to the owner to keep this restaurant at its best and always full of customers.', 'resources/images/chefguy.jpg'),
-(3, 'Rakesh Patel', 'Assistant Chef', 'Patel has graduated from New Delhi University of Fine Arts in Food Preparation and Assistance with a first class honours degree as well as a diploma in Food production. He has 9 years of experience in assisting multiple world famous chefs in their food preparation and has always loved giving a helping hand to people from when he was just a young boy. His main responsibility is to help the head chef and ensure a consistent level of hygiene in the kitchen.  Mr. Patel looks forward to assisting the head chef with any help that he may need whilst assuring that the customer is satisfied with the service provided.', 'resources/images/fishguy.jpg'),
-(4, 'Ahmed Abioye', 'Head Waiter', 'We found Mr. Abioye in the streets, he does an excellent job with the clients however no one knows anything about him. He keeps to himself and disappears the moment he punches out. He hasn\'t cashed in any of the cheques in years. If anyone has any information about Mr. Abioye\'s past, please call our establishment we are very worried we might be employing a murderer on the run.', 'resources/images/waiterguy.jpg');
+(1, 'Faisal Amnaj', 'Owner', 'When he was younger, he always showed a passion for his father\'s business.  He used to help him with the paperwork, until one day, the restaurant was his to manage. One of his life goals is to continue to develop, expand and grow his father\'s business whilst providing top-notch service to the clients. He is very appreciated by his employees, as they always have words of praise and appreciation about him. He currently takes care of the restaurant\'s finances, accounts, and strives to keep his clients satisfied.', 'resources/images/staffimages/ownerguy.jpg'),
+(2, 'Bashir Babu', 'Head Chef', 'He studied in one of the top institutions in India and is a hard working person, because he does his job with a passion. He has 15 years of experience in this role. He has worked for very famous Michelin star restaurants around the globe. He keeps the kitchen under control, whilst ensuring the best quality dishes are prepared by him and his assistant chef. His main responsibility is to ensure that the food bought is fresh and to co-ordinate the other chefs and cook at the restaurant. He is very co-operative towards his boss and always tries to suggest new ideas to the owner to keep this restaurant at its best and always full of customers.', 'resources/images/staffimages/chefguy.jpg'),
+(3, 'Rakesh Patel', 'Assistant Chef', 'Patel has graduated from New Delhi University of Fine Arts in Food Preparation and Assistance with a first class honours degree as well as a diploma in Food production. He has 9 years of experience in assisting multiple world famous chefs in their food preparation and has always loved giving a helping hand to people from when he was just a young boy. His main responsibility is to help the head chef and ensure a consistent level of hygiene in the kitchen.  Mr. Patel looks forward to assisting the head chef with any help that he may need whilst assuring that the customer is satisfied with the service provided.', 'resources/images/staffimages/fishguy.jpg'),
+(4, 'Ahmed Abioye', 'Head Waiter', 'We found Mr. Abioye in the streets, he does an excellent job with the clients however no one knows anything about him. He keeps to himself and disappears the moment he punches out. He hasn\'t cashed in any of the cheques in years. If anyone has any information about Mr. Abioye\'s past, please call our establishment we are very worried we might be employing a murderer on the run.', 'resources/images/staffimages/waiterguy.jpg');
 
 CREATE TABLE `types` (
   `typeid` int(3) NOT NULL,
@@ -162,7 +176,9 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `users` (`id`, `email`, `pword`, `name`, `surname`, `usergroup`) VALUES
-(6, 'smithj@gmail.com', '$2y$10$NlIOsRWe2eS67/jpq4QwbOeMNlV2hS/6SEhXheZzC.plEOXZy1dva', 'John', 'Smith', 1);
+(6, 'smithc@gmail.com', '$2y$10$NlIOsRWe2eS67/jpq4QwbOeMNlV2hS/6SEhXheZzC.plEOXZy1dva', 'John', 'Ommok', 1),
+(18, 'bernard.borg36@gmail.com', '$2y$10$7.VfwmDzyIn3yuVw8vjtluY1nFiiyfA1Da/07rVp/iYVg.v0pg8oC', 'Bernard', 'Borg', 2);
+
 
 ALTER TABLE `allergies`
   ADD PRIMARY KEY (`allergyid`);
@@ -198,20 +214,21 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `usergroup_fk` (`usergroup`);
 
+
 ALTER TABLE `allergies`
   MODIFY `allergyid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 ALTER TABLE `menu`
-  MODIFY `dishid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `dishid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 ALTER TABLE `opening_hours`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 ALTER TABLE `restaurant_details`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 ALTER TABLE `team_details`
-  MODIFY `teamid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `teamid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 ALTER TABLE `types`
   MODIFY `typeid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
@@ -220,7 +237,8 @@ ALTER TABLE `usergroups`
   MODIFY `groupID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 
 ALTER TABLE `favourites`
   ADD CONSTRAINT `dish_fav_fk` FOREIGN KEY (`dishID`) REFERENCES `menu` (`dishid`),
@@ -235,3 +253,7 @@ ALTER TABLE `menu`
 
 ALTER TABLE `users`
   ADD CONSTRAINT `usergroup_fk` FOREIGN KEY (`usergroup`) REFERENCES `usergroups` (`groupID`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
