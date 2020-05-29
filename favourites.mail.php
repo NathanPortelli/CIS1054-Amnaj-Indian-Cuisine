@@ -7,8 +7,7 @@
     $db = new Db();
 
     if(isset($_POST['submit'])){
-        if(isset($_SESSION['id']))
-        {
+        if(isset($_SESSION['id'])){
             $currUser = $db->quote($_SESSION['id']);
             $result = $db->select("SELECT m.dishname as dishname, fa.dishID as dishid, m.dishdesc, m.price, m.ingredients FROM favourites fa INNER JOIN menu m ON (fa.dishID = m.dishid) INNER JOIN users u ON (fa.userid = u.id) WHERE u.id = ".$currUser."");
             
@@ -29,7 +28,9 @@
                 $message .= $currItem;  
             }            
 
-            if (strlen($message) > 0){
+            if (strlen(trim($message)) <= 0){
+                header("Location: favourites.php?mailfail");
+            } else {
                 $email = $_POST['email'];
                 $subject = "Favourites List (Amnaj Indian Cuisine)";
     
@@ -42,8 +43,6 @@
                 } else {
                     header("Location: favourites.php?mailfail");
                 }
-            } else {
-                header("Location: favourites.php?mailfail");
             }
         }
     }

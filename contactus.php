@@ -1,17 +1,55 @@
 <?php
     require_once 'bootstrap.php';
     require_once 'header.php';
+    require_once 'resources/includes/validate.php';
 
-	$errorMessage = "";
+    $validations = array();
+    $formvalues = array();
+    $val = new Validate();
 
-    if(isset($_GET['error'])){
-        if($_GET['error'] == "emptyFields"){
-            $errorMessage = "Please fill in all fields";
-        }else if($_GET['error'] == "invalidEmail"){
-            $errorMessage = "Please enter a valid email";
+    if(isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $subject = $_POST['subject'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+    
+        if (empty($name)){
+            $validations['name'] = "Name should not be empty";
         }
+
+        $vemail = $val->validateEmail($email);
+        if ($email != $vemail){
+            $validations['email'] = $vemail;
+        }
+
+        if (empty($subject)){
+            $validations['subject'] = "Subject should not be empty";
+        }
+
+        if (empty($message)){
+            $validations['message'] = "Message should not be empty";
+        }
+        
+        if (empty($validations)){
+            $mailTo = "amnajcuisine@gmail.com";
+            $headers = "From: ".$email;
+            $txt = "You have received an email from ".$name." (".$email.").\n\n".$message;
+
+            if(mail($mailTo, $subject, $txt, $headers)){
+                header("Location: contactus.php?mailsend");
+                exit();
+            } else {
+                header("Location: contactus.php?mailfail");
+                exit();
+            }
+        }
+
+        $formvalues['name'] = $name;
+        $formvalues['email'] = $email;
+        $formvalues['subject'] = $subject;
+        $formvalues['message'] = $message;
     }
 
-    echo $twig->render('contactus.html', ['error' => $errorMessage]);
+    echo $twig->render('contactus.html', ['validations' => $validations, 'formvalues' => $formvalues]);
 
     require_once 'footer.php';

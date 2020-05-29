@@ -2,8 +2,8 @@
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
 require_once 'header.php';
-require_once 'handleimages.php';
-require_once 'validate.php';
+require_once 'resources/includes/handleimages.php';
+require_once 'resources/includes/validate.php';
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -22,7 +22,7 @@ if($_SESSION['usergroup'] == 1){
 
 		$vid = $val->validateInt($id, 3);
 		$idCheck = $db->select("SELECT teamid FROM team_details WHERE teamid = ".$db->quote($id));
-		// echo "name: ".$name;
+		
 		if($id != $vid){
 			$validations['id'] = $vid;
 		}else if(!in_array($id, $idCheck)){
@@ -30,19 +30,19 @@ if($_SESSION['usergroup'] == 1){
 		}
 
 		$vname = $val->validateString($name, 100);
-		// echo "name: ".$name;
+		
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
 
 		$vdesc = $val->validateArea($desc, 200);
-		// echo "desc: ".$desc;
+		
 		if($desc != $vdesc){
 			$validations['desc'] = $vdesc;
 		}
 
 		$vrole = $val->validateString($role, 100);
-		// echo "name: ".$name;
+	
 		if($role != $vrole){
 			$validations['role'] = $vrole;
 		}

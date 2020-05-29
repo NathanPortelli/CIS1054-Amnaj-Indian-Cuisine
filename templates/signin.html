@@ -3,15 +3,15 @@
 {% block title %}Sign In{% endblock %}
 
 {% block content %}
-    <form action="resources/includes/login.inc.php" method="POST">
+    <form action="signin.php" method="POST">
         <div class="input-section"> 
             <h1 class="forms">SIGN IN</h1>
             <p class="error">{{error}}</p>
             <div class="form-div">
-                <input class="input-line" aria-label="Email" type="text" name="email" placeholder="Email*" maxlength="255">
+                <input class="input-line" aria-label="Email" type="text" name="email" placeholder="Email*" maxlength="255" autocomplete="email" required>
             </div>
             <div class="form-div">
-                <input class="input-line" aria-label="Password" type="password" name="password" placeholder="Password*">
+                <input class="input-line" aria-label="Password" type="password" name="password" placeholder="Password*" autocomplete="current-password" required>
             </div>
             <div class="form-div">
                 <button class="form-button" type="submit" name="login">Sign In</button>

@@ -3,22 +3,25 @@
 {% block title %}Contact Us!{% endblock %}
 
 {% block content %}
-    <form action="./mail.php" method="POST">
+    <form action="contactus.php" method="POST">
         <div class="input-section">
             <h1 class="forms">CONTACT US</h1>
-            <p class="error">{{error}}</p>
             <div class="form-div">
-                <input class="input-line" aria-label="Name" type="text" name="name" placeholder="Name" autocomplete="name" required>
+                <input class="input-line" aria-label="Name" type="text" name="name" value="{{formvalues.name}}" placeholder="Name" autocomplete="name" required>
             </div>
+            <p class="error">{{validations.name}}</p>
             <div class="form-div">
-                <input class="input-line" aria-label="Subject" type="text" name="subject" placeholder="Subject" required>
+                <input class="input-line" aria-label="Subject" type="text" name="subject" value="{{formvalues.subject}}" placeholder="Subject" required>
             </div>
+            <p class="error">{{validations.subject}}</p>
             <div class="form-div">
-                <input class="input-line" aria-label="Email" type="email" name="email" placeholder="Email" required autocomplete="email">
+                <input class="input-line" aria-label="Email" type="email" name="email" value="{{formvalues.email}}" placeholder="Email" autocomplete="email" required>
             </div>
+            <p class="error">{{validations.email}}</p>
             <div class="form-div">
-                <textarea class="input-line" aria-label="Message" type="text" name="message" placeholder="Message" rows=4 required></textarea>
+                <textarea class="input-line" aria-label="Message" type="text" name="message" placeholder="Message" rows=4 required>{{formvalues.message}}</textarea>
             </div>
+            <p class="error">{{validations.message}}</p>
             <div class="form-div">
                 <button class="form-button" type="submit" name="submit">SUBMIT</button>
             </div>

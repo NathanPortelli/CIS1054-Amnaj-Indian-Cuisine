@@ -1,5 +1,4 @@
-.wrap
-{
+.wrap{
     margin-bottom: 100px;
 }
 
@@ -55,6 +54,7 @@ img.member{
     text-align: center; /*Centres button*/
 }
 
+/*
 .admin-button
 {
 	margin: 10px;
@@ -68,27 +68,31 @@ img.member{
 }
 
 .admin-button:hover{
-    background-color: #dddedf; /*Sets the colour of the button when the user is hovering over it*/
+    background-color: #dddedf; 
 }
+*/
 
-#form-button{
-    margin-bottom: 25px;
-    margin-top: 25px;
-	width: 500px;
-	font-size: 30px;
-}
-
-#edit-button
-{
-    display: block;
-    width: 150px;
-    height: 30px;
-    font-size: 15px;
+#view-mem-button{
+    margin: 10px;
+    width: 200px;
+    height: 50px;
     float: right;
+    background-color: #fe6b40;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 }
 
-p.title
-{
+#view-mem-button:hover{
+    background-color: #e64616;
+}
+
+p.title{
 	font-size: 30px;
 	font-family: 'PT Serif', serif;
 	font-weight: bold;
@@ -110,7 +114,8 @@ hr{
   
 	hr{
 		width: 100%;
-	}
+    }
+    
     .mem-container{
         width: 90%;
     }
@@ -119,17 +124,46 @@ hr{
         font-size: 16px;
     }
 
+    #form-button{
+        margin-bottom: 0px;
+    }
+
+    #view-mem-button{
+        width: 150px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 620px)
+{
+    .section{
+        width: 80%;
+    }
+
+    p.member, h2.member{
+        text-align: center;
+    }
+
     h2.member{
         font-size: 20px;
     }
 }
 
-@media only screen and (max-width: 320px){
-    .mem-box{
-        font-size: 16px;
+@media only screen and (max-width: 500px){
+    .mem-container{
+        width: 45%;
+        margin-left: 20px;
+        
     }
 
-    h2.member{
-        font-size: 20px;
+    img.member{
+        height:150px;
+    }
+
+    #view-mem-button{
+        width: 100px;
+        height: 40px;
+        font-size: 10px;
     }
 }

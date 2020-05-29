@@ -6,9 +6,7 @@ require_once 'dbwrapper.php';
 if($_SESSION['usergroup'] == 1){
 	if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$db = new Db();
-
 			$choice = $_POST['adminSelect'];
-
 
 			switch($choice){
 				case "aDish":

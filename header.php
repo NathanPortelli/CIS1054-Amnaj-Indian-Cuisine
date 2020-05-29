@@ -7,7 +7,7 @@
         $firstButton = strtoupper($_SESSION['name']);
         $firstLink = "profile.php";
         $secondButton = "LOGOUT";
-        $secondLink = "resources/includes/logout.inc.php";
+        $secondLink = "logout.php";
     } else {
         $firstButton = "SIGN UP";
         $firstLink = "signup.php";

@@ -1,11 +1,3 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
-
 CREATE TABLE `allergies` (
   `allergyid` int(3) NOT NULL,
   `allergy` varchar(5) NOT NULL,
@@ -167,7 +159,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `email`, `pword`, `name`, `surname`, `usergroup`) VALUES
 (6, 'smithc@gmail.com', '$2y$10$NlIOsRWe2eS67/jpq4QwbOeMNlV2hS/6SEhXheZzC.plEOXZy1dva', 'John', 'Ommok', 1);
 
-
 ALTER TABLE `allergies`
   ADD PRIMARY KEY (`allergyid`);
 
@@ -202,7 +193,6 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `usergroup_fk` (`usergroup`);
 
-
 ALTER TABLE `allergies`
   MODIFY `allergyid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
@@ -225,8 +215,7 @@ ALTER TABLE `usergroups`
   MODIFY `groupID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `favourites`
   ADD CONSTRAINT `dish_fav_fk` FOREIGN KEY (`dishID`) REFERENCES `menu` (`dishid`),
@@ -241,7 +230,3 @@ ALTER TABLE `menu`
 
 ALTER TABLE `users`
   ADD CONSTRAINT `usergroup_fk` FOREIGN KEY (`usergroup`) REFERENCES `usergroups` (`groupID`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

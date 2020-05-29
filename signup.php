@@ -1,35 +1,62 @@
 <?php
     require_once "bootstrap.php";
-    require_once 'header.php';
+    require_once "header.php";
 
-    $errorMessage = "";
+    $validations = array();
+    $formvalues = array();
 
-    if(isset($_GET['error'])){
-        if($_GET['error'] == "emptyFields"){
-            $errorMessage = "Please fill in all fields";
-        }else if($_GET['error'] == "invalidEmail"){
-            $errorMessage = "Please enter a valid email";
-        }else if($_GET['error'] == "invalidName"){
-            $errorMessage = "Please enter a valid name";
-        }else if($_GET['error'] == "invalidSurname"){
-            $errorMessage = "Please enter a valid surname";
-        }else if($_GET['error'] == "passwordCheck"){
-            $errorMessage = "Passwords do not match";
-        }else if($_GET['error'] == "SQLError"){
-            $errorMessage = "An internal database error has occured";
-        }else if($_GET['error'] == "emailAlreadyUsed"){
-            $errorMessage = "This email address is already in use";
-        }else if($_GET['error'] == "invalidPasswordLen"){
-            $errorMessage = "Password must be at least 8 characters long";
-        }else if($_GET['error'] == "invalidPasswordNum"){
-            $errorMessage = "Password must contain at least one numerical digit";
-        }else if($_GET['error'] == "invalidPasswordUC"){
-            $errorMessage = "Password must contain at least one capital letter";
-        }else if($_GET['error'] == "invalidPasswordLC"){
-            $errorMessage = "Password must include at least one lower case letter";
+    if(isset($_POST['signup'])){
+        require_once 'dbwrapper.php';
+        require_once 'resources/includes/validate.php';
+        $db = new Db();
+        $val = new Validate();
+
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $cpassword = $_POST['confirmpassword'];
+    
+        $vname = $val->validateString($name, 20);
+        if ($name != $vname){
+            $validations['name'] = $vname;
         }
+
+        $vsurname = $val->validateString($surname, 20);
+        if ($surname != $vsurname){
+            $validations['surname'] = $vsurname;
+        }
+
+        $vemail = $val->validateEmail($email);
+        if ($email != $vemail){
+            $validations['email'] = $vemail;
+        }
+
+        $vpassword = $val->validatePasswordC($password, $cpassword);
+        if ($password != $vpassword){
+            $validations['password'] = $vpassword;
+        }
+
+        if (empty($validations)){
+            $sql = $db->select("SELECT email FROM users WHERE email=".$db->quote($email));
+    
+            if(count($sql) <= 0){
+                $hashedpword = password_hash($password, PASSWORD_DEFAULT);	
+    
+                $sqlAdd = $db->query("INSERT INTO users (email, pword, name, surname) VALUES (".$db->quote($email).", ".$db->quote($hashedpword).", ".$db->quote($name).", ".$db->quote($surname).")");
+                    
+                header("Location: signin.php");
+                exit();
+            }else{	
+                $validations['email'] = "Email already in use";
+            }
+        }
+
+        $formvalues['name'] = $name;
+        $formvalues['surname'] = $surname;
+        $formvalues['email'] = $email;   
     }
 
-    echo $twig->render('signup.html', ['error' => $errorMessage]);
+    echo $twig->render('signup.html', ['validations' => $validations, 'formvalues' => $formvalues]);
 
     require_once 'footer.php';

@@ -1,8 +1,8 @@
 <?php
     require_once "bootstrap.php";
     require_once "dbwrapper.php";
-
-    session_start();
+    require_once 'header.php';
+    
     $db = new Db();
 
     if(isset($_GET['dish'])){
@@ -40,8 +40,6 @@
 
             //Price is formatted below
             $result[0]['price'] = '€'.number_format($result[0]['price'], 2, ".", ",");
-
-            require_once 'header.php';
             
             echo $twig->render('menudetails.html', ['result' => $result, 'resultallergy' => $resultallergy, 'isAdded' => $isAdded]);
             
@@ -65,10 +63,12 @@
             }else{
                 echo $twig->render('404.html');
             }
+            
             header("Location: menudetails.php?dish=$favmenuID");
-        }    
-        else{
+        }else{
             //User is not logged in and therefore cannot access items in 'My Favourites'
             echo $twig->render('404.html');
         }
     }
+
+    

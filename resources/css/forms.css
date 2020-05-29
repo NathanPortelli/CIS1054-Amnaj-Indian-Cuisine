@@ -53,6 +53,7 @@ p.forms, .error{
 .error{
     font-size: 25px; /*Sets the font size for the header*/
     letter-spacing: 0.5px; /*Spaces out the letters of the text*/
+    margin: 0;
 }
 
 a.forms{
