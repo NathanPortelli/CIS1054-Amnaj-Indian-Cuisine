@@ -27,9 +27,6 @@ CREATE TABLE `favourites` (
   `dishID` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `favourites` (`userID`, `dishID`) VALUES
-(6, 19);
-
 CREATE TABLE `hasallergies` (
   `allerID` int(3) NOT NULL,
   `dishID` int(3) NOT NULL
@@ -63,15 +60,7 @@ INSERT INTO `hasallergies` (`allerID`, `dishID`) VALUES
 (3, 13),
 (6, 15),
 (3, 16),
-(6, 16),
-(1, 19),
-(2, 19),
-(3, 19),
-(4, 19),
-(5, 19),
-(6, 19),
-(7, 19),
-(2, 20);
+(6, 16);
 
 CREATE TABLE `menu` (
   `dishid` int(3) NOT NULL,
@@ -176,8 +165,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `users` (`id`, `email`, `pword`, `name`, `surname`, `usergroup`) VALUES
-(6, 'smithc@gmail.com', '$2y$10$NlIOsRWe2eS67/jpq4QwbOeMNlV2hS/6SEhXheZzC.plEOXZy1dva', 'John', 'Ommok', 1),
-(18, 'bernard.borg36@gmail.com', '$2y$10$7.VfwmDzyIn3yuVw8vjtluY1nFiiyfA1Da/07rVp/iYVg.v0pg8oC', 'Bernard', 'Borg', 2);
+(6, 'smithc@gmail.com', '$2y$10$NlIOsRWe2eS67/jpq4QwbOeMNlV2hS/6SEhXheZzC.plEOXZy1dva', 'John', 'Ommok', 1);
 
 
 ALTER TABLE `allergies`
