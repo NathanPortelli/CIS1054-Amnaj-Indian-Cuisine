@@ -2,8 +2,8 @@
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
 require_once 'header.php';
-require_once 'resources/includes/handleimages.php';
-require_once 'resources/includes/validate.php';
+require_once 'handleimages.php';
+require_once 'validate.php';
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -19,19 +19,19 @@ if($_SESSION['usergroup'] == 1){
 		$formvalues = array();
 
 		$vname = $val->validateString($name, 40);
-		
+		// echo "name: ".$name;
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
 
 		$vdesc = $val->validateArea($desc, 1000);
-		
+		// echo "desc: ".$desc;
 		if($desc != $vdesc){
 			$validations['desc'] = $vdesc;
 		}
 
 		$vrole = $val->validateString($role, 40);
-		
+		// echo "name: ".$name;
 		if($role != $vrole){
 			$validations['role'] = $vrole;
 		}
@@ -62,9 +62,10 @@ if($_SESSION['usergroup'] == 1){
 		}else{
 			$sql = $db->query("INSERT INTO team_details (name, role, description, photo) VALUES (".$db->quote($name).", ".$db->quote($role).", ".$db->quote($desc).", ".$db->quote($upload).")");
 			
-			header("Location: addmember.php?success=true");
+			header("Location: admin.php?success=true");
 			exit();
 		}
+
 	}else{
 		echo $twig->render("addmember.html");
 	}

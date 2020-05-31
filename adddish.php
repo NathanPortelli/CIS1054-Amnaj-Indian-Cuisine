@@ -2,8 +2,8 @@
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
 require_once 'header.php';
-require_once 'resources/includes/handleimages.php';
-require_once 'resources/includes/validate.php';
+require_once 'handleimages.php';
+require_once 'validate.php';
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -12,7 +12,6 @@ if($_SESSION['usergroup'] == 1){
 
 	$types = $db->select("SELECT * FROM types");
 	$allergies = $db->select("SELECT * FROM allergies");
-	
 	if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$name = $_POST["aDishName"];
 		$type = $_POST["typeSelect"];
@@ -27,31 +26,31 @@ if($_SESSION['usergroup'] == 1){
 		$typeId = "";
 
 		$vname = $val->validateString($name, 100);
-		
+		// echo "name: ".$name;
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
 
 		$ving = $val->validateArea($ing, 250);
-		
+		// echo "ing: ".$ing;
 		if($ing != $ving){
 			$validations['ing'] = $ving;
 		}
 
 		$vdesc = $val->validateArea($desc, 200);
-		
+		// echo "desc: ".$desc;
 		if($desc != $vdesc){
 			$validations['desc'] = $vdesc;
 		}
 
 		$vserving = $val->validateInt($serving, 3);
-		
+		// echo "serving: ".$serving;
 		if($serving != $vserving){
 			$validations['serving'] = $vserving;
 		}
 
 		$vprice = $val->validateDouble($price, 7);
-		
+		// echo "price: ".$price;
 		if($price != $vprice){
 			$validations['price'] = $vprice;
 		}
@@ -72,7 +71,7 @@ if($_SESSION['usergroup'] == 1){
 			$validations['photo'] = "Please upload a photo";
 		}
 
-		if(!isset($type)){
+		if(empty($type)){
 			$validations['type'] = "Please select a dish type";
 		}else{
 			$typeId = $db->select("SELECT typeid FROM types WHERE type = ".$db->quote($type));
@@ -92,14 +91,14 @@ if($_SESSION['usergroup'] == 1){
 			$sql = $db->query("INSERT INTO menu (dishtype, dishname, dishdesc, price, dishphoto, ingredients, serving) VALUES (".$db->quote($typeId[0]['typeid']).", ".$db->quote($name).", ".$db->quote($desc).", ".$db->quote($price).", ".$db->quote($upload).", ".$db->quote($ing).", ".$db->quote($serving).")");
 
 			if($all[0] != "None"){
-				$dishIdS = $db->select("SELECT MAX(dishid) AS dishid FROM menu");
+				$dishIdS = $db->select("SELECT  MAX(dishid) AS dishid FROM menu");
 		
 				for($i = 0; $i<sizeof($all); $i++){
 					$createAllergy = $db->query("INSERT INTO hasallergies (allerID, dishID) VALUES (".$db->quote($all[$i]).", ".$db->quote($dishIdS[0]['dishid']).")");
 				}
 			}
 
-			header("Location: menu.php?success=true");
+			header("Location: admin.php?success=true");
 			exit();
 		}
 

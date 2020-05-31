@@ -2,8 +2,8 @@
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
 require_once 'header.php';
-require_once 'resources/includes/handleimages.php';
-require_once 'resources/includes/validate.php';
+require_once 'handleimages.php';
+require_once 'validate.php';
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -22,33 +22,33 @@ if($_SESSION['usergroup'] == 1){
 
 		$vid = $val->validateInt($id, 3);
 		$idCheck = $db->select("SELECT teamid FROM team_details WHERE teamid = ".$db->quote($id));
-		
+		// echo "name: ".$name;
 		if($id != $vid){
 			$validations['id'] = $vid;
-		}else if(!in_array($id, $idCheck)){
+		}else if($idCheck === false){
 			$validations['id'] = "Please enter an existing id";
 		}
 
-		$vname = $val->validateString($name, 100);
-		
+		$vname = $val->validateString($name, 40);
+		// echo "name: ".$name;
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
 
-		$vdesc = $val->validateArea($desc, 200);
-		
+		$vdesc = $val->validateArea($desc, 1000);
+		// echo "desc: ".$desc;
 		if($desc != $vdesc){
 			$validations['desc'] = $vdesc;
 		}
 
-		$vrole = $val->validateString($role, 100);
-	
+		$vrole = $val->validateString($role, 40);
+		// echo "name: ".$name;
 		if($role != $vrole){
 			$validations['role'] = $vrole;
 		}
 		
 		if($photo['size'] !== 0){
-			$upload = $himg->upload($photo['name'], $photo['tmp_name'], $photo['size'], $photo['error']);
+			$upload = $himg->upload($photo['name'], $photo['tmp_name'], $photo['size'], $photo['error'], "staffimages");
 
 			if($upload === 0){
 				$validations['photo'] = "Invalid file extension";

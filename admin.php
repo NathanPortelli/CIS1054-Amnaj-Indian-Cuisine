@@ -6,7 +6,9 @@ require_once 'dbwrapper.php';
 if($_SESSION['usergroup'] == 1){
 	if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$db = new Db();
+
 			$choice = $_POST['adminSelect'];
+
 
 			switch($choice){
 				case "aDish":
@@ -25,10 +27,10 @@ if($_SESSION['usergroup'] == 1){
 					header("Location: editdetails.php");
 					break;
 				case "aDishType":
-					header("Location: adddishtype.php");
+					header("Location: addtype.php");
 					break;
 				case "vDishType":
-					header("Location: viewdishtypes.php");
+					header("Location: viewtypes.php");
 					break;
 
 		}
