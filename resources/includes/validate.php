@@ -1,27 +1,37 @@
 <?php
 
 class Validate{
-	public function validateString($string, $length, $strict = false){
+
+	public function validateStringR($string, $length){
 		if(strlen($string) <= $length){
 			if(!empty(trim($string))){
-				$regex = "/^[a-zA-z -]*$/";
-
-				if ($strict){
-					$regex = "/^[a-zA-z]*$/";
-				}
-
-				if (preg_match($regex, $string)) {
-					return $string;
+				if (preg_match("/^[a-zA-z]*$/", $string)) {
+						return $string;
 				}else{
 					return "Invalid characters entered";
 				}
-			} else {
 				return "Empty field";
 			}
 		}else{
 			return "Too many characters entered";
 		}
 	}
+
+	public function validateString($string, $length){
+		if(strlen($string) <= $length){
+			if(!empty($string)){
+				if (preg_match("/^[a-zA-z -]*$/", $string)) {
+					return $string;
+				}else{
+					return "Invalid characters entered";
+				}
+				return "Empty field";
+			}
+		}else{
+			return "Too many characters entered";
+		}
+	}
+
 
 	public function validateInt($int, $length){
 		if(strlen($int) <= $length){
@@ -31,7 +41,6 @@ class Validate{
 				}else{
 					return "Invalid characters entered";
 				}
-			} else {
 				return "Empty field";
 			}
 		}else{
@@ -47,7 +56,6 @@ class Validate{
 				}else{
 					return "Invalid characters entered";
 				}
-			} else {
 				return "Empty field";
 			}
 		}else{
@@ -62,8 +70,6 @@ class Validate{
 			}else{
 				return "Too many characters entered";
 			}
-		} else {
-			return "Empty field";
 		}
 	}
 
@@ -72,7 +78,7 @@ class Validate{
 			if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 				return $email;
 			}else{
-				return "Invalid email";
+				return "Invalid characters entered";
 			}
 		}else{
 			return "Empty field";
@@ -82,16 +88,15 @@ class Validate{
 	public function validatePasswordC($password, $cpassword){
 		if(!empty($password)){
 			if(strlen($password) < 8){
-				return "Password must be at least 8 characters long";
+				return "Must be at least 8 characters long";
 			}else if(strlen($password) > 20){
-				return "Password too long (max 20)";
+				return "Too many characters entered";
 			}else{
-				echo "Password: ".$password;
-				if(!preg_match_all("/[0-9]/",$password)){
+				if(!preg_match("#[0-9]+#",$password)){
 					return "Password must contain at least one number";
-				}else if(!preg_match_all("/[A-Z]/",$password)){
+				}else if(!preg_match("#[A-Z]+#",$password)){
 					return "Password must contain at least one uppercase letter";
-				}else if(!preg_match_all("/[a-z]/",$password)){
+				}else if(!preg_match("#[a-z]+#",$password)){
 					return "Password must contain at least one lowercase letter";
 				}else{
 					if($password !== $cpassword){
@@ -105,4 +110,20 @@ class Validate{
 			return "Empty field";
 		}
 	}
+
+	public function validateIntE($int, $length){
+		if(strlen($int) <= $length){
+			if(!empty(trim($int))){
+				if (preg_match("/[0-9+\- :]*$/", $int)) {
+					return $int;
+				}else{
+					return "Invalid characters entered";
+				}
+				return "Empty field";
+			}
+		}else{
+			return "Too many characters entered";
+		}
+	}
+
 }
