@@ -2,8 +2,8 @@
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
 require_once 'header.php';
-require_once 'handleimages.php';
-require_once 'validate.php';
+require_once 'resources/includes/handleimages.php';
+require_once 'resources/includes/validate.php';
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
