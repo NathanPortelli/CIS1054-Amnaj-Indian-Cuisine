@@ -1,0 +1,29 @@
+{% extends "formslayout.html" %}
+
+{% block title %}View Dishes{% endblock %}
+
+{% block pagetitle %}Dishes{% endblock %}
+
+{% block head %}
+{{ parent ()}}<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+	<div class="wrap">
+		{% for dish in dishes %}
+		<div class="view-container">
+			<div class="view-entry">  
+				<div class="view-box" >
+					<form action="./viewdishes.php" method="POST">
+						<p class="view">Dish No.:&nbsp{{dish.dishid}}</p>
+						<h2 class = "view">{{dish.dishname}}</h2>
+						<button class="view-button" type="submit" name="delete{{dish.dishid}}">Delete Dish</button>
+						<button class="view-button" type="submit" name="submit{{dish.dishid}}">Edit Dish</button>
+					</form>
+				</div>
+				<img src="{{dish.dishphoto}}" alt='Image of Dish' class="view">
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+{% endblock %}

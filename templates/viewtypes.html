@@ -1,0 +1,30 @@
+{% extends "formslayout.html" %}
+
+{% block title %}View Dish Types{% endblock %}
+
+{% block pagetitle %}Dish Types{% endblock %}
+
+{% block head %}
+	{{ parent ()}}
+	<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+	<div class="wrap">
+		{% for type in types %}
+		<div class="view-container">
+			<div class="view-entry">  
+				<div class="view-box" >
+					<form action="./viewtypes.php" method="POST">
+						<p class="view">Type ID.:&nbsp{{type.typeid}}</p>
+						<h2 class="view">{{type.type}}</h2>
+						<button class="view-button" type="submit" name="delete{{type.typeid}}">Delete Type</button>
+						<button class="view-button" type="submit" name="submit{{type.typeid}}">Edit Type</button>
+					</form>
+				</div>
+				<img src="{{type.typeimg}}" alt='Dish Type Icon' class="view">
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+{% endblock %}
