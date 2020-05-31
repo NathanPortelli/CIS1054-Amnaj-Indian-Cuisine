@@ -1,21 +1,22 @@
-.wrap{
+.wrap
+{
     margin-bottom: 100px;
 }
 
-.mem-container{
+.view-container{
     display: flex;
     flex-direction: column;
     width: 70%;
     margin: 0 auto;
 }
 
-.mem-entry{
+.view-entry{
     display: flex;
     align-items: center;
     font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
 }
 
-.mem-box{
+.view-box{
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
     border-radius: 5px; /*Makes corners of container rounded*/
     font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
@@ -26,12 +27,12 @@
     margin-right: 15px;
 }
 
-h2.member{
+h2.view{
     margin-bottom: 15px;
 	margin-top: 0px;
 }
 
-img.member{
+img.view{
     height: 190px;
     border: 1px solid #929292; /*Adds a border around the image*/
     border-radius: 5px;
@@ -72,7 +73,7 @@ img.member{
 }
 */
 
-#view-mem-button{
+.view-button{
     margin: 10px;
     width: 200px;
     height: 50px;
@@ -88,11 +89,12 @@ img.member{
     font-weight: bold;
 }
 
-#view-mem-button:hover{
+.view-button:hover{
     background-color: #e64616;
 }
 
-p.title{
+p.title
+{
 	font-size: 30px;
 	font-family: 'PT Serif', serif;
 	font-weight: bold;
@@ -114,20 +116,17 @@ hr{
   
 	hr{
 		width: 100%;
-    }
-    
+	}
     .mem-container{
         width: 90%;
     }
-
     .mem-box{
         font-size: 16px;
     }
-
-    #form-button{
+    #form-button
+    {
         margin-bottom: 0px;
     }
-
     #view-mem-button{
         width: 150px;
         height: 40px;
@@ -140,11 +139,10 @@ hr{
     .section{
         width: 80%;
     }
-
-    p.member, h2.member{
+    p.member, h2.member
+    {
         text-align: center;
     }
-
     h2.member{
         font-size: 20px;
     }
@@ -156,11 +154,9 @@ hr{
         margin-left: 20px;
         
     }
-
     img.member{
         height:150px;
     }
-
     #view-mem-button{
         width: 100px;
         height: 40px;
