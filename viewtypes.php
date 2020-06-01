@@ -1,9 +1,9 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'resources/includes/handleimages.php';
 require_once 'resources/includes/validate.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -36,9 +36,9 @@ if($_SESSION['usergroup'] == 1){
 		$type['id'] = $selectedType[0]['typeid'];
 		$type['name'] = $selectedType[0]['type'];
 
-		if($isEdit === true){	
+		if($isEdit){	
 			echo $twig->render("edittype.html",['type' => $type]);
-		}else if($isDelete === true){
+		}else if($isDelete){
 			$dishes = $db->select("SELECT dishid FROM menu WHERE dishtype=".$selectedTypeId);
 
 			for($j = 0; $j < sizeof($dishes); $j++){
@@ -59,5 +59,3 @@ if($_SESSION['usergroup'] == 1){
 	header("Location: index.php");
 	exit();
 }
-
-require_once 'footer.php';

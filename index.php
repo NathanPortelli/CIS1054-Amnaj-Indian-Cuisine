@@ -1,7 +1,7 @@
 <?php
 	require_once 'bootstrap.php';
 	require_once 'dbwrapper.php';
-	require_once 'header.php';
+	session_start();
 
 	$db = new Db();
 
@@ -18,5 +18,3 @@
 	}
 
 	echo $twig->render('index.html', ['welcome_message' => $welcome_message, 'ourpromise' => $ourpromise, 'ourstory' => $ourstory]);
-
-	require_once 'footer.php';

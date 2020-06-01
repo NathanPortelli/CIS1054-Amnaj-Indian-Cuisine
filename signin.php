@@ -1,6 +1,7 @@
 <?php
-    require_once 'header.php';
     $errorMessage = "";
+    require_once "bootstrap.php";
+    session_start();
 
     //making sure access to this page was granted from the form
     if(isset($_POST['login'])){
@@ -36,5 +37,3 @@
     }
     
     echo $twig->render('signin.html', ['error' => $errorMessage]);
-    
-    require_once 'footer.php';

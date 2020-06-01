@@ -1,6 +1,6 @@
 <?php
     require_once 'dbwrapper.php';
-    require_once 'bootstrap.php';
+    require 'bootstrap.php';
 
     $db = new Db();
 
@@ -124,5 +124,5 @@
     }
 
     $year = date("Y");
-
+    
     echo $twig->render('footer.html', ['year' => $year, 'details' => $details, 'address' => $address, 'openingHours' => $openingHours]);

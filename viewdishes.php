@@ -1,9 +1,9 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'resources/includes/handleimages.php';
 require_once 'resources/includes/validate.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -43,10 +43,10 @@ if($_SESSION['usergroup'] == 1){
 		$dish['ing'] = $selectedDish[0]['ingredients'];
 		$dish['photo'] = $selectedDish[0]['dishphoto'];
 
-		if($isEdit === true){	
+		if($isEdit){	
 			echo $twig->render("editdish.html",['dish' => $dish, 'allergies' => $allergies, 'types' => $types]);
 
-		}else if($isDelete === true){
+		}else if($isDelete){
 			$delAllergy = $db->query("DELETE FROM hasallergies WHERE dishID=".$db->quote($dish['id']));
 			$sql = $db->query("DELETE FROM menu WHERE dishid = ".$db->quote($dish['id']));
 			header("Location: admin.php?success=true");
@@ -59,6 +59,3 @@ if($_SESSION['usergroup'] == 1){
 	header("Location: index.php");
 	exit();
 }
-
-require_once 'footer.php';
-?>

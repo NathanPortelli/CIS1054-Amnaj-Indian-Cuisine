@@ -1,9 +1,9 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'resources/includes/handleimages.php';
 require_once 'resources/includes/validate.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -74,5 +74,3 @@ if($_SESSION['usergroup'] == 1){
 	exit();
 }
 
-require_once 'footer.php';
-?>

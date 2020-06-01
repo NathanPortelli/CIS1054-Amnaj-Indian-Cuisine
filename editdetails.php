@@ -1,9 +1,9 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'resources/includes/handleimages.php';
 require_once 'resources/includes/validate.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -47,7 +47,7 @@ if($_SESSION['usergroup'] == 1){
 
 		$vid = $val->validateInt($id, 3);
 		$idCheck = $db->select("SELECT id FROM restaurant_details WHERE id = ".$db->quote($id));
-		// echo "name: ".$name;
+		
 		if($id != $vid){
 			$validations['id'] = $vid;
 		}else if($idCheck === false){
@@ -55,43 +55,43 @@ if($_SESSION['usergroup'] == 1){
 		}
 
 		$vwelMsg = $val->validateArea($welMsg, 200);
-		// echo "name: ".$name;
+		
 		if($welMsg != $vwelMsg){
 			$validations['welMsg'] = $vwelMsg;
 		}
 
 		$vaddress = $val->validateArea($address, 200);
-		// echo "desc: ".$desc;
+		
 		if($address != $vaddress){
 			$validations['address'] = $vaddress;
 		}
 
 		$vemail = $val->validateEmail($email);
-		// echo "name: ".$name;
+		
 		if($email != $vemail){
 			$validations['email'] = $vemail;
 		}
 		
 		$vtelNum = $val->validateIntE($telNum, 12);
-		// echo "name: ".$name;
+		
 		if($telNum != $vtelNum){
 			$validations['telNum'] = $vtelNum;
 		}
 
 		$vmobNum = $val->validateIntE($mobNum, 12);
-		// echo "name: ".$name;
+		
 		if($mobNum != $vmobNum){
 			$validations['mobNum'] = $vmobNum;
 		}
 
 		$vourStory = $val->validateArea($ourStory, 1000);
-		// echo "desc: ".$desc;
+		
 		if($ourStory != $vourStory){
 			$validations['ourStory'] = $vourStory;
 		}
 
 		$vourPromise = $val->validateArea($ourPromise, 1000);
-		// echo "desc: ".$desc;
+		
 		if($ourPromise != $vourPromise){
 			$validations['ourPromise'] = $vourPromise;
 		}

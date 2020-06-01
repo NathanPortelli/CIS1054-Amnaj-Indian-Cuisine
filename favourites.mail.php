@@ -1,7 +1,7 @@
 <?php
     require_once 'bootstrap.php';
     require_once 'dbwrapper.php';
-    require_once 'header.php';
+    session_start();
 
     //Get db objects
     $db = new Db();

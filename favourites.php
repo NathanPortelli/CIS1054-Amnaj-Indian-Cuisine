@@ -1,7 +1,7 @@
 <?php
     require_once 'bootstrap.php';
-    require_once 'dbwrapper.php';
-    require_once 'header.php';    
+    require_once 'dbwrapper.php';   
+    session_start();
 
     //Get db objects
     $db = new Db();
@@ -42,5 +42,3 @@
         //Display 404 page
         echo $twig->render('404.html');
     }
-
-    require_once 'footer.php';  

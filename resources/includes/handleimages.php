@@ -5,7 +5,7 @@ class HandleImages{
 		$pExtArr = explode('.', $pName);
 		$pExt = strtolower(end($pExtArr));
 
-		$allowedExts = array('jpg', 'jpeg', 'png');
+		$allowedExts = array('jpg', 'jpeg', 'png', 'webp');
 
 		if(in_array($pExt, $allowedExts)){
 			if($pError === 0){

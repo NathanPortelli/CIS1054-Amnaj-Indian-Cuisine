@@ -1,9 +1,9 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'handleimages.php';
 require_once 'validate.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -20,7 +20,7 @@ if($_SESSION['usergroup'] == 1){
 
 		$vid = $val->validateInt($id, 3);
 		$idCheck = $db->select("SELECT typeid FROM types WHERE typeid = ".$db->quote($id));
-		// echo "name: ".$name;
+		
 		if($id != $vid){
 			$validations['id'] = $vid;
 		}else if($idCheck === false){
@@ -28,7 +28,7 @@ if($_SESSION['usergroup'] == 1){
 		}
 
 		$vname = $val->validateString($name, 20);
-		// echo "name: ".$name;
+		
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
@@ -74,6 +74,3 @@ if($_SESSION['usergroup'] == 1){
 	header("Location: index.php");
 	exit();
 }
-
-require_once 'footer.php';
-?>

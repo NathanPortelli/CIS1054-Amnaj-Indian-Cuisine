@@ -1,7 +1,7 @@
 <?php
     require_once 'bootstrap.php';
     require_once 'dbwrapper.php';
-    require_once 'header.php';
+    session_start();
 
     $db = new Db();
 
@@ -9,5 +9,3 @@
     $result = $db->select($sql);
     
     echo $twig->render('staff.html', ['result' => $result]);
-
-    require_once 'footer.php';

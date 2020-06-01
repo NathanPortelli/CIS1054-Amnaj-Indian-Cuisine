@@ -1,5 +1,4 @@
-.wrap
-{
+.wrap{
     margin-bottom: 100px;
 }
 
@@ -93,40 +92,29 @@ img.view{
     background-color: #e64616;
 }
 
-p.title
-{
+p.title{
 	font-size: 30px;
 	font-family: 'PT Serif', serif;
 	font-weight: bold;
 }
-
-hr{
-	background: url(../images/hrpattern.png) top center;
-	background-size: 38px 17px;
-	height: 17px;
-	width: 75%;
-	margin: 50px auto;
-	border: none;
-}	
 
 @media only screen and (max-width: 1200px){
 	.admin-div{
 		width: 90%;
 	}
   
-	hr{
-		width: 100%;
-	}
     .mem-container{
         width: 90%;
     }
+
     .mem-box{
         font-size: 16px;
     }
-    #form-button
-    {
+
+    #form-button{
         margin-bottom: 0px;
     }
+
     #view-mem-button{
         width: 150px;
         height: 40px;
@@ -139,8 +127,8 @@ hr{
     .section{
         width: 80%;
     }
-    p.member, h2.member
-    {
+    
+    p.member, h2.member{
         text-align: center;
     }
     h2.member{
@@ -154,9 +142,11 @@ hr{
         margin-left: 20px;
         
     }
+
     img.member{
         height:150px;
     }
+
     #view-mem-button{
         width: 100px;
         height: 40px;

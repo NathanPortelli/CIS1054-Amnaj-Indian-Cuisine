@@ -1,7 +1,7 @@
 <?php
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'dbwrapper.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -43,5 +43,3 @@ if($_SESSION['usergroup'] == 1){
 	exit();
 	//use error 403
 }
-
-require_once "footer.php";

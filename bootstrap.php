@@ -7,3 +7,9 @@
 
     //Instantiates our Twig
     $twig = new Twig_Environment($loader);
+
+    $function = new Twig_SimpleFunction("render", function($phpFile){
+        require $phpFile;
+    });
+
+    $twig->addFunction($function);

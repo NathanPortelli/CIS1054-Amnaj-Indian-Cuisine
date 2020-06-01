@@ -1,9 +1,9 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'resources/includes/handleimages.php';
 require_once 'resources/includes/validate.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
@@ -17,7 +17,7 @@ if($_SESSION['usergroup'] == 1){
 		$formvalues = array();
 
 		$vname = $val->validateString($name, 20);
-		// echo "name: ".$name;
+		
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
@@ -57,6 +57,3 @@ if($_SESSION['usergroup'] == 1){
 	header("Location: index.php");
 	exit();
 }
-
-require_once 'footer.php';
-?>

@@ -1,7 +1,7 @@
 <?php
     require_once 'bootstrap.php';
-    require_once 'header.php';
     require_once 'resources/includes/validate.php';
+    session_start();
 
     $validations = array();
     $formvalues = array();
@@ -51,5 +51,3 @@
     }
 
     echo $twig->render('contactus.html', ['validations' => $validations, 'formvalues' => $formvalues]);
-
-    require_once 'footer.php';

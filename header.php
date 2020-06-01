@@ -1,9 +1,7 @@
 <?php
-    session_start();
+    require "bootstrap.php";
     
-    require_once "bootstrap.php";
-    
-    ini_set("display_errors", FALSE);
+    ini_set("display_errors", TRUE);
 
     if (isset($_SESSION['id'])){
         $firstButton = strtoupper($_SESSION['name']);
@@ -16,5 +14,5 @@
         $secondButton = "LOGIN";
         $secondLink = "signin.php";
     }
-    
+
     echo $twig->render('header.html', ['firstButton' => $firstButton, 'firstLink' => $firstLink, 'secondButton' => $secondButton, 'secondLink' => $secondLink]);

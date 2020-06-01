@@ -1,9 +1,9 @@
 <?php
 	require_once 'bootstrap.php';
-	require_once 'header.php';
 	require_once 'dbwrapper.php';
 	require_once 'resources/includes/validate.php';
-
+	session_start();
+	
 	$db = new Db();
 	$val = new Validate();
 
@@ -83,12 +83,8 @@
                 }
             }
 		}
-		
-		require 'header.php';
 
 		echo $twig->render('profile.html', ['name' => $_SESSION['name'], 'surname' => $_SESSION['surname'], 'email' => $_SESSION['email'], 'usergroup' => $_SESSION['usergroup'], 'validations' => $validations]);
     } else {
 		header("Location: signin.php");
     }
-
-	require_once 'footer.php';

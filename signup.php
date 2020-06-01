@@ -1,6 +1,6 @@
 <?php
     require_once "bootstrap.php";
-    require_once "header.php";
+    session_start();
 
     $validations = array();
     $formvalues = array();
@@ -58,5 +58,3 @@
     }
 
     echo $twig->render('signup.html', ['validations' => $validations, 'formvalues' => $formvalues]);
-
-    require_once 'footer.php';

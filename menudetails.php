@@ -1,8 +1,8 @@
 <?php
     require_once "bootstrap.php";
     require_once "dbwrapper.php";
-    require_once 'header.php';
-    
+    session_start();
+
     $db = new Db();
 
     if(isset($_GET['dish'])){
@@ -42,8 +42,6 @@
             $result[0]['price'] = '€'.number_format($result[0]['price'], 2, ".", ",");
             
             echo $twig->render('menudetails.html', ['result' => $result, 'resultallergy' => $resultallergy, 'isAdded' => $isAdded]);
-            
-            require_once 'footer.php';
         } else {
             header("Location: menu.php?error=invalidID");
         }

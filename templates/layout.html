@@ -8,10 +8,10 @@
         <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="resources/images/index-logo.png" type="image/x-icon">
         {% block head %}
         {% endblock %}
     </head>
+    {{ render ("header.php") }}
     <body>
         <main>
             <h1 class="main-title">{% block pagetitle %}{% endblock %}</h1>
@@ -22,4 +22,5 @@
         {% block scripts %}
         {% endblock %}
     </body>
+    {{ render ("footer.php") }}
 </html>

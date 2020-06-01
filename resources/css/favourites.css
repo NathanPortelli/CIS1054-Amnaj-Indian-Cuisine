@@ -85,11 +85,11 @@ img.favourites{
 
 .error{
     font-size: 25px; /*Sets the font size for the header*/
-    letter-spacing: 0.5px; /*Spaces out the letters of the text*/
+    letter-spacing: 0.5px; /*Spaces out the letters of the error*/
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    color: #ed2939; /*Sets font color for any text used in forms*/
+    color: #ed2939; /*Sets font color for error message*/
 }
 
 button.form-element:hover{

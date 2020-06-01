@@ -1,7 +1,7 @@
 <?php 
     require_once 'bootstrap.php';
     require_once 'dbwrapper.php';
-    require_once 'header.php';
+    session_start();
 
     //Get db Objects
     $db = new Db();
@@ -24,5 +24,3 @@
     } else{
         echo $twig->render('menu.html', ['menutypes' => $menutypes]);
     }
-
-    require_once 'footer.php';

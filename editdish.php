@@ -1,15 +1,14 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'header.php';
 require_once 'resources/includes/handleimages.php';
 require_once 'resources/includes/validate.php';
+session_start();
 
 if($_SESSION['usergroup'] == 1){
 	$db = new Db();
 	$val = new Validate();
 	$himg = new HandleImages();
-	
 
 	$types = $db->select("SELECT * FROM types");
 	$allergies = $db->select("SELECT * FROM allergies");
@@ -32,7 +31,7 @@ if($_SESSION['usergroup'] == 1){
 
 		$vid = $val->validateInt($id, 3);
 		$idCheck = $db->select("SELECT dishid FROM menu WHERE dishid = ".$db->quote($id));
-		// echo "name: ".$name;
+		
 		if($id != $vid){
 			$validations['id'] = $vid;
 		}else if($idCheck === false){
@@ -40,31 +39,31 @@ if($_SESSION['usergroup'] == 1){
 		}
 
 		$vname = $val->validateString($name, 100);
-		// echo "name: ".$name;
+		
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
 
 		$ving = $val->validateArea($ing, 250);
-		// echo "ing: ".$ing;
+		
 		if($ing != $ving){
 			$validations['ing'] = $ving;
 		}
 
 		$vdesc = $val->validateArea($desc, 200);
-		// echo "desc: ".$desc;
+		
 		if($desc != $vdesc){
 			$validations['desc'] = $vdesc;
 		}
 
 		$vserving = $val->validateInt($serving, 3);
-		// echo "serving: ".$serving;
+		
 		if($serving != $vserving){
 			$validations['serving'] = $vserving;
 		}
 
 		$vprice = $val->validateDouble($price, 7);
-		// echo "price: ".$price;
+		
 		if($price != $vprice){
 			$validations['price'] = $vprice;
 		}
@@ -131,6 +130,3 @@ if($_SESSION['usergroup'] == 1){
 	header("Location: index.php");
 	exit();
 }
-
-require_once 'footer.php';
-?>
