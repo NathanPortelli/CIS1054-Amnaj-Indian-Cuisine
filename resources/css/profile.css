@@ -9,7 +9,7 @@ label{
     font-family: 'Open Sans', sans-serif;
     text-align: left;
     font-size: 30px;
-    margin-top: 25px;
+    margin-top: 30px;
     display: block;
 }
 
@@ -31,7 +31,6 @@ h2.profile{
 }
 
 .top-div{
-    padding-top: 1px;
     margin-bottom: 15px;
 }
 
