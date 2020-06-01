@@ -42,7 +42,7 @@ class Validate{
 	public function validateDouble($d, $length){
 		if(strlen($d) <= $length){
 			if(!empty(trim($d))){
-				if (preg_match("/[0-9]+\.+[0-9]*$/", $d)) {
+				if (preg_match("/[0-9\.]*$/", $d)) {
 					return $d;
 				}else{
 					return "Invalid characters entered";
