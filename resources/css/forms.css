@@ -84,8 +84,14 @@ a.forms{
     }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+    .input-section{
+        width: 60%;
+    }
+}
+
 @media only screen and (min-width: 451px) and (max-width: 768px){
     .input-section{
-        width: 60%; /*Sets the width of the input section for tablets*/
+        width: 80%; /*Sets the width of the input section for tablets*/
     }
 }

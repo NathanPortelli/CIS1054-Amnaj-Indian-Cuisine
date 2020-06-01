@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="resources/css/profile.css" type="text/css">
 {% endblock %}
 
+{% block pagetitle %}Your Profile{% endblock %}
+
 {% block content %}
-    <form action="profile.php" method="POST">
-        <div class="input-section">
-            <h1 class="forms">PROFILE</h1>
+    <div class="middle-div">
+        <form action="profile.php" method="POST">
             <div class="input-div">
                 <div class="top-div">
-                    <label for="new-name"><span>Your current name: </span>{{name}}</label>
-                    <input class="input-line" type="text" id="new-name" name="new-name" placeholder="Enter new name" maxlength="20">
+                    <div class="form-div">
+                        <label for="new-name"><span>Your current name: </span>{{name}}</label>
+                        <input class="input-line" type="text" id="new-name" name="new-name" placeholder="Enter new name" maxlength="20">
+                    </div>
                     <p class="error">{{validations.name}}</p>
                     <label for="new-surname"><span>Your current surname: </span>{{surname}}</label>
                     <input class="input-line" type="text" id="new-surname" name="new-surname" placeholder="Enter new surname" maxlength="20">
@@ -33,10 +36,7 @@
                 </div>
                 <button class="form-button" name="submit" type="submit">Save</button>
             </div>
-        </div>
-    </form>
-
-    <div class="fav-button-container">
+        </form>
         <button onclick="window.location = 'favourites.php'" class="favourites-button">Your Favourites</button>
         {% if usergroup == 1 %}
             <button onclick="window.location = 'admin.php'" class="favourites-button adminbutton">Admin Page</button>

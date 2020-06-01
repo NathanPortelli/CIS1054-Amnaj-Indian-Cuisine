@@ -15,12 +15,12 @@
             <p class="error">{{validations.id}}</p>
             <div class="form-div">
                 <p class="title">Name</p>
-                <input class="input-line" aria-label="Enter name" type="text" name="eTypeName" value="{{type.name}}{{formvalues.name}}">
+                <input class="input-line" aria-label="Enter name" type="text" name="eTypeName" value="{{type.name}}{{formvalues.name}}" maxlength="20" required>
             </div>
             <p class="error">{{validations.name}}</p>
             <div class="form-div">
                 <p class="title">Photo</p>
-                <input class="input-line" aria-label="Enter photo" type="file" name="eTypePhoto" placeholder="Enter photo">
+                <input class="input-line" aria-label="Enter photo" type="file" name="eTypePhoto" placeholder="Enter photo" maxlength="150">
             </div>
             <p class="error">{{validations.photo}}</p>
             

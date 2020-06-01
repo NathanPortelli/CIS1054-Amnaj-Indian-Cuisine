@@ -15,22 +15,22 @@
             <p class="error">{{validations.id}}</p>
             <div class="form-div">
                 <p class="title">Name</p>
-                <input class="input-line" aria-label="Enter name" type="text" name="eTeamName" value="{{member.name}}{{formvalues.name}}">
+                <input class="input-line" aria-label="Enter name" type="text" name="eTeamName" value="{{member.name}}{{formvalues.name}}" maxlength="40" required>
             </div>
             <p class="error">{{validations.name}}</p>
             <div class="form-div">
                 <p class="title">Role</p>
-                <input class="input-line" aria-label="Enter role" type="text" name="eTeamRole" value="{{member.role}}{{formvalues.role}}">
+                <input class="input-line" aria-label="Enter role" type="text" name="eTeamRole" value="{{member.role}}{{formvalues.role}}" maxlength="40" required>
             </div>
             <p class="error">{{validations.role}}</p>
             <div class="form-div">
                 <p class="title">Description</p>
-                <textarea class="input-line" aria-label="Enter description" type="text" name="eTeamDescription" rows="10">{{member.description}}{{formvalues.desc}}</textarea>
+                <textarea class="input-line" aria-label="Enter description" type="text" name="eTeamDescription" rows="10" maxlength="1000" required>{{member.description}}{{formvalues.desc}}</textarea>
             </div>
             <p class="error">{{validations.desc}}</p>
             <div class="form-div">
                 <p class="title">Photo</p>
-                <input class="input-line" aria-label="Enter photo" type="file" name="eTeamPhoto" placeholder="Enter photo">
+                <input class="input-line" aria-label="Enter photo" type="file" name="eTeamPhoto" placeholder="Enter photo" maxlength="100">
             </div>
             <p class="error">{{validations.photo}}</p>
             

@@ -12,8 +12,9 @@
 {% block content %}
 	<div class="wrap">
 		<form action="./viewdishes.php" method="POST">
+			<div class="view-container">
 			{% for dish in dishes %}
-				<div class="view-container">
+				<div class="view-entry">
 					<div class="view-box">
 						<p class="view">Dish No.:&nbsp{{dish.dishid}}</p>
 						<h2 class="view">{{dish.dishname}}</h2>
@@ -23,6 +24,7 @@
 					<img src="{{dish.dishphoto}}" alt='Image of Dish' class="view">
 				</div>
 			{% endfor %}
+			</div>
 		</form>
 	</div>
 {% endblock %}

@@ -12,8 +12,9 @@
 {% block content %}
 	<div class="wrap">
 		<form action="./viewtypes.php" method="POST">
+			<div class="view-container">
 			{% for type in types %}
-				<div class="view-container">
+				<div class="view-entry">
 					<div class="view-box" >
 						<p class="view">Type ID.:&nbsp{{type.typeid}}</p>
 						<h2 class="view">{{type.type}}</h2>

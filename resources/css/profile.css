@@ -18,7 +18,7 @@ label{
 }
 
 .input-line{
-    width: 100%;
+    width: 98%;
 }
 
 .password-div{
@@ -31,11 +31,12 @@ h2.profile{
 }
 
 .top-div{
+    padding-top: 1px;
     margin-bottom: 15px;
 }
 
-.password-div > :nth-child(2){
-    margin-top: 0;
+.input-section{
+    margin-bottom: 5%;
 }
 
 .favourites-button{
@@ -46,8 +47,6 @@ h2.profile{
     text-align: center;
     font-size: 25px;
     cursor: pointer;
-    margin-bottom: 75px;
-    margin-top: 25px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     width: 275px;
@@ -57,13 +56,19 @@ h2.profile{
     background-color: #e64616;
 }
 
+.fav-button-container{
+    text-align: center;
+    margin-bottom: 75px;
+    margin-top: 25px;
+}
+
 @media only screen and (max-width: 640px){
     label{
         font-size: 20px;
     }
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 425px){
     .middle-div{
         width: 90%;
     }
@@ -73,10 +78,10 @@ h2.profile{
     }
 
     .favourites-button{
-        margin-bottom: 0px;
+        margin-bottom: 20px;
     }
 
-    .adminbutton{
-        margin-bottom: 75px;
+    .fav-button-container{
+        margin-bottom: 25px;
     }
 }

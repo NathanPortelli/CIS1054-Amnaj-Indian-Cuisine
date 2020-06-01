@@ -2,11 +2,6 @@
 
 {% block title %}Add Team Member{% endblock %}
 
-{% block head %}
-    {{ parent ()}}
-    <link href="resources/css/admin.css" rel="stylesheet" type="text/css">
-{% endblock %}
-
 {% block content %}
     <form action="./addmember.php" method="POST" enctype="multipart/form-data">
         <div class="input-section">

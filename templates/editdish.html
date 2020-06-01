@@ -14,7 +14,7 @@
             <p class="error">{{validations.id}}</p>
             <div class="form-div">
                 <p class="title">Name</p>
-                <input class="input-line" type="text" value="{{dish.name}}{{formvalues.name}}" aria-label="Enter name" name="eDishName" required>
+                <input class="input-line" type="text" value="{{dish.name}}{{formvalues.name}}" aria-label="Enter name" name="eDishName" maxlength="100" required>
             </div>
             <p class="error">{{validations.name}}</p>
             <div class="form-div">
@@ -29,27 +29,27 @@
             <p class="error">{{validations.type}}</p>
             <div class="form-div">
                 <p class="title">Description</p>
-                <textarea class="input-line" aria-label="Enter description" type="text" name="eDishDescription"  rows=4 required>{{formvalues.desc}}{{dish.desc}}</textarea>
+                <textarea class="input-line" aria-label="Enter description" type="text" name="eDishDescription" maxlength="200" rows=4 required>{{formvalues.desc}}{{dish.desc}}</textarea>
             </div>
             <p class="error">{{validations.desc}}</p> 
             <div class="form-div">
                 <p class="title">Price</p>
-                <input class="input-line" type="text" value="{{dish.price}}{{formvalues.price}}" aria-label="Enter price" name="eDishPrice" required>
+                <input class="input-line" type="number" value="{{dish.price}}{{formvalues.price}}" aria-label="Enter price" name="eDishPrice" min="0" step="0.01" required>
             </div>
             <p class="error">{{validations.price}}</p>
             <div class="form-div">
                 <p class="title">Ingredients</p>
-                <textarea class="input-line" aria-label="Enter ingredients" type="text" name="eDishIngredients"  rows=4 required>{{formvalues.ing}}{{dish.ing}}</textarea> 
+                <textarea class="input-line" aria-label="Enter ingredients" type="text" name="eDishIngredients" maxlength="250" rows=4 required>{{formvalues.ing}}{{dish.ing}}</textarea> 
             </div>
             <p class="error">{{validations.ing}}</p>
             <div class="form-div">
                 <p class="title">Serving</p>
-                <input class="input-line" type="text" value="{{formvalues.serving}}{{dish.serving}}" aria-label="Enter serving" name="eDishServing" required>
+                <input class="input-line" type="number" value="{{formvalues.serving}}{{dish.serving}}" aria-label="Enter serving" name="eDishServing" min="1" required>
             </div>
             <p class="error">{{validations.serving}}</p>
             <div class="form-div">
                 <p class="title">Allergies</p>
-                <select name="allSelect[]" class="input-line" aria-label="allSelect" multiple="multiple" autofocus="" required>
+                <select name="allSelect[]" class="input-line" aria-label="allSelect" multiple required>
                     <option value="none">None</option>
                     {% for allergy in allergies %}
                         <option value="{{allergy.allergyid}}">{{allergy.name}}</option>
@@ -59,7 +59,7 @@
             <p class="error">{{validations.allergies}}</p>
             <div class="form-div">
                 <p class="title">Photo</p>
-                <input class="input-line" type="file" value="{{formvalues.photo}}" aria-label="Enter photo" name="eDishPhoto">
+                <input class="input-line" type="file" value="{{formvalues.photo}}" aria-label="Enter photo" name="eDishPhoto" maxlength="50">
             </div>
             <p class="error">{{validations.photo}}</p>
             

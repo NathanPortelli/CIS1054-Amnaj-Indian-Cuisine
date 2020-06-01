@@ -13,8 +13,8 @@
             
             <div class="details-container">
                 <p class="menudetails">
-                    <b>Description:</b>&nbsp;{{row.dishdesc}}<br><br>
-                    <b>Ingredients:</b>&nbsp;{{row.ingredients}}<br><br>
+                    <b>Description:</b>&nbsp;{{row.dishdesc}}<br>
+                    <b>Ingredients:</b>&nbsp;{{row.ingredients}}<br>
                     <b>Price:</b>&nbsp;{{row.price}}<br>
                     <b>Serving:</b>&nbsp;{{row.serving}}
                 </p>
@@ -27,9 +27,9 @@
                 <form method="POST" action="menudetails.php">
                     <input name="menuid" type="hidden" value="{{row.id}}">
                     {% if isAdded == true %}
-                        <button name="favBtn" id="favouritesBtn" class="menudetails" type="submit" disabled>Add to Favourites</button>
+                        <button name="favBtn" class="menudetails" type="submit" disabled>Add to Favourites</button>
                     {% else %}
-                        <button name="favBtn" id="favouritesBtn" class="menudetails" type="submit">Add to Favourites</button>
+                        <button name="favBtn" class="menudetails" type="submit">Add to Favourites</button>
                     {% endif %}
                 </form>
                 <button onclick="window.location='menu.php?type={{row.dishtypeid}}'" class="menudetails returnbutton">Return to Menu</button>
