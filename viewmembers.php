@@ -28,7 +28,6 @@ if($_SESSION['usergroup'] == 1){
 				break;
 			}
 			$i++;
-
 		}
 		
 		$selectedMember = $db->select("SELECT * FROM team_details WHERE teamid = ".$selectedMemberId);

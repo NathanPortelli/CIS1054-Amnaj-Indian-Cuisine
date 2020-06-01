@@ -49,7 +49,7 @@ if($_SESSION['usergroup'] == 1){
 		}else if($isDelete){
 			$delAllergy = $db->query("DELETE FROM hasallergies WHERE dishID=".$db->quote($dish['id']));
 			$sql = $db->query("DELETE FROM menu WHERE dishid = ".$db->quote($dish['id']));
-			header("Location: admin.php?success=true");
+			header("Location: viewdishes.php?success=true");
 			exit();
 		}
 	}else{

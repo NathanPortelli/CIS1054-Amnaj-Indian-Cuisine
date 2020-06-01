@@ -1,8 +1,8 @@
 <?php
 require_once 'dbwrapper.php';
 require_once 'bootstrap.php';
-require_once 'handleimages.php';
-require_once 'validate.php';
+require_once 'resources/includes/handleimages.php';
+require_once 'resources/includes/validate.php';
 session_start();
 
 if($_SESSION['usergroup'] == 1){
@@ -58,7 +58,6 @@ if($_SESSION['usergroup'] == 1){
 		}else{
 			if($photoCheck === true){
 				$sql = $db->query("UPDATE types SET type =".$db->quote($name).", typeimg=".$db->quote($upload)." WHERE typeid=".$db->quote($id));
-			
 			}else{
 				$sql = $db->query("UPDATE types SET type =".$db->quote($name).", WHERE typeid=".$db->quote($id));
 			}
@@ -66,7 +65,6 @@ if($_SESSION['usergroup'] == 1){
 			header("Location: viewtypes.php?success=true");
 			exit();
 		}
-
 	}else{
 		echo $twig->render("edittype.html");
 	}

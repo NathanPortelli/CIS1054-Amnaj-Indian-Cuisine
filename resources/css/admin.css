@@ -1,18 +1,13 @@
+
 .wrap{
     margin-bottom: 100px;
 }
 
 .view-container{
     display: flex;
-    flex-direction: column;
     width: 70%;
     margin: 0 auto;
-}
-
-.view-entry{
-    display: flex;
     align-items: center;
-    font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
 }
 
 .view-box{
@@ -38,40 +33,6 @@ img.view{
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
 }
 
-.admin-div{
-	margin: 0 auto;
-	text-align: center;
-	width: 60%;
-}
-
-.section{
-    background-color: white; /*Sets background colour of container to white*/
-    width: 100%; /*Sets the width of the container*/
-    margin: 10% auto; /*Adds some space from header and footer and aligns input section to the middle*/
-    border-radius: 5px; /*Makes corners of container rounded*/
-    padding: 25px; /*Adds some spacing for inputs inside the container*/
-    box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
-    text-align: center; /*Centres button*/
-}
-
-/*
-.admin-button
-{
-	margin: 10px;
-	background-color: #ff7950;
-    border: grey;
-    color: #000;
-    text-align: center;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-}
-
-.admin-button:hover{
-    background-color: #dddedf; 
-}
-*/
-
 .view-button{
     margin: 10px;
     width: 200px;
@@ -95,24 +56,17 @@ img.view{
 p.title{
 	font-size: 30px;
 	font-family: 'PT Serif', serif;
-	font-weight: bold;
+    font-weight: bold;
+    margin-top: 0;
 }
 
 @media only screen and (max-width: 1200px){
-	.admin-div{
-		width: 90%;
-	}
-  
     .mem-container{
         width: 90%;
     }
 
     .mem-box{
         font-size: 16px;
-    }
-
-    #form-button{
-        margin-bottom: 0px;
     }
 
     #view-mem-button{
@@ -122,25 +76,20 @@ p.title{
     }
 }
 
-@media only screen and (max-width: 620px)
-{
-    .section{
-        width: 80%;
-    }
-    
+@media only screen and (max-width: 620px){
     p.member, h2.member{
         text-align: center;
     }
+
     h2.member{
         font-size: 20px;
-    }
+    }    
 }
 
 @media only screen and (max-width: 500px){
     .mem-container{
         width: 45%;
         margin-left: 20px;
-        
     }
 
     img.member{
@@ -153,3 +102,4 @@ p.title{
         font-size: 10px;
     }
 }
+

@@ -23,13 +23,19 @@ class Validate{
 		}
 	}
 
-	public function validateInt($int, $length){
+	public function validateInt($int, $length, $extended = false){
 		if(strlen($int) <= $length){
 			if(!empty(trim($int))){
-				if (preg_match("/[0-9]*$/", $int)) {
-					return $int;
-				}else{
+				$regex = "/[^0-9]/";
+
+				if ($extended){
+					$regex = "/[^0-9+:\- ]/";
+				}
+
+				if (preg_match($regex, $int)) {
 					return "Invalid characters entered";
+				}else{
+					return $int;
 				}
 			} else {
 				return "Empty field";
@@ -39,13 +45,17 @@ class Validate{
 		}
 	}
 
-	public function validateDouble($d, $length){
-		if(strlen($d) <= $length){
-			if(!empty(trim($d))){
-				if (preg_match("/[0-9]+\.+[0-9]*$/", $d)) {
-					return $d;
-				}else{
+	public function validateDouble($double, $length){
+		if(strlen($double) <= $length){
+			if(!empty(trim($double))){
+				if (preg_match("/[^0-9.]/", $double) || preg_match("/[.].*[.]/", $double)) {
 					return "Invalid characters entered";
+				}else{
+					if (doubleval($double) < 0){
+						return "Number is smaller than 0";
+					} else {
+						return $double;
+					}
 				}
 			} else {
 				return "Empty field";

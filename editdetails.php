@@ -34,12 +34,12 @@ if($_SESSION['usergroup'] == 1){
 		$id = $_POST['eResId'];
 		$validations = array();
 		$formvalues = array();
-
 		$days = array();
-		for($i = 1; $i<=7; $i++){
+		
+		for($i = 1; $i <= 7; $i++){
 			$days[$i] = $_POST['e'.$i];
 
-			$vday = $val->validateIntE($days[$i], 15);
+			$vday = $val->validateInt($days[$i], 15, true);
 			if($vday != $days[$i]){
 				$validations['openHours'] = $vday;
 			}
@@ -72,13 +72,13 @@ if($_SESSION['usergroup'] == 1){
 			$validations['email'] = $vemail;
 		}
 		
-		$vtelNum = $val->validateIntE($telNum, 12);
+		$vtelNum = $val->validateInt($telNum, 12, true);
 		
 		if($telNum != $vtelNum){
 			$validations['telNum'] = $vtelNum;
 		}
 
-		$vmobNum = $val->validateIntE($mobNum, 12);
+		$vmobNum = $val->validateInt($mobNum, 12, true);
 		
 		if($mobNum != $vmobNum){
 			$validations['mobNum'] = $vmobNum;
@@ -125,6 +125,3 @@ if($_SESSION['usergroup'] == 1){
 	header("Location: index.php");
 	exit();
 }
-
-require_once 'footer.php';
-?>

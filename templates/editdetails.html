@@ -1,65 +1,65 @@
 {% extends "formslayout.html" %}
 
 {% block title %}Edit Details{% endblock %}
+
 {% block head %}
-{{ parent ()}}<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+    {{ parent ()}}
+    <link href="resources/css/admin.css" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block content %}
-    <div class="admin-div">
-        <div class="section">
-            <form action="./editdetails.php" method="POST" enctype="multipart/form-data">
-                <h1 class="forms">Edit Restaurant Details</h1>
-                <div class="form-div">
-                    <p class="error">{{validations.id}}</p>
-                    <input class="input-line" aria-label="Enter id" type="text" name="eResId" value="{{dets.id}}{{formvalues.id}}" hidden>
-                </div>
-                <div class="form-div">
-                    <p class="title">Welcome Message</p>
-                    <p class="error">{{validations.welMsg}}</p>
-                    <textarea class="input-line" aria-label="Enter Welcome Message" required type="text" name="eWelMsg" rows="4">{{dets.welMsg}}{{formvalues.welMsg}}</textarea>
-                </div>
-                <div class="form-div">
-                    <p class="title">Address</p>
-                    <p class="error">{{validations.address}}</p>
-                    <textarea class="input-line" aria-label="Enter address" required type="text" name="eAddress" rows="3">{{dets.address}}{{formvalues.address}}</textarea>
-                </div>
-                <div class="form-div">
-                    <p class="title">Email</p>
-                    <p class="error">{{validations.email}}</p>
-                    <input class="input-line" aria-label="Enter email" type="text" required name="eEmail" value="{{dets.email}}{{formvalues.email}}">
-                </div>
-                <div class="form-div">
-                    <p class="title">Mobile Num</p>
-                    <p class="error">{{validations.mobNum}}</p>
-                    <input class="input-line" aria-label="Enter Mobile Number" required type="text" name="eMobNum" value="{{dets.mobNum}}{{formvalues.mobNum}}">
-                </div>
-                <div class="form-div">
-                    <p class="title">Telephone Num</p>
-                    <p class="error">{{validations.telNum}}</p>
-                    <input class="input-line" aria-label="Enter Tel Number" requiredtype="text" name="eTelNum" value="{{dets.telNum}}{{formvalues.telNum}}">
-                </div>
-                <div class="form-div">
-                    <p class="title">Our Story</p>
-                    <p class="error">{{validations.ourStory}}</p>
-                    <textarea class="input-line" aria-label="Our Story" required type="text" name="eStory" rows="10">{{dets.ourStory}}{{formvalues.ourStory}}</textarea>
-                </div>
-                <div class="form-div">
-                    <p class="title">Our Promise</p>
-                    <p class="error">{{validations.ourPromise}}</p>
-                    <textarea class="input-line" aria-label="Our Promise" type="text" name="ePromise" required rows="10">{{dets.ourPromise}}{{formvalues.ourPromise}}</textarea>
-                </div>
-                <div class="form-div">
-                    <p class="title">Opening Hours</p>
-                    <p class="error">{{validations.openHours}}</p>
-                    {% for openHours in openingHours %}
-                    <div class="form-div">
-                        <input class="input-line" aria-label="{{openHours.day}}" type="text" name="e{{openHours.id}}" value="{{openHours.hours}}{{formvalues.day}}" required>
-                    </div>
-                    {% endfor %}
-                </div>
+    <form action="./editdetails.php" method="POST" enctype="multipart/form-data">
+        <div class="input-section">
+            <h1 class="forms">Edit Restaurant Details</h1>
+            <input class="input-line" aria-hidden="true" type="text" name="eResId" value="{{dets.id}}{{formvalues.id}}" hidden>
+            <p class="error">{{validations.id}}</p>
+            <div class="form-div">
+                <p class="title">Welcome Message</p>
+                <textarea class="input-line" aria-label="Enter Welcome Message" required type="text" name="eWelMsg" maxlength="200" rows="4">{{dets.welMsg}}{{formvalues.welMsg}}</textarea>
+            </div>
+            <p class="error">{{validations.welMsg}}</p>
+            <div class="form-div">
+                <p class="title">Address</p>
+                <textarea class="input-line" aria-label="Enter address" type="text" name="eAddress" maxlength="200" rows="3" required>{{dets.address}}{{formvalues.address}}</textarea>
+            </div>
+            <p class="error">{{validations.address}}</p>
+            <div class="form-div">
+                <p class="title">Email</p>
+                <input class="input-line" aria-label="Enter email" type="email" name="eEmail" value="{{dets.email}}{{formvalues.email}}" maxlength="200" required>
+            </div>
+            <p class="error">{{validations.email}}</p>
+            <div class="form-div">
+                <p class="title">Mobile Num</p>
+                <input class="input-line" aria-label="Enter Mobile Number" type="text" name="eMobNum" value="{{dets.mobNum}}{{formvalues.mobNum}}" pattern="[+][0-9]{11}" maxlength="12" required>
+            </div>
+            <p class="error">{{validations.mobNum}}</p>
+            <div class="form-div">
+                <p class="title">Telephone Num</p>
+                <input class="input-line" aria-label="Enter Tel Number" type="text" name="eTelNum" value="{{dets.telNum}}{{formvalues.telNum}}" pattern="[+][0-9]{11}" maxlength="12" required>
+            </div>
+            <p class="error">{{validations.telNum}}</p>
+            <div class="form-div">
+                <p class="title">Our Story</p>
+                <textarea class="input-line" aria-label="Our Story" type="text" name="eStory" rows="10" maxlength="1000" required>{{dets.ourStory}}{{formvalues.ourStory}}</textarea>
+            </div>
+            <p class="error">{{validations.ourStory}}</p>
+            <div class="form-div">
+                <p class="title">Our Promise</p>
+                <textarea class="input-line" aria-label="Our Promise" type="text" name="ePromise" rows="10" maxlength="1000" required>{{dets.ourPromise}}{{formvalues.ourPromise}}</textarea>
+            </div>
+            <p class="error">{{validations.ourPromise}}</p>
+            <div class="form-div" style="font-family: 'Open Sans', sans-serif;">
+                <p class="title">Opening Hours</p>
+                {% for openHours in openingHours %}
+                    <p style="margin-bottom: 0">{{openHours.day}}</p>
+                    <input style="text-align: center; width: 65%;" class="input-line" aria-label="{{openHours.day}}" type="text" name="e{{openHours.id}}" value="{{openHours.hours}}{{formvalues.day}}" required>
+                {% endfor %}
+            </div>
+            <p class="error">{{validations.openHours}}</p>
+
+            <div class="form-div">
                 <button class="form-button" type="submit" name="eDetsSubmit">Edit Details</button>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
 {% endblock %}

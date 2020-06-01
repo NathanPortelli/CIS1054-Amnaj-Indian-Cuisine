@@ -74,7 +74,6 @@ if($_SESSION['usergroup'] == 1){
 		}else{
 			if($photoCheck === true){
 				$sql = $db->query("UPDATE team_details SET name =".$db->quote($name).", role=".$db->quote($role).", description=".$db->quote($desc).", photo=".$db->quote($upload)." WHERE teamid=".$db->quote($id));
-			
 			}else{
 				$sql = $db->query("UPDATE team_details SET name =".$db->quote($name).", role=".$db->quote($role).", description=".$db->quote($desc)." WHERE teamid=".$db->quote($id));
 			}
@@ -82,7 +81,6 @@ if($_SESSION['usergroup'] == 1){
 			header("Location: viewmembers.php?success=true");
 			exit();
 		}
-
 	}else{
 		echo $twig->render("editmember.html");
 	}

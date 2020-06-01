@@ -11,6 +11,7 @@ if($_SESSION['usergroup'] == 1){
 	$himg = new HandleImages();
 	
 	$types = $db->select("SELECT * FROM types");
+	
 	if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$selectedTypeId = 0;
 		$isEdit = false;
@@ -28,7 +29,6 @@ if($_SESSION['usergroup'] == 1){
 				break;
 			}
 			$i++;
-
 		}
 		
 		$selectedType = $db->select("SELECT * FROM types WHERE typeid = ".$selectedTypeId);
@@ -36,9 +36,9 @@ if($_SESSION['usergroup'] == 1){
 		$type['id'] = $selectedType[0]['typeid'];
 		$type['name'] = $selectedType[0]['type'];
 
-		if($isEdit){	
-			echo $twig->render("edittype.html",['type' => $type]);
-		}else if($isDelete){
+		if($isEdit===true){	
+			echo $twig->render("edittype.html", ['type' => $type]);
+		}else if($isDelete===true){
 			$dishes = $db->select("SELECT dishid FROM menu WHERE dishtype=".$selectedTypeId);
 
 			for($j = 0; $j < sizeof($dishes); $j++){

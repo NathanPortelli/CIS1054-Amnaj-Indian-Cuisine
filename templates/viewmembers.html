@@ -11,20 +11,20 @@
 
 {% block content %}
 	<div class="wrap">
-		{% for member in members %}
-		<div class="view-container">
-			<div class="view-entry">  
-				<div class="view-box" >
-					<form action="./viewmembers.php" method="POST">
-						<p class="view">Member ID.:&nbsp{{member.teamid}}</p>
-						<h2 class="view">{{member.name}}</h2>
-						<button class="view-button" type="submit" name="delete{{member.teamid}}">Delete Member</button>
-						<button class="view-button" type="submit" name="submit{{member.teamid}}">Edit Member</button>
-					</form>
+		<form action="./viewmembers.php" method="POST">
+			{% for member in members %}
+				<div class="mem-container">
+					<div class="mem-entry">  
+						<div class="mem-box" >
+							<p class="member">Member No.:&nbsp{{member.teamid}}</p>
+							<h2 class="member">{{member.name}}</h2>
+							<button id="view-mem-button" type="submit" name="delete{{member.teamid}}">Delete Member</button>
+							<button id="view-mem-button" type="submit" name="submit{{member.teamid}}">Edit Member</button>
+						</div>
+						<img src="{{member.photo}}" alt='Image of Team Member' class="member">
+					</div>
 				</div>
-				<img src="{{member.photo}}" alt='Image of Team Member' class="view">
-			</div>
-		</div>
-		{% endfor %}
+			{% endfor %}
+		</form>
 	</div>
 {% endblock %}

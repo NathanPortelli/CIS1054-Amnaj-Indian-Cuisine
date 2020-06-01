@@ -68,6 +68,10 @@ h2.profile{
         width: 90%;
     }
 
+    .input-line{
+        width: 95%;
+    }
+
     .favourites-button{
         margin-bottom: 0px;
     }

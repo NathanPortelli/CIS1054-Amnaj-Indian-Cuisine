@@ -1,25 +1,28 @@
 {% extends "formslayout.html" %}
 
 {% block title %}Add Dish Type{% endblock %}
+
 {% block head %}
-{{ parent ()}}<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+    {{ parent ()}}
+    <link href="resources/css/admin.css" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block content %}
-   <div class="admin-div">
-    <div class="section">
-        <form action="./addtype.php" method="POST" enctype="multipart/form-data">
+    <form action="./addtype.php" method="POST" enctype="multipart/form-data">
+        <div class="input-section">
             <h1 class="forms">ADD DISH TYPE</h1>
             <div class="form-div">
-                <p class="error">{{validations.name}}</p>
-                <input class="input-line" aria-label="Enter name" type="text" placeholder="Enter name" name="aTypeName" value="{{formvalues.name}}" maxlength="20">
+                <input class="input-line" aria-label="Enter name" type="text" placeholder="Enter name" name="aTypeName" value="{{formvalues.name}}" maxlength="20" required>
             </div>
+            <p class="error">{{validations.name}}</p>
             <div class="form-div">
-                 <p class="error">{{validations.photo}}</p>
-                <input class="input-line" aria-label="Enter photo" type="file" name="aTypePhoto" placeholder="Enter photo" maxlength="150">
+                <input class="input-line" aria-label="Enter photo" type="file" name="aTypePhoto" placeholder="Enter photo" maxlength="150" required>
             </div>
-            <button class="form-button"type="submit" name="eTeamSubmit">Add Dish Type</button>
-        </form>
-    </div>
-</div>
+            <p class="error">{{validations.photo}}</p>
+
+            <div class="form-div">
+                <button class="form-button"type="submit" name="eTeamSubmit">Add Dish Type</button>
+            </div>
+        </div>
+    </form>
 {% endblock %}

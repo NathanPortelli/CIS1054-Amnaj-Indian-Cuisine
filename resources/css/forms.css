@@ -1,3 +1,7 @@
+select.input-line{
+    width: 97%;
+}
+
 .input-section{
     background-color: white; /*Sets background colour of container to white*/
     width: 41%; /*Sets the width of the container*/
@@ -60,6 +64,12 @@ a.forms{
     color: #fe6b40; /*Sets color for any links used in forms*/
 }
 
+@media only screen and (max-width: 620px){
+    .error{
+        font-size: 20px;
+    }
+}
+
 @media only screen and (max-width: 450px){
     .input-section{
         width: 80%; /*Sets the width of the input section for small phones*/
@@ -67,6 +77,10 @@ a.forms{
 
     .input-line{
 	    font-size: 20px; /*Sets the font size of text to be smaller on mobiles so that the placeholders will show on phones*/
+    }
+
+    select.input-line{
+        width: 100%;
     }
 }
 

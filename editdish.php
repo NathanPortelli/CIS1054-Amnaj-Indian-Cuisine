@@ -89,7 +89,6 @@ if($_SESSION['usergroup'] == 1){
 		}else{
 			$typeId = $db->select("SELECT typeid FROM types WHERE type = ".$db->quote($type));
 		}
-		
 
 		if(!empty($validations)){
 			$formvalues['id'] = $id;
@@ -100,7 +99,6 @@ if($_SESSION['usergroup'] == 1){
 			$formvalues['serving'] = $serving;
 			$formvalues['ing'] = $ing;
 			$formvalues['photo'] = $photo;
-
 
 			echo $twig->render("editdish.html", ['types' => $types, 'allergies' => $allergies, 'validations' => $validations, 'formvalues' => $formvalues]);
 		}else{

@@ -19,19 +19,19 @@ if($_SESSION['usergroup'] == 1){
 		$formvalues = array();
 
 		$vname = $val->validateString($name, 40);
-		// echo "name: ".$name;
+		
 		if($name != $vname){
 			$validations['name'] = $vname;
 		}
 
 		$vdesc = $val->validateArea($desc, 1000);
-		// echo "desc: ".$desc;
+		
 		if($desc != $vdesc){
 			$validations['desc'] = $vdesc;
 		}
 
 		$vrole = $val->validateString($role, 40);
-		// echo "name: ".$name;
+		
 		if($role != $vrole){
 			$validations['role'] = $vrole;
 		}
@@ -65,7 +65,6 @@ if($_SESSION['usergroup'] == 1){
 			header("Location: admin.php?success=true");
 			exit();
 		}
-
 	}else{
 		echo $twig->render("addmember.html");
 	}

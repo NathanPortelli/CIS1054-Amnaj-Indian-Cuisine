@@ -23,7 +23,7 @@
         <div id="myModal" class="modal">
             <div class="modal-content">
             <span id="closeModal" class="close">&times;</span>
-            <p>{{welcome_message | striptags('<br><i></i>') | raw}}</p>
+            <p>{{welcome_message | striptags('<br><i></i><b></b>') | raw}}</p>
             </div>
         </div>
     {% endif %}

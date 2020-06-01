@@ -79,21 +79,19 @@ if($_SESSION['usergroup'] == 1){
 
 		if(!empty($validations)){
 			$formvalues['name'] = $name;
-			$formvalues['type'] = $type;
 			$formvalues['desc'] = $desc;
 			$formvalues['price'] = $price;
 			$formvalues['serving'] = $serving;
 			$formvalues['ing'] = $ing;
-			$formvalues['photo'] = $photo;
 
 			echo $twig->render("adddish.html", ['types' => $types, 'allergies' => $allergies, 'validations' => $validations, 'formvalues' => $formvalues]);
 		}else{
 			$sql = $db->query("INSERT INTO menu (dishtype, dishname, dishdesc, price, dishphoto, ingredients, serving) VALUES (".$db->quote($typeId[0]['typeid']).", ".$db->quote($name).", ".$db->quote($desc).", ".$db->quote($price).", ".$db->quote($upload).", ".$db->quote($ing).", ".$db->quote($serving).")");
 
 			if($all[0] != "None"){
-				$dishIdS = $db->select("SELECT  MAX(dishid) AS dishid FROM menu");
+				$dishIdS = $db->select("SELECT MAX(dishid) AS dishid FROM menu");
 		
-				for($i = 0; $i<sizeof($all); $i++){
+				for($i = 0; $i < sizeof($all); $i++){
 					$createAllergy = $db->query("INSERT INTO hasallergies (allerID, dishID) VALUES (".$db->quote($all[$i]).", ".$db->quote($dishIdS[0]['dishid']).")");
 				}
 			}

@@ -1,31 +1,32 @@
 {% extends "formslayout.html" %}
 
 {% block title %}Edit Dish Type{% endblock %}
+
 {% block head %}
-{{ parent ()}}<link href="resources/css/admin.css" rel="stylesheet" type="text/css">
+    {{ parent ()}}
+    <link href="resources/css/admin.css" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block content %}
-    <div class="admin-div">
-        <div class="section">
-            <form action="./edittype.php" method="POST" enctype="multipart/form-data">
-                <h1 class="forms">Edit Dish Type</h1>
-                <div class="form-div">
-                    <p class="error">{{validations.id}}</p>
-                    <input class="input-line" aria-label="Enter id" type="text" name="eTypeId" value="{{type.id}}{{formvalues.id}}" hidden>
-                </div>
-                <div class="form-div">
-                    <p class="title">Name</p>
-                    <p class="error">{{validations.name}}</p>
-                    <input class="input-line" aria-label="Enter name" type="text" name="eTypeName" value="{{type.name}}{{formvalues.name}}">
-                </div>
-                <div class="form-div">
-                    <p class="title">Photo</p>
-                    <p class="error">{{validations.photo}}</p>
-                    <input class="input-line" aria-label="Enter photo" type="file" name="eTypePhoto" placeholder="Enter photo">
-                </div>
+    <form action="./edittype.php" method="POST" enctype="multipart/form-data">
+        <div class="input-section">            
+            <h1 class="forms">Edit Dish Type</h1>
+            <input class="input-line" aria-hidden="true" type="text" name="eTypeId" value="{{type.id}}{{formvalues.id}}" hidden>
+            <p class="error">{{validations.id}}</p>
+            <div class="form-div">
+                <p class="title">Name</p>
+                <input class="input-line" aria-label="Enter name" type="text" name="eTypeName" value="{{type.name}}{{formvalues.name}}">
+            </div>
+            <p class="error">{{validations.name}}</p>
+            <div class="form-div">
+                <p class="title">Photo</p>
+                <input class="input-line" aria-label="Enter photo" type="file" name="eTypePhoto" placeholder="Enter photo">
+            </div>
+            <p class="error">{{validations.photo}}</p>
+            
+            <div class="form-div">
                 <button class="form-button" type="submit" name="eTeamSubmit">Edit Dish Type</button>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
 {% endblock %}
