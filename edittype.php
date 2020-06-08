@@ -59,7 +59,7 @@ if($_SESSION['usergroup'] == 1){
 			if($photoCheck === true){
 				$sql = $db->query("UPDATE types SET type =".$db->quote($name).", typeimg=".$db->quote($upload)." WHERE typeid=".$db->quote($id));
 			}else{
-				$sql = $db->query("UPDATE types SET type =".$db->quote($name).", WHERE typeid=".$db->quote($id));
+				$sql = $db->query("UPDATE types SET type =".$db->quote($name)." WHERE typeid=".$db->quote($id));
 			}
 			
 			header("Location: viewtypes.php?success=true");
