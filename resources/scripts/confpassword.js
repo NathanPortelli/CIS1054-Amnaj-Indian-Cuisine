@@ -25,8 +25,7 @@ function validatePassword(){
         if (oldpassfield.value.length == 0){
             oldpassfield.setCustomValidity("This cannot be empty");
         }
-    }
-    catch(err){
+    } catch(err){
     }
 }
 
