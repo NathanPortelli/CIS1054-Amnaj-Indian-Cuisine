@@ -5,7 +5,7 @@
     $validations = array();
     $formvalues = array();
 
-    if(isset($_POST['signup'])){
+    if(isset($_POST['signup']) && isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirmpassword'])){
         require_once 'dbwrapper.php';
         require_once 'resources/includes/validate.php';
         $db = new Db();

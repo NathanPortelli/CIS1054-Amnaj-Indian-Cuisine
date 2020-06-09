@@ -19,7 +19,7 @@
             <p class="error">{{validations.name}}</p>
             <div class="form-div">
                 <p class="title">Type</p>
-                <select name="typeSelect" class="input-line" aria-label="Select dish type" autofocus="{{formvalues.type}}{{dish.type}}" required>
+                <select id="typeSelect" name="typeSelect" dataitem="{{dish.typename}}" class="input-line" aria-label="Select dish type" required>
                     <option value="">Select Type</option>
                     {% for type in types %}
                         <option value="{{type.typeid}}">{{type.type}}</option>
@@ -68,4 +68,9 @@
             </div>
         </div>
     </form>
+{% endblock %}
+
+{% block scripts %}
+    {{parent()}}
+    <script src="resources/scripts/dishtypefill.js" async defer></script>
 {% endblock %}

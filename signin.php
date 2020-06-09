@@ -4,7 +4,7 @@
     session_start();
 
     //making sure access to this page was granted from the form
-    if(isset($_POST['login'])){
+    if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])){
         require_once 'dbwrapper.php';
         require_once 'resources/includes/validate.php';
         $db = new Db();

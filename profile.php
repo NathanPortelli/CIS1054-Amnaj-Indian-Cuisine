@@ -10,7 +10,7 @@
 	if (isset($_SESSION['id'])){
 		$validations = array();
 
-    	if (isset($_POST['submit'])){
+    	if (isset($_POST['submit']) && isset($_POST['new-name']) && isset($_POST['new-surname']) && isset($_POST['new-email']) && isset($_POST['passold']) && isset($_POST['passnew']) && isset($_POST['passconf'])){
 			$name = $_POST['new-name'];
 			$surname = $_POST['new-surname'];
 			$email = $_POST['new-email'];

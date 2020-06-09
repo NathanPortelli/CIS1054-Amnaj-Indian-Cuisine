@@ -7,7 +7,7 @@
     $formvalues = array();
     $val = new Validate();
 
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['subject']) && isset($_POST['email']) && isset($_POST['message'])){
         $name = $_POST['name'];
         $subject = $_POST['subject'];
         $email = $_POST['email'];

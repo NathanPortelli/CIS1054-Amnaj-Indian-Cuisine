@@ -20,6 +20,7 @@
                 $isAdded = false;
             }
         }
+
         //quotes dish id to prevent SQL injection
         $dishIDquoted = $db->quote($_GET['dish']);
 
@@ -44,11 +45,15 @@
             echo $twig->render('menudetails.html', ['result' => $result, 'resultallergy' => $resultallergy, 'isAdded' => $isAdded]);
         } else {
             header("Location: menu.php?error=invalidID");
+            exit;
         }
+    } else {
+        header("Location: menu.php?error=invalidID");
+        exit;
     }
 
     if(isset($_POST['favBtn'])){
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && isset($_POST['menuid'])){
             $favmenuID = $_POST['menuid'];
             $currUser = $_SESSION['id'];
 

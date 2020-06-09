@@ -24,7 +24,7 @@
                         <img class="allergyicons" src="{{allergy.allergyicon}}" alt="{{allergy.name}} Icon" title="{{allergy.name}}"> 
                     {% endfor %}
                 </div>
-                <form method="POST" action="menudetails.php">
+                <form method="POST" action="menudetails.php?dish={{row.id}}">
                     <input name="menuid" type="hidden" value="{{row.id}}">
                     {% if isAdded == true %}
                         <button name="favBtn" class="menudetails" type="submit" disabled>Add to Favourites</button>

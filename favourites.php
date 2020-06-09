@@ -14,8 +14,7 @@
         }
 
         $isEmpty = false;
-        //User is logged in and can access items in 'My Favourites'
-        //Load
+        //User is logged in and can access items in 'My Favourites', load
         $currUser = $db->quote($_SESSION['id']);
         
         if(isset($_POST['removeItem'])){
@@ -23,8 +22,7 @@
             $sql = $db->query("DELETE FROM favourites  WHERE dishID=".$favmenuID." AND userID=".$currUser."");
 
             if ($db->query($sql) === TRUE){  
-                //Failed to delete
-                //Display 404 page
+                //Failed to delete, display 404 page
                 echo $twig->render('404.html');
             }
         }
@@ -38,7 +36,6 @@
         //Display
         echo $twig->render('favourites.html', ['result' => $result, 'isEmpty' => $isEmpty, 'mailfail' => $errorMessage]);
     }else{
-        //User is not logged in and therefore cannot access items in 'My Favourites'
-        //Display 404 page
+        //User is not logged in and therefore cannot access items in 'My Favourites', display 404 page
         echo $twig->render('404.html');
     }
