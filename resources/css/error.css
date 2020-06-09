@@ -1,7 +1,11 @@
-*{
+.button, .errorpage, #buttonDiv{
     color:#000;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
+}
+
+#buttonDiv{
+    margin: 0 auto;
 }
 
 img.errorimage{

@@ -43,6 +43,7 @@ textarea.input-line{
     font-size: 30px; /*Sets the font size of the SUBMIT text*/
     background-color: #f2f4f5; /*Sets the background colour of the button*/
     border-radius: 5px; /*Rounds the corners of the button*/
+    cursor: pointer;
 }
 
 .form-button:hover{

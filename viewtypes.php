@@ -50,7 +50,7 @@
 
 					$sql = $db->query("DELETE FROM types WHERE typeid = ".$db->quote($type['id']));
 
-					header("Location: admin.php?success=true");
+					header("Location: viewtypes.php?success=true");
 					exit();
 				}
 			}else{

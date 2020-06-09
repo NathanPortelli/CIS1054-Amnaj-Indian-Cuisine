@@ -42,7 +42,7 @@
 					echo $twig->render("editmember.html",['member' => $member]);
 				}else if($isDelete === true){
 					$sql = $db->query("DELETE FROM team_details WHERE teamid = ".$db->quote($member['id']));
-					header("Location: admin.php?success=true");
+					header("Location: viewmembers.php?success=true");
 					exit();
 				}
 			}else{

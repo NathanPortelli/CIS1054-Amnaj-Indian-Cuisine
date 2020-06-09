@@ -50,7 +50,6 @@
 					header("Location: admin.php?success=true");
 					exit();
 				}
-
 			}else{
 				echo $twig->render("addtype.html");
 			}
