@@ -1,118 +1,135 @@
-#title{
-	font-size: 9rem;
-	padding-bottom: 15px;
-	text-align: center;
-	margin-bottom: 100px;
+/*Used by 'Amnaj Indian Cuisine' Title*/
+#title
+{	
+	padding-bottom: 15px; /*Generates 15px space from the bottom*/
+	margin-bottom: 100px; /*Creates 100px space under the text*/
 }
 
+/*Used by 'Welcome to' in Index*/
 #above-title{
-	padding-top: 20px;
-	font-size: 9rem;
-	text-align: center;
-	margin-top: 100px;
+	padding-top: 20px; /*Generates 20px space from the top*/
+	margin-top: 100px; /*Creates 100px space above the text*/
 }
 
+/*Used by 'Welcome to Amnaj Indian Cuiside'*/
+#title, #above-title
+{
+	font-size: 9rem; /*Sets size of text to 9rem*/
+	text-align: center; /*Centers the text in the middle of the screen*/
+	line-height: 100px; /*Sets height of the text line to 100px*/
+}
+
+/*Used by Welcome Title and Sub-Headers 'Our Story' and 'Our Promises'*/
 #title, #above-title, .text-title{
-	line-height: 60px;
-	font-family: 'Dancing Script', cursive;
-	position: relative;
-	color: #fff;
-	line-height: 100px;
-	text-shadow: 2px 2px #708090;
+	font-family: 'Dancing Script', cursive; /*Sets text font to 'Dancing Script'*/
+	position: relative; /*Positions the text relative to their normal position*/
+	color: #fff; /*Sets the text colour to White*/
+	text-shadow: 2px 2px #708090; /*Gives the text a gray shadow emanating 2px from actual text */
 }
 
+/*Used by Elephant Logo*/
 #logo-img{
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-  	width: 150px;
-  	height: 150px;
+	display: block; /*Displays logo as a block element, starts on a new line and takes the whole width*/
+  	margin-left: auto; /*Allows browser to calculate the margin from the left*/
+  	margin-right: auto; /*Allows browser to calculate the margin from the right*/
+  	width: 150px; /*Sets total width of Image to 150px*/
+  	height: 150px;/*Sets total height of Image to 150px*/
 }
 
 body{
-	background: url('../images/backgroundimg.webp');
-	background-color: #fe6b40;
-	background-size: 140rem;
+	background: url('../images/backgroundimg.webp'); /*Where the actual background image is located within directory*/
+	background-color: #fe6b40; /*Sets background colour in case image fails to load*/
+	background-size: 140rem; /*Specifies the size of the background image by 140rem*/
 }
 
+/*Used by Sub-Headers 'Our Story' and 'Our Promises'*/
 .text-title{
-	font-size: 3rem;
-	margin-left: 10px;
-	line-height: 10px;
-	padding-left: 0.5%;
+	font-size: 3rem; /*Sets size of text to 3rem*/
+	margin-left: 10px; /*Sets the margin to the left of the text to 10px*/
+	line-height: 20px; /*Sets height of the text line to 20px*/
+	padding-left: 0.5%; /*Generates 0.5% space to the left of the text from the side of the screen*/
 }
 
+/*Used by the text boxes used for the details of 'Our Story' and 'Our Promise' Sub-Headers*/
 .text-box{
-	font-family: 'PT Serif', serif;
-	font-size: 26px;
-	color: black;
-	position: relative;
-	padding-right: .5%;
-	padding-left: .5%;
-	text-align: justify;
-    background-color: #fff;
-    border: 20px solid #fff;
-	box-shadow: 0 0 5px 5px #fff;
-	margin-bottom: 100px;
-	line-height: 34px;
+	font-family: 'PT Serif', serif; /*Sets text font to 'PT Serif'*/
+	font-size: 26px; /*Sets size of text to 26px*/
+	color: black; /*Sets text colour to Black*/
+	position: relative; /*Positions the text box relatice to its normal position*/
+	padding-right: 0.5%; /*Generates 0.5% space to the right of the text from the side of the screen*/
+	padding-left: 0.5%; /*Generates 0.5% space to the left of the text from the side of the screen*/
+	text-align: justify; /*Justifies the text*/
+    background-color: #fff; /*Sets the background of the text box to white*/
+    border: 20px solid #fff; /*Generates a 20px size border around the text box coloured white*/
+	box-shadow: 0 0 5px 5px #fff; /*Creates a shadow effect around the text box coloured white with a 5px transition space*/
+	margin-bottom: 100px; /*Sets the margin to the bottom of the text box to 100px*/
+	line-height: 34px; /*Sets height of the text line to 34px*/
 }
 
+/*Used by the Modal which pops up on first access of Index Page*/
 .modal {
-	position: fixed;
-	z-index: 5;
-	margin-top: 30vh;
-	top: 0;
-	width: 100%;
-	overflow: auto;
+	position: fixed; /*Modal Box is fixed to the same position even if page is scrolled*/
+	z-index: 5; /*Ensures Modal Box is positioned on top of any item displayed in Index bu setting the stack orderto be 1 above the rest of the page*/
+	margin-top: 30vh; /*Sets margin to the top of the elements to 30vh*/
+	top: 0; /*Sets the vertical position of the elements with no margin or border*/
+	width: 100%; /*Sets total width of the Model to be 100% of the width of the div*/
+	overflow: auto; /*Ensures that if the overflow clips the screen, a scroll-bar is added to see the rest of the content*/
 }
   
 /* Modal Content */
 .modal-content {
-	background-color: #fe6b40;
-	margin: auto;
-	padding: 0px 20px;
-	border: 2px solid white;
-	width: 50%;
-	text-align: center;
-	font-family: 'PT Serif', serif;
-	font-size: 30px;
-	opacity: 95%;
+	background-color: #fe6b40; /*Sets the Background Colour to the Modal Box to Orange*/
+	margin: auto; /*Allows browser to calculate the margin*/
+	padding: 0px 20px; /*Creates a space around the Modal's content*/
+	border: 2px solid white; /*Generates a 2px size border around the text box coloured white*/
+	width: 50%; /*Sets the total width of the Model's contents to be 50% of the width of the Modal*/
+	text-align: center; /*Aligns text to the center of the Modal*/
+	font-family: 'PT Serif', serif; /*Sets text font to 'PT Serif'*/
+	font-size: 30px; /*Sets size of text to 30px*/
+	opacity: 95%; /*Reduces transparency of the Modal to 95%*/
 }
   
 /* The Close Button */
 .close {
-	color: white;
-	float: right;
-	font-size: 40px;
-	font-weight: bold;
+	color: white; /*Sets button colour to White*/
+	float: right; /*Moves button to the right hand side of the Modal*/
+	font-size: 40px; /*Sets size of the close button to 40px*/
+	font-weight: bold; /*Sets weight of the close button to be thick*/
 }
   
+/*Activates when the user hovers over or focuses on the close button*/
 .close:hover,
 .close:focus {
-	color: #000;
-	cursor: pointer;
+	color: #000; /*Changes the colours of the close button to Black*/
+	cursor: pointer; /*The cursor will change to a pointer icon*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1200px or less*/
 @media only screen and (max-width: 1200px){
+
+	/*Used by Welcome Title*/
 	#title, #above-title{
-		font-size: 4rem;
+		font-size: 4rem; /*Sets size of the close button to 4rem*/
 	}
 
+	/*Used by the text boxes used for the details of 'Our Story' and 'Our Promise' Sub-Headers*/
 	.text-title{
-		font-size: 2.5rem;
+		font-size: 2.5rem; /*Sets size of the close button to 2.5rem*/
 	}
 
+	/*Used by Welcome Title and Sub-Headers*/
 	#title, #above-title, .text-title{
-		line-height: 50px;
+		line-height: 50px; /*Sets height of the text line to 50px*/
 	}
 
 	.modal{
-		display: none;
+		display: none; /*Modal is not visible*/
 	}
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 2600px or more*/
 @media only screen and (min-width: 2600px){
   	#above-title{
-    	padding-top: 60px;
+    	padding-top: 60px; /*Generates 60px space from the top*/
   	}
 }

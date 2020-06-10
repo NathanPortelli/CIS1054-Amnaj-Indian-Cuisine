@@ -1,5 +1,5 @@
 select.input-line{
-    width: 97%;
+    width: 97%; /*Sets total width of content to 97% of the total screen width*/
 }
 
 .input-section{
@@ -58,19 +58,21 @@ p.forms, .error{
 .error{
     font-size: 25px; /*Sets the font size for the header*/
     letter-spacing: 0.5px; /*Spaces out the letters of the text*/
-    margin: 0;
+    margin: 0; /*Centers content in div*/
 }
 
 a.forms{
     color: #fe6b40; /*Sets color for any links used in forms*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 620px or less*/
 @media only screen and (max-width: 620px){
     .error{
-        font-size: 20px;
+        font-size: 20px; /*Sets size of text to 20px*/
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 450px or less*/
 @media only screen and (max-width: 450px){
     .input-section{
         width: 80%; /*Sets the width of the input section for small phones*/
@@ -81,16 +83,18 @@ a.forms{
     }
 
     select.input-line{
-        width: 100%;
+        width: 100%; /*Sets width of content to the entire length of the parent div*/
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1200px or less*/
 @media only screen and (min-width: 769px) and (max-width: 1200px){
     .input-section{
-        width: 60%;
+        width: 60%; /*Sets the width of the input section*/
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 768px or less*/
 @media only screen and (min-width: 451px) and (max-width: 768px){
     .input-section{
         width: 80%; /*Sets the width of the input section for tablets*/

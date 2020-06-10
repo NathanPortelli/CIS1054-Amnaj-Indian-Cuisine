@@ -1,121 +1,124 @@
 h2.favourites{
-    margin-bottom: 15px;
-    margin-top: 0px;
+    margin-bottom: 15px; /*Creates 15px space under the div*/
+    margin-top: 0px; /*Sets no space above the div*/
 }
 
 p.favourites{
-    margin-right: 20px;
-}
+    margin-right: 20px; /*Creates 20px space to the right of the div*/
+} 
 
 img.favourites{
-    height: 145px;
+    height: 145px; /*Sets the height of the image to 145px*/
     border: 1px solid #929292; /*Adds a border around the image*/
-    border-radius: 5px;
+    border-radius: 5px; /*Makes the corners of the input and button rounded*/
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
 }
 
 .dishlink{
-    color: inherit;
-    text-decoration: inherit;
+    color: inherit; /*Inherits colour from its parent*/
+    text-decoration: inherit; /*Inherits text decoration from parent*/
 }
 
 .favourites-container{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 100px auto;
+    display: flex; /*Displays as a block-level flex container*/
+    flex-direction: column; /*Texts are stacked as columns*/
+    width: 70%; /*Sets width to 70% of parent container*/
+    margin: 100px auto; /*Sets top margin to 100px and allows broswer to auto set the rest*/
 }
 
 .noItems{
-    text-align: center;
-    font-family: 'PT Serif', serif;
-    font-size: 25px;
+    text-align: center; /*Aligns the text in the Tooltip box as center*/
+    font-family: 'PT Serif', serif; /*Sets text font to 'PT Serif'*/
+    font-size: 25px; /*Sets text size to 25px*/
 }
 
 .favourites-entry{
-    display: flex;
-    align-items: center;
+    display: flex; /*Displays as a block-level flex container*/
+    align-items: center; /*Aligns the elements as center*/
     font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
 }
 
 .favourites-box{
-    cursor: pointer;
+    cursor: pointer; /*When the user hovers over the button, the cursor will change to a pointer icon*/
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
     border-radius: 5px; /*Makes corners of container rounded*/
     font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
     border: 1px solid #929292; /*Adds a border around the inputs*/
-    margin: 20px 0;
-    padding: 20px;
-    width: 90%;
-    margin-right: 15px;
+    margin: 20px 0; /*Creates a top margin around box by 20px and 0 among the rest*/
+    padding: 20px; /*Creates a space around the box's content*/
+    width: 90%; /*Sets width to 90% of parent container*/
+    margin-right: 15px; /*Creates 15px space to the right the div*/
 }
 
 .removeimage{
-    height: 15px;
-    width: 15px;
-    cursor: pointer;
+    height: 15px; /*Sets the total height of the Image to 15px*/
+    width: 15px; /*Sets total width of close to 15px*/
+    cursor: pointer; /*When the user hovers over the button, the cursor will change to a pointer icon*/
 }
 
 .removeBtn{
-    border: 0;
-    padding: 0;
-    background: #fff;
-    float: right;
+    border: 0; /*Removes any default border around button*/
+    padding: 0;  /*Removes any space around the button's content*/
+    background: #fff; /*Sets the background colour of the button as White*/
+    float: right; /*Floats the button to the right of div*/
 }
 
 .form-container{
-    margin: 0 auto;
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
-    align-items: center;
+    margin: 0 auto; /*Sets the element within the button as center, both from left to right and from top to bottom*/
+    width: 250px; /*Sets total width of container to 250px*/
+    display: flex; /*Displays as a block-level flex container*/
+    flex-direction: column; /*Texts are stacked as columns*/
+    margin-bottom: 100px; /*Creates 100px space under the div*/
+    align-items: center; /*Aligns the elements as center*/
 }
 
 .form-element{
-    font-family: 'PT Serif', serif; /*Sets fonts for the text inside the input and button*/
+    font-family: 'PT Serif', serif; /*Sets fonts for the text inside the input and button as 'PT Serif'*/
     font-size: 25px; /*Sets the font size of text inside the input and button*/
-    width: 100%;
+    width: 100%; /*Sets width to 100% of parent container*/
     border: 1px solid #929292; /*Adds a border around the inputs*/
     border-radius: 5px; /*Makes the corners of the input and button rounded*/
     padding: 5px; /*Adds some spacing around the text inside the input*/
     background-color: #f2f4f5; /*Sets background colour of inputs*/
-    margin-bottom: 10px;
+    margin-bottom: 10px; /*Creates 10px space under the div*/
 }
 
 .error{
     font-size: 25px; /*Sets the font size for the header*/
     letter-spacing: 0.5px; /*Spaces out the letters of the error*/
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
+    margin: 0; /*Centers content in div*/
+    font-family: 'Open Sans', sans-serif; /*Sets text font to 'Open Sans'*/
+    text-align: center; /*Aligns the text of the error*/
     color: #ed2939; /*Sets font color for error message*/
 }
 
+/*Activates when user hovers over Button*/
 button.form-element:hover{
     background-color: #dddedf; /*Sets the colour of the button when the user is hovering over it*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1200px or less*/
 @media only screen and (max-width: 1200px){
     .favourites-container{
-        width: 90%;
+        width: 90%; /*Sets width to 90% of parent container*/
     }
 
     .favourites-box{
-        font-size: 16px;
+        font-size: 16px; /*Sets text size to 16px*/
     }
 
     h2.favourites{
-        font-size: 20px;
+        font-size: 20px; /*Sets text size to 20px*/
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 320px or less*/
 @media only screen and (max-width: 320px){
     .favourites-box{
-        font-size: 16px;
+        font-size: 16px; /*Sets text size to 16px*/
     }
 
     h2.favourites{
-        font-size: 20px;
+        font-size: 20px; /*Sets text size to 20px*/
     }
 }

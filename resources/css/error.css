@@ -1,53 +1,65 @@
+/*Used by all elements in the Page, including header, paragraphs and button*/
 .errorpage, #buttonDiv{
-    color:#000;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
+    color:#000; /*Sets colour of the text to Black*/
+    font-family: 'Open Sans', sans-serif; /*Sets text font to 'Open Sans'*/
+    text-align: center; /*Aligns any text to the center of the page or div*/
 }
 
 #buttonDiv{
-    margin: 0 auto;
+    margin: 0 auto; /*Sets the element within the button as center, both from left to right and from top to bottom*/
 }
 
+/*Used by the Cat Image*/
 img.errorimage{
-    width: 35%;
-    display: block;
-    margin: 0 auto;
-    border-radius: 20px;
-    margin-bottom: 30px;
+    width: 35%; /*Sets width of image as 35% of the total width of the screen*/
+    display: block; /*Displays image as a block*/
+    margin: 0 auto; /*Sets the element within the button as center, both from left to right and from top to bottom*/
+    border-radius: 20px; /*Changes the corners of the image to a quadrant and sets the radius of the quadrant*/
+    margin-bottom: 40px; /*Sets the bottom margin of the image to 40px*/
 }
 
+/*Used by the Button*/
 button.errorpage {
-    background-color: #fe6b40;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 30px;
-    margin: 4px 2px;
-    cursor: pointer;
-    margin-bottom: 30px;
+    background-color: #fe6b40; /*Sets the button's background colour to Orange*/
+    border: none; /*Removes any border the default button would have*/
+    color: white; /*Sets the text of the button to white*/
+    padding: 15px 32px; /*Creates a space around the button's content*/
+    font-size: 30px; /*Sets the size of the text to 30px*/
+    margin: 4px 2px; /*Sets the margin of the button by 4px from top and 2px from right*/
+    cursor: pointer; /*When the user hovers over the button, the cursor will change to a pointer icon*/
+    margin-bottom: 70px; /*Sets the bottom margin of the button to 70px*/
 }
 
+/*Activated whenever the user hovers the cursor over the button*/
 button.errorpage:hover{
-    background-color: #e64616;
+    background-color: #e64616; /*Changes the button's background colour to a darker shade of Orange*/
 }
 
+/*Used by Header of the Page*/
 h1.errorpage{
-    margin-bottom: 50px;
-    margin-top: 50px;
-    font-size: 46px;
+    margin-bottom: 50px; /*Sets the bottom margin of the Header by 50px*/
+    margin-top: 50px; /*Sets the top margin of the Header by 50px*/
+    font-size: 46px; /*Sets the size of the text to 46px*/
 }
 
+
+/*Used by the Paragraph*/
 p.errorpage{
-    font-size: 30px;
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    text-align: justify;
+    font-size: 30px; /*Sets the size of the text to 30px*/
+    width: 60%; /*Sets width of paragraph as 60% of the total width of the screen*/
+    margin: 0 auto; /*Sets the element within the button as center, both from left to right and from top to bottom*/
+    margin-bottom: 50px; /*Sets the bottom margin of the button to 50px*/
+    text-align: justify; /*Sets text alignment to justified*/
 }
 
+/*Runs only when total width of the screen is 1200px or less*/
 @media only screen and (max-width: 1200px){
+    /*Used by the Paragraph*/
     p.errorpage{
-        width: 90%;
+        width: 90%; /*Readjusts the width of the paragraph from 60% of the total width of the user's screen to 90%*/
+    }
+
+    img.errorimage{
+        width: 80%; /*Sets width of image as 80% of the total width of the screen*/
     }
 }

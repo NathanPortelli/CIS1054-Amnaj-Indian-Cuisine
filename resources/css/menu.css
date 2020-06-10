@@ -1,137 +1,155 @@
+/*Used for slide-in animation of the Menu Items*/
 @keyframes slidein {
+    /*Starts at*/
     from {
-        margin-left: 100%;
-        width: 300%; 
+        margin-left: 100%; /*Sets the items 100% away from the left hand side of the screen, essentially off-screen*/
     }
 
+    /*Ends up at*/
     to {
-        margin-left: 0%;
+        margin-left: 0%; /*Sets the items 0% away from the left hand side of the screen, essentially bringing the items into view*/
         width: 100%;
     }
 }
 
+/*Used by Pop-Up tooltip that shows when user hovers over the Menu Icons*/
 .tooltip {
-    position: relative;
-    display: inline-block;
+    position: relative; /*Tooltip positioned relative to its normal position*/
+    display: inline-block; /*Dispkay as an inline-level block container*/
 }
-  
+ 
+/*Used by tooltip and its text*/
 .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color:  #fe6b40;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 130%;
-    left: 50%;
-    margin-left: -60px;
-    font-family: 'Ubuntu', sans-serif;
+    visibility: hidden; /*Tooltip is initially invisible until user hovers over Menu Icon*/
+    width: 120px; /*Sets total width of the tooltip to 120px*/
+    background-color:  #fe6b40; /*Sets Background Colour of the Tooltip Box to Orange*/
+    font-weight: bold; /*Sets weight of characters to be thick*/
+    color: #fff; /*Sets text colour as white*/
+    text-align: center; /*Aligns the text in the Tooltip box as center*/
+    padding: 5px 0; /*Generates 5px space around the tooltip content*/
+    position: absolute; /*Sets the tooltip to be positioned relative to its parent*/
+    z-index: 1; /*Specifies that the stack order of the tooltip should be 1 above the rest of the page*/
+    bottom: 130%; /*Sets tooltip 130% above Icons*/
+    left: 50%; /*Sets tooltip 50% from left div*/
+    margin-left: -60px; /*Sets tooltip 60px closer to left margin*/
+    font-family: 'Ubuntu', sans-serif; /*Sets text font to 'Ubuntu'*/
 }
-  
+
+/*Used by arrow under tooltip box*/
 .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
+    content: ""; /*Empty Content*/
+    position: absolute; /*Positioned relative to its parent*/
+    top: 100%; /*Places it 100% above Icons*/
+    left: 50%; /*Sets arrow 50% from left div*/
+    margin-left: -5px; /*Set arrow 5px closer to left margin*/
+    border-width: 5px; /*Sets total border width of the array to 5px*/
     border-style: solid;
     border-color:  #fe6b40 transparent transparent transparent;
 }
-  
+
+/*Activates when user hovers over Menu Icons*/
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    visibility: visible; /*Makes tooltip and its text visible*/
 }
 
+/*Used by Menu Icon div*/
 .menu-cat{
-    display: flex; 
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    margin-top: 75px;
-    margin-bottom: 100px;
-    width: 50%;
-    flex-wrap: wrap;
+    display: flex; /*Displays as a block-level flex container*/
+    margin: 0 auto; /*Sets the element within the button as center, both from left to right and from top to bottom*/
+    align-items: center; /*Aligns the elements of the hamburger as center*/
+    justify-content: center; /*Centers the elements on the main axis*/
+    margin-top: 75px; /*Sets margin to the top of the elements to 75px*/
+    margin-bottom: 100px; /*Sets margin to the bottom of the elements to 100px*/
+    width: 50%; /*Sets total width of Menu Icon div to 50% of the total screen*/
+    flex-wrap: wrap; /*Breaks the icons into multiple lines if the list no longer fits within the screen*/
 }
 
+/*Used by Menu Icon Images*/
 .menuicons{
-    position: relative;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
+    position: relative; /*Icons positioned relative to its normal position*/
+    width: 100px; /*Sets total width of Images to 100px*/
+    height: 100px; /*Sets total height of images to 100px*/
+    cursor: pointer; /*When the user hovers over, the cursor will change to a pointer icon*/
 }
 
+/*Activated when the user hovers over the Menu Icons*/
 .menuicons:hover{
-    z-index: 1;
-    transition-duration: 0.4s;
-    transform: scale(1.5); 
+    z-index: 1; /*Specifies that the stack order of the tooltip should be 1 above the rest of the page*/
+    transition-duration: 0.4s; /*The amount of time the transition takes to be performed*/
+    transform: scale(1.5);  /*Enlarges the Menu Icons by 1.5*/
 }
 
+/*Div for Menu Items*/
 .entry-list{
-    animation-duration: 1s;
-    animation-name: slidein;
-    display: flex;
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    animation-duration: 1s; /*Duration of slide-in animation*/
+    animation-name: slidein; /*Calls slide-in animation*/
+    display: flex; /*Displays as a block-level flex container*/
+    width: 80%; /*Sets width of div to 80% of the total screen size*/
+    margin: 0 auto; /*Sets the element within the button as center, both from left to right and from top to bottom*/
+    margin-bottom: 100px; /*Sets margin to the bottom of the elements to 100px*/
+    flex-wrap: wrap; /*Breaks the icons into multiple lines if the list no longer fits within the screen*/
+    justify-content: space-around; /*Item positioned with space before and after lines*/
+    align-items: center; /*Aligns the elements of the hamburger as center*/
 }
 
+/*Menu Item Card Block*/
 .blockitem{
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
     border: 1px solid #929292; /*Adds a border around the inputs*/
-    border-radius: 5px;
-    width: 280px;
-    margin-bottom: 30px;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+    border-radius: 5px; /*Changes the corners of the image to a quadrant and sets the radius of the quadrant*/
+    width: 280px; /*Sets total width of the Menu Items to 280px*/
+    margin-bottom: 30px; /*Sets margin to the bottom of the elements to 100px*/
+    justify-content: space-around; /*Item positioned with space before and after lines*/
+    text-align: center; /*Aligns the text in the Tooltip box as center*/
+    align-items: center; /*Aligns the elements of the hamburger as center*/
+    display: flex; /*Displays as a block-level flex container*/
+    flex-direction: column; /*Lists items as a column*/
+    padding: 20px; /*Generates 20px space around the menu item*/
 }
 
+/*Activates when the user hovers over the Menu Item block*/
 .blockitem:hover{
-    transform: scale(1.05);
-    cursor: pointer;
+    transform: scale(1.05); /*Enlarges the Menu Item by 1.05*/
+    cursor: pointer; /*When the user hovers over, the cursor will change to a pointer icon*/
 }
 
+/*Activates when the user click on the Menu Item block*/
 .blockitem:active{
-    position: relative;
-    top: 3px;
+    position: relative; /*Tooltip positioned relative to its normal position*/
+    top: 3px; /*Moves the Block by 3px*/
 }
 
+/*Used by Menu Image*/
 .dishimg{
-    width: 250px;
-    border-radius: 5px;
-    margin-top: 30px;
+    width: 250px; /*Sets the total width of the Image by 250px*/
+    border-radius: 5px; /*Changes the corners of the image to a quadrant and sets the radius of the quadrant*/
+    margin-top: 30px; /*Sets margin to the top of the elements to 30px*/
 }
 
+/*Used by Dish Name, Dish Price and Dish Allergy Details*/
 .dishname, .dishprice, .dishallergies{
-    font-family: 'PT Serif', serif;
-    font-size: 26px;
-    margin: 0;
-    height: 72px;
-    vertical-align: middle;
+    font-family: 'PT Serif', serif; /*Sets text font to 'PT Serif'*/
+    font-size: 26px; /*Sets size of text to 26px*/
+    margin: 0; /*Centers content in div*/
+    height: 72px; /*Sets height of text block*/
+    vertical-align: middle; /*Content is placed in the middle of the parent element*/
 }
 
+/*Used by Dish Price Detail*/
 .dishprice{
-    margin-top: 20px;
-    height: auto;
+    margin-top: 20px; /*Sets margin to the top of the elements to 75px*/
+    height: auto; /*Allows broswer to automatically assign height of Image based on set width*/
 }
 
+/*Used by Dish Allergy Details*/
 .dishallergies{
-    font-size: 16px;
-    height: auto;
+    font-size: 16px; /*Sets size of text to 16px*/
+    height: auto; /*Allows broswer to automatically assign height of Image based on set width*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1800px or less*/
 @media only screen and (max-width: 1080px){
     .menu-cat{
-        width: 90%;
+        width: 90%; /*Sets total width of the Menu Icon div to 90% of the total screen width*/
     }   
 }

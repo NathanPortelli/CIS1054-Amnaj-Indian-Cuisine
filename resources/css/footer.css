@@ -50,7 +50,7 @@ table.footer, #location{
 }
 
 #footer-row{
-    display: table-row;
+    display: table-row; /*Allows the footer rows to behave like a <tr> element*/
 }
 
 #footer-logo{
@@ -65,6 +65,7 @@ table.footer, #location{
     padding-right: 10px; /*Creates some space between opening hours table columns*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1200px or more*/
 @media only screen and (max-width: 1200px){
     .footer-section{
         display: block; /*Allows footer sections to be display under each other on smaller screens*/
@@ -73,10 +74,9 @@ table.footer, #location{
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 320px or less*/
 @media only screen and (max-width: 320px){
     .footer-section{
         width: 96%;
     }
-
-    /*Above rule makes sure footer displays well on very small screens*/
 }

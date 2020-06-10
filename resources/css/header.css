@@ -1,150 +1,147 @@
 nav ul li {
     list-style-type: none; /*Ensures the list-item bullets are not shown*/
     font-family: 'Ubuntu', sans-serif; /*Sets font of the element as sans-serif from 'Ubuntu'*/
-    font-weight: bold; 
+    font-weight: bold; /*Sets weight of characters to be thick*/
 }
 
 .main-title{
-    text-align: center;
-    font-family: 'PT Serif', serif;
-    font-size: 46px;
+    text-align: center; /*Centers text to the middle of the screen*/
+    font-family: 'PT Serif', serif; /*Sets font of the element as serif from 'PT Serif'*/
+    font-size: 46px; /*Sets size of text to 46px*/
     margin-top: 100px; /*Moves the header down on larger screens because of the header*/
+}
+
+.menu-wrap a {
+    text-decoration: none; /*Removes any decoration added by default on links*/
+    color: #fff; /*Sets text colour to white*/
+    display: block; /*Displays element as a block element [starts on a new line and takes the whole width]*/
 }
 
 /*Changes the Style of a contents when user is hovering mouse over item*/
 .menu-wrap a:hover {
-    background-color: #fff;
-    color: #fe6b40;
-}
-
-.menu-wrap a {
-    text-decoration: none;
-    color: #fff;
-    display: block; /*Displays element as a block element [starts on a new line and takes the whole width]*/
+    background-color: #fff; /*Changes the text colour to White*/
+    color: #fe6b40; /*Changes the background colour to Orange*/
 }
 
 .menu-wrap, nav{
-    background-color: #fe6b40; /*Sets Header's background colour*/
+    background-color: #fe6b40; /*Sets Header's background colour to Orange*/
     z-index: 1; /*Ensures header remains on top of elements*/
 }
 
 body{
-    margin: 0;
+    margin: 0; /*Removes any margin from body class elements*/
 }
 
 /*The CSS Style enclosed within this @media only applies when screen resolution is 1079px or less*/
 @media only screen and (max-width: 1079px) {
     .menu-wrap {
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        height: 59px;
-        top: 0;
+        position: fixed; /*Menu is fixed to the same position even if page is scrolled*/
+        z-index: 1; /*Specifies that the stack order of the Menu should be 1 above the rest of the page, ensures Menu is always visible*/
+        width: 100%; /*Sets width of Menu as the entire width of the screen*/
+        height: 59px;/*Sets the height of the Menu as 59px*/
+        top: 0; /*Sets the vertical position of the Menu to be on top of page with no margin or border*/
     }
     
+    /*Used by Checkbox*/
     .menu-wrap .toggler {
-        position: absolute;
-        z-index: 2;
-        cursor: pointer;
-        width: 70px;
-        height: 50px;
-        opacity: 0;
+        position: absolute; /*Sets the toggler to be positioned relative to its parent Menu*/
+        z-index: 2; /*Specifies that the stack order of the Toggler should be 2 above the rest of the page, ensures Menu is always visible*/
+        cursor: pointer; /*When the user hovers over, the cursor will change to a pointer icon*/
+        width: 70px; /*Sets the width of the toggler to 70px*/
+        height: 50px;/*Sets the height of the toggler to 50px*/
+        opacity: 0; /*Makes toggler [the actual checkbox] transparent*/
     }
     
+    /*Used by the Hamburger Menu Icon [3 vertical lines]*/
     .menu-wrap .hamburger {
-        position: absolute;
-        z-index: 1;
-        width: 60px;
-        height: 60px;
-        padding-left: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: absolute; /*Sets the toggler to be positioned relative its parent Menu*/
+        z-index: 1; /*Specifies that the stack order of the Icon should be 1 above the rest of the page, but under the toggler*/
+        width: 60px; /*Sets the width of the icon to 60px*/
+        height: 60px; /*Sets the height of the icon to 60px*/
+        padding-left: 5px; /*Generates 5px space to the left of the hamburger from the side of the screen*/
+        display: flex; /*Displays the hamburger as a block-level flex container*/
+        align-items: center; /*Aligns the elements of the hamburger as center*/
+        justify-content: center; /*Centers the elements on the main axis*/
     }
     
     /* Hamburger Line */
     .menu-wrap .hamburger > div {
-        position: relative;
-        flex: none;
-        width: 80%;
-        height: 4px; /*thickness of middle line of the hamburger*/
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s ease;
+        position: relative; /*Positions the Hamburger Lines relative to their normal position*/
+        flex: none; /*Flex Lines according to width and height of the div without shrinking when the display is changed*/
+        width: 80%; /*Sets width of the Lines 80% of the div*/
+        height: 4px; /*Thickness of middle line of the hamburger*/
+        background: #fff; /*Sets the colour of the lines to white*/
+        display: flex; /*Displays the hamburger lines as a block-level flex container*/
+        align-items: center; /*Aligns the elements of the hamburger lines as center*/
+        justify-content: center; /*Centers the elements on the main axis*/
+        transition: all 0.4s ease; /*Changes hamburger lines smoothly, with 0.4 seconds given for transition to end*/
     }
     
     /* Hamburger Lines - Top & Bottom */
     .menu-wrap .hamburger > div::before,
     .menu-wrap .hamburger > div::after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -12px;
-        width: 100%;
-        height: 4px; /*thickness of the top and bottom line of the hamburger*/
-        background: inherit;
+        content: ''; /*Empty Content*/
+        position: absolute; /*Sets the lines to be positioned relative its parent Menu*/
+        z-index: 1; /*Specifies that the stack order of the lines should be 1 above the rest of the page*/
+        top: -12px; /*Places the lines 12px above the 'middle' line*/
+        width: 100%; /*Sets the width to 100% of the parent*/
+        height: 4px; /*Thickness of the top and bottom line of the hamburger*/
+        background: inherit; /*Inherits Background Details from parent*/
     }
     
     /* Moves Line Down */
     .menu-wrap .hamburger > div::after {
-        top: 12px;
+        top: 12px; /*Places 'after' line 12px under the 'middle' line*/
     }
     
     /* Toggler Animation */
     .menu-wrap .toggler:checked + .hamburger > div {
-        transform: rotate(225deg) rotateY(360deg);
+        transform: rotate(225deg) rotateY(360deg); /*Rotates lines by x-axis 225 degrees and y-axes 360 degrees*/
     }
 
-    /* Turns Lines Into X */
+    /* Animation - Turns Lines Into X */ 
     .menu-wrap .toggler:checked + .hamburger > div:before,
     .menu-wrap .toggler:checked + .hamburger > div:after {
         top: 0;
-        transform: rotate(90deg);
+        transform: rotate(90deg); /*Rotates lines by 90 degrees*/
     }
 
     /* Show Menu */
     .menu-wrap .toggler:checked ~ .background .menu {
-        visibility: visible;
+        visibility: visible; /*Makes Menu visible when the Checkbox is checked by user*/
     }
     
     .menu-wrap .menu {
-        height: 100%; /*SideBar keeps going down till end of screen*/
-        width: 200px; /*SideNav is "hidden", therefore it has no width*/
+        height: 100%; /*Menu keeps going down till end of screen*/
+        width: 200px; /*Sets width to 200px from screen*/
         position: fixed; /*Positioned relative to viewport [stays in the same position no matter if user scrolls]*/
         overflow: auto; /*A scrollbar is provided if the sideNav doesn't fit completely in the screen*/
         padding-top: 40px; /*Space between sideNav contents and top border*/
-        display: inline-block;
-        visibility: hidden;
-        align-items: center;
-        justify-content: center;
+        display: inline-block; /*Displays Menu in the inline-level block container*/
+        visibility: hidden; /*Menu is hidden until checkbox is activated*/
+        align-items: center; /*Aligns elements within the Menu to Center*/
+        justify-content: center; /*Centers the elements on the main axis*/
     }
 
     .menu-wrap .background
     {
-        visibility: hidden;
+        visibility: hidden; /*Menu is hidden until checkbox is activated*/
         background-color: #fe6b40; /*Sets Header's background colour*/
         height: 100%; /*SideBar keeps going down till end of screen*/
-        width: 250px;
+        width: 250px;/*Sets width to 250px from screen*/
         position: fixed; /*Positioned relative to viewport [stays in the same position no matter if user scrolls]*/
         overflow: auto; /*A scrollbar is provided if the sideNav doesn't fit completely in the screen*/
         padding-top: 20px; /*Space between sideNav contents and top border*/
     }
 
-    /* Show Background */
+    /* When Checkbox is checked */
     .menu-wrap .toggler:checked ~ .background {
-        visibility: visible;
-    }
-    
-    .menu-wrap .toggler:checked ~ .background{
-        opacity: 1;
-        transition:  opacity 0.4s ease 0.4s;
+        visibility: visible; /*Show Background*/
     }
 
     .menu-wrap a{
         padding: 8px 8px 20px 32px; /*Set padding for the block element*/
-        font-size: 25px;
+        font-size: 25px; /*Sets size of text to 25px*/
     }
 }
 
@@ -159,7 +156,7 @@ body{
     
     nav ul {
         padding: 0; /*Removes stock ul padding and margin*/
-        margin: 0;
+        margin: 0; /*Removes any margin from nav ul class elements*/
     }
 
     nav ul li {
@@ -167,7 +164,7 @@ body{
     }
 
     nav ul li a {
-        padding: 1.05em 1.8em;
+        padding: 1.05em 1.8em; /*Generates 5px space to the left of the hamburger from the side of the screen*/
     }
    
     li.login {
@@ -175,9 +172,10 @@ body{
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 2600px or more*/
 @media only screen and (min-width: 2600px) {
     nav {
-        font-size: 36px; /*Increases nav size on larger screens*/
+        font-size: 36px; /*Increases font size on larger screens*/
     }
 
     .main-title{

@@ -1,21 +1,21 @@
 .view-entry{
-    display: flex;
-    align-items: center;
+    display: flex; /*Displays as a block-level flex container*/
+    align-items: center; /*Aligns the elements as center*/
     font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
-    width: 75%;
+    width: 75%; /*Sets total width to 75% of parent*/
 }
 
 .wrap{
-    margin-bottom: 100px;
+    margin-bottom: 100px; /*Creates 100px space under the div*/
 }
 
 .view-container{
-    display: flex;
-    width: 70%;
-    margin: 0 auto;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    display: flex; /*Displays as a block-level flex container*/
+    width: 70%; /*Sets total width to 70% of parent*/
+    margin: 0 auto; /*Sets the elements as center, both from left to right and from top to bottom*/
+    align-items: center; /*Aligns the elements as center*/
+    flex-direction: column; /*Texts are stacked as columns*/
+    justify-content: center; /*Centers the content of the div*/
 }
 
 .view-box{
@@ -23,37 +23,37 @@
     border-radius: 5px; /*Makes corners of container rounded*/
     font-family: 'PT Serif', serif; /*Sets fonts for the placeholder text inside inputs*/
     border: 1px solid #929292; /*Adds a border around the inputs*/
-    margin: 20px 0;
-    padding: 20px;
-    width: 90%;
-    margin-right: 15px;
-    text-align: center;
+    margin: 20px 0; /*Sets the elements as center, both from left to right and from bottom, but adds 20px from top*/
+    padding: 20px; /*Creates a space around the content*/
+    width: 90%; /*Sets total width to 90% of parent*/
+    margin-right: 15px; /*Creates 15px space to the right of the div*/
+    text-align: center; /*Aligns text to the center of the box*/
 }
 
 img.view{
-    height: 190px;
+    height: 190px; /*Sets the height of the Image to 190px*/
     border: 1px solid #929292; /*Adds a border around the image*/
-    border-radius: 5px;
+    border-radius: 5px; /*Makes corners of container rounded*/
     box-shadow: 0 2px 6px rgba(0,0,0,.2); /*Adds a shadow around the whole container*/
 }
 
 .view-button{
-    margin: 10px;
-    width: 200px;
-    height: 50px;
-    background-color: #fe6b40;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
+    margin: 10px; 
+    width: 200px; /*Sets total width to 200px*/
+    height: 50px; /*Sets the height of the Image to 50px*/
+    background-color: #fe6b40; /*Sets the background colour of the button as Orange*/
+    border: none; /*Removes any default border from the button*/
+    color: #fff; /*Sets the text colour as White*/
+    padding: 10px; /*Creates a space around the content*/
+    text-align: center; /*Aligns text to the center of the button*/
+    font-size: 20px; /*Sets size of text to 20px*/
+    cursor: pointer; /*When the user hovers over the button, the cursor will change to a pointer icon*/
+    font-family: 'Open Sans', sans-serif; /*Sets text font to 'Open Sans'*/
+    font-weight: bold; /*Sets weight of the close button to be thick*/
 }
 
 p.view, h2.view{
-    font-size: 25px;
+    font-size: 25px; /*Sets size of text to 25px*/
 }
 
 p.view{
@@ -61,64 +61,67 @@ p.view{
 }
 
 h2.view{
-    margin-bottom: 15px;
-    margin-top: 0px;
+    margin-bottom: 15px; /*Creates 15px space under the div*/
+    margin-top: 0px; /*Removes any space above the div*/
 }
 
 .view-button:hover{
-    background-color: #e64616;
+    background-color: #e64616; /*Sets the background colour of the button as Orange*/
 }
 
 p.title{
-	font-size: 30px;
-	font-family: 'PT Serif', serif;
-    font-weight: bold;
-    margin-top: 0;
+	font-size: 30px; /*Sets size of text to 30px*/
+	font-family: 'PT Serif', serif; /*Sets text font to 'PT Serif'*/
+    font-weight: bold; /*Sets weight of the close button to be thick*/
+    margin-top: 0; /*Removes any space above the div*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1200px or less*/
 @media only screen and (max-width: 1200px){
     .view-container{
-        width: 90%;
+        width: 90%; /*Sets total width to 90% of parent*/
     }
 
     .view-button{
-        width: 150px;
-        height: 40px;
-        font-size: 15px;
+        width: 150px; /*Sets total width to 150px*/
+        height: 40px; /*Sets the height of the Image to 40px*/
+        font-size: 15px; /*Sets size of text to 15px*/
     }
 
     .view-entry{
-        width: 100%;
+        width: 100%; /*Sets total width to 100% of parent*/
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 620px or less*/
 @media only screen and (max-width: 620px){
     h2.view, p.view{
-        font-size: 20px;
+        font-size: 20px; /*Sets size of text to 20px*/
     }
 
     .view-box{
-        padding: 10px;
+        padding: 10px; /*Creates a space around the content*/
     }
 
     img.view{
-        height: 150px;
+        height: 150px; /*Sets the height of the Image to 150px*/
     }
 
     .view-button{
-        width: 85%;
-        height: 40px;
-        font-size: 12px;
+        width: 85%; /*Sets total width to 85% of parent*/
+        height: 40px; /*Sets the height of the Image to 40px*/
+        font-size: 12px; /*Sets size of text to 12px*/
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 320px or less*/
 @media only screen and (max-width: 320px){
     img.view{
-        height: 130px;
+        height: 130px; /*Sets the height of the Image to 130px*/
     }
 
     .view-button{
-        font-size: 10px;
+        font-size: 10px; /*Sets size of text to 10px*/
     }
 }
 

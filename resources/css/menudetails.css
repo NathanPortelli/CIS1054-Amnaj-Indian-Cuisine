@@ -1,86 +1,95 @@
 .main-div{
-    width: 80%;
-    margin: 0 auto;
+    width: 80%; /*Sets width of contents to not exceed 80% of the total width of the screen*/
+    margin: 0 auto; /*Sets the element within the button as center, both from left to right and from top to bottom*/
 }
 
+/*Used by Buttons*/
 button.menudetails{
-    background-color: #fe6b40;
-    border: none;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
-    margin-bottom: 35px;
-    margin-top: 25px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    width: 275px;
+    background-color: #fe6b40; /*Sets the button's background colour to Orange*/
+    border: none; /*Removes any border the default button would have*/
+    color: #fff; /*Sets the text of the button to white*/
+    padding: 20px; /*Creates a space around the button's content*/
+    text-align: center; /*Centers the text withing the Button*/
+    font-size: 25px; /*Sets the size of the text to 30px*/
+    cursor: pointer; /*When the user hovers over the button, the cursor will change to a pointer icon*/
+    margin-bottom: 35px; /*Sets the bottom margin of the button to 35px*/
+    margin-top: 25px; /*Sets the top margin of the button to 25px*/
+    font-family: 'Open Sans', sans-serif; /*Sets text font to 'Open Sans'*/
+    font-weight: bold; /*Sets weight of the close button to be thick*/
+    width: 275px; /*Sets width of Button to 275px*/
 }
 
+/*Activates when user hovers the cursor over the button*/
 button.menudetails:hover{
-    background-color: #e64616;
+    background-color: #e64616; /*Changes the button's background colour to a darker shade of Orange*/
 }
 
+/*Activates when the button is set to 'Disabled'*/
 button.menudetails:disabled{
-    background-color: grey;
-    color: black;
-    cursor: default;
+    background-color: grey; /*Changes the button's background colour to a gray*/
+    color: black; /*Changes the text colour to black*/
+    cursor: default; /*Cursor does not change to pointer icon when hovering over the button*/
 }
 
+/*Used by the 'Return to Menu' button*/
 button.returnbutton{
-    margin-top: 0px;
+    margin-top: 0px; /*Sets the top margin of the button to 0*/
 }
 
+/*Used by 'paragraph' text*/
 p.menudetails{
-    font-family: 'PT Serif', serif;
-    font-size: 20px;
-    line-height: 25px;
-    width: 100%;
+    font-family: 'PT Serif', serif; /*Sets text font to 'PT Serif'*/
+    font-size: 20px; /*Sets the size of the text to 20px*/ 
+    line-height: 25px; /*Sets height of the text line to 25px*/
+    width: 100%; /*Sets width of text to 100% of the div*/
 }
 
+/*Used by Menu Image*/
 img.menudetails{
-    margin-top: 30px;
-    border-radius: 10px;
-    height: 250px;
-    margin-bottom: 30px;
+    margin-top: 30px; /*Sets the top margin of the button to 30px*/
+    border-radius: 10px; /*Changes the corners of the image to a quadrant and sets the radius of the quadrant to 10px*/
+    height: 250px; /*Sets height of image to 250px*/
+    margin-bottom: 30px; /*Sets the bottom margin of the button to 30px*/
 }
 
+/*Used by div container containing Menu Details, Image, Allergy Icons and Buttons*/
 .details-container{
-    margin: 0 auto;
-    display: flex;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin: 0 auto; /*Sets the elements as center, both from left to right and from top to bottom*/
+    display: flex; /*Displays as a block-level flex container*/
+    width: 90%; /*Sets width of text to 90% of the details-container*/
+    justify-content: center; /*Centers the content of the div*/
+    align-items: center;  /*Aligns the elements as center*/
+    flex-direction: column; /*Texts are stacked as columns*/
 }
 
+/*Used by Allergy Icons Section*/
 .allergy-div{
-    display: flex; 
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    width: 50%;
-    flex-wrap: wrap;
+    display: flex; /*Displays as a block-level flex container*/
+    justify-content: center; /*Centers the content of the div*/
+    margin-bottom: 30px; /*Sets the bottom margin of the button to 30px*/
+    width: 50%; /*Sets width of text to 50% of the div*/
+    flex-wrap: wrap; /*Breaks the icons into multiple lines if the list no longer fits within the screen*/
 }
 
+/*Used by the Allergy Icons*/
 .allergyicons{
-    width: 50px;
-    height: 50px;
+    width: 50px; /*Sets width of the image to 50px*/
+    height: 50px; /*Sets height of the image to 50px*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 1200px or less*/
 @media only screen and (max-width: 1200px){
     .middle-div{
         width: 90%;
     }
 
+    /*Used by Buttons*/
     button.menudetails{
-        margin-bottom: 25px;
+        margin-bottom: 25px; /*Sets the bottom margin of the button to 25px*/
     }
 
+    /*Used by the 'Return to Menu' button*/
     button.returnbutton{
-        margin-bottom: 50px;
-        margin-top: 0px;
+        margin-bottom: 50px; /*Sets the bottom margin of the button to 25px*/
     }
 }

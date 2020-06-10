@@ -1,86 +1,90 @@
 .middle-div{
     margin: 0 auto;
-    width: 60%;
-    margin-top: 50px;
-    text-align: center;
+    width: 60%; /*Sets total width of the div to 60% of parent's width*/
+    margin-top: 50px; /*Creates 50px space above the div*/
+    text-align: center; /*Centers the text*/
 }
 
 label{
-    font-family: 'Open Sans', sans-serif;
-    text-align: left;
-    font-size: 30px;
-    margin-top: 30px;
-    display: block;
+    font-family: 'Open Sans', sans-serif; /*Sets text font to 'Open Sans'*/
+    text-align: left; /*Aligns the text to the left*/
+    font-size: 30px; /*Sets the font size of text as 30px*/
+    margin-top: 30px; /*Creates 30px space above the div*/
+    display: block; /*Displays as a block element, starts on a new line and takes the whole width*/
 }
 
 .password-div > .input-line{
-    margin-top: 15px;
+    margin-top: 15px; /*Creates 25px space under the div*/
 }
 
 .input-line{
-    width: 98%;
+    width: 98%; /*Sets total width of the div to 98% of parent's width*/
 }
 
 .password-div{
-    margin-bottom: 30px;
+    margin-bottom: 30px; /*Creates 30px space under the div*/
 }
 
 h2.profile{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 30px;
+    font-family: 'Open Sans', sans-serif; /*Sets text font to 'Open Sans'*/
+    font-size: 30px; /*Sets the font size of text as 30px*/
 }
 
 .top-div{
-    margin-bottom: 15px;
+    margin-bottom: 15px; /*Creates 15px space under the div*/
 }
 
 .input-section{
-    margin-bottom: 5%;
+    margin-bottom: 5%; /*Creates 5% space under the div*/
 }
 
+/*Used by Button*/
 .favourites-button{
-    background-color: #fe6b40;
-    border: none;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    width: 275px;
+    background-color: #fe6b40; /*Sets the Background Colour of the Button as Orange*/
+    border: none; /*Removes any border set as default on a button*/
+    color: #fff; /*Sets text colour within button to White*/
+    padding: 20px; /*Generates 20px space around button content*/
+    text-align: center; /*Centers the text*/
+    font-size: 25px; /*Sets the font size of text as 25px*/
+    cursor: pointer; /*The cursor will change to a pointer icon*/
+    font-family: 'Open Sans', sans-serif; /*Sets text font to 'Open Sans'*/
+    font-weight: bold; /*Sets weight of characters to be thick*/
+    width: 275px; /*Sets total width of button to 275px*/
 }
 
+/*Activates when the user hovers over or focuses on the button*/
 .favourites-button:hover{
-    background-color: #e64616;
+    background-color: #e64616; /*Changes the background colour of the button to a darker shade of Orange*/
 }
 
 .fav-button-container{
-    text-align: center;
-    margin-bottom: 75px;
-    margin-top: 25px;
+    text-align: center; /*Centers the text*/
+    margin-bottom: 75px; /*Creates 75px space under the div*/
+    margin-top: 25px; /*Creates 25px space above the div*/
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 640px or less*/
 @media only screen and (max-width: 640px){
     label{
-        font-size: 20px;
+        font-size: 20px; /*Sets the font size of text as 20px*/
     }
 }
 
+/*The CSS Style enclosed within this @media only applies when screen resolution is 425px or less*/
 @media only screen and (max-width: 425px){
     .middle-div{
-        width: 90%;
+        width: 90%; /*Sets total width of the div to 90% of parent's width*/
     }
 
     .input-line{
-        width: 95%;
+        width: 95%; /*Sets total width of the input to 95% of its parent div*/
     }
 
     .favourites-button{
-        margin-bottom: 20px;
+        margin-bottom: 20px; /*Creates 20px space under the div*/
     }
 
     .fav-button-container{
-        margin-bottom: 25px;
+        margin-bottom: 25px; /*Creates 25px space under the div*/
     }
 }
