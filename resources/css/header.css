@@ -1,14 +1,14 @@
 nav ul li {
     list-style-type: none; /*Ensures the list-item bullets are not shown*/
-    font-family: 'Ubuntu', sans-serif; /*Sets font of the element as sans-serif from 'Ubuntu'*/
+    font-family: 'Ubuntu', sans-serif; /*Sets font of the element as 'Ubuntu'*/
     font-weight: bold; /*Sets weight of characters to be thick*/
 }
 
 .main-title{
     text-align: center; /*Centers text to the middle of the screen*/
-    font-family: 'PT Serif', serif; /*Sets font of the element as serif from 'PT Serif'*/
+    font-family: 'PT Serif', serif; /*Sets font of the element as 'PT Serif'*/
     font-size: 46px; /*Sets size of text to 46px*/
-    margin-top: 100px; /*Moves the header down on larger screens because of the header*/
+    margin-top: 100px; /*Moves the title down on larger screens because of the header*/
 }
 
 .menu-wrap a {
@@ -29,7 +29,7 @@ nav ul li {
 }
 
 body{
-    margin: 0; /*Removes any margin from body class elements*/
+    margin: 0; /*Removes default margin from body class elements*/
 }
 
 /*The CSS Style enclosed within this @media only applies when screen resolution is 1079px or less*/
