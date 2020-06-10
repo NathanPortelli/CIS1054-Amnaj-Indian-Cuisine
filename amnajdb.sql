@@ -19,6 +19,9 @@ CREATE TABLE `favourites` (
   `dishID` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `favourites` (`userID`, `dishID`) VALUES
+(6, 6);
+
 CREATE TABLE `hasallergies` (
   `allerID` int(3) NOT NULL,
   `dishID` int(3) NOT NULL
@@ -68,7 +71,7 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`dishid`, `dishtype`, `dishname`, `dishdesc`, `price`, `dishphoto`, `ingredients`, `serving`) VALUES
 (1, 1, 'Vegetable Kofta', 'Fried balls mixed with spices and besan, deep fried till crisp', 9, 'resources/images/dishes/Starter1.png', 'Chopped Carrots, Green Peas, Potatoes, Cauliflower, Green beans, Green Chilli, Cilantro, Red Chili Powder, Garam Masala, Chaat Masala, Besan', 3),
 (2, 1, 'Paneer Manchurian', 'Deep fried, crispy paneer cubes, coated with spicy, sour and sweet sauce', 8.5, 'resources/images/dishes/Starter2.png', 'Black Pepper, Pinch of Salt, Paneer, Ginger, Garlic, Green Chili, Red Chili Flakes, Chili Sauce, Celery, Onion, Spring Onion, Soy Sauce, White Vinegar', 1),
-(3, 1, 'Vegetable Momos', 'Steamed dumplings filled with vegetables and a spicy dipping sauce on the side', 9, 'resources/images/dishes/Starter3.png', 'Finely Chopped Garlic, Finely Chopped Onion, Spring Onion, Ginger, Cabbage, Green Bell Pepper, Carrots, Salt, Black Pepper, Soy Sauce', 2),
+(3, 1, 'Vegetable Momos', 'Steamed dumplings filled with vegetables and a spicy dipping sauce on the side', 9, 'resources/images/dishes/Starter3.png', 'Garlic, Onion, Spring Onion, Ginger, Cabbage, Green Bell Pepper, Carrots, Salt, Black Pepper, Soy Sauce', 2),
 (4, 1, 'Baked Samosas', 'Baked triangular pastry with lamb filling', 8.75, 'resources/images/dishes/Starter4.png', 'Salt, Butter, Onion, Garlic Cloves, Green Chili Peppers, Ginger, Turmeric, Lamb, Garam Masala, Fresh Lemon Juice', 2),
 (5, 2, 'Punjabi Chicken in Thick Gravy', 'Chicken curry in a thick spicy gravy, served on a bed of rice', 14.5, 'resources/images/dishes/MainCourse1.png', 'Vegetable Oil, Ghee (Butter), Chicken Legs, Cumin Seeds, Finely Chopped Onion, Garlic Cloves, Chopped Tomato, Garam Masala, Ground Turmeric, Pinch of Salt, Chilli Pepper, Chopped Cilantro', 8),
 (6, 2, 'Indian Shrimp Curry', 'Richly flavoured curry that complements shrimp perfectly, served with rice', 15, 'resources/images/dishes/MainCourse2.png', 'Peanut oil, Onion, Garlic Cloves, Ginger, Cumin, Turmeric, Paprika, Red Chili Powder, Chopped Tomatoes, Coconut Milk, Salt, Peeled Shrimp, Chopped Cilantro, Indian Shrimp Curry', 1),
@@ -95,8 +98,8 @@ INSERT INTO `opening_hours` (`day`, `hours`, `id`) VALUES
 ('Wednesday', '10:00 - 22:00', 3),
 ('Thursday', '10:00 - 22:00', 4),
 ('Friday', '10:00 - 22:00', 5),
-('Saturday', '9:00 - 16:00', 6),
-('Sunday', '9:00 - 18:00', 7);
+('Saturday', '09:00 - 18:00', 6),
+('Sunday', '09:00 - 16:00', 7);
 
 CREATE TABLE `restaurant_details` (
   `welcome_message` varchar(200) DEFAULT NULL,
@@ -110,7 +113,7 @@ CREATE TABLE `restaurant_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `restaurant_details` (`welcome_message`, `address`, `email_address`, `telephone`, `mobile`, `ourstory`, `ourpromise`, `id`) VALUES
-('Welcome to Amnaj Indian Cuisine\'s online website<br>All you need is just a click away!<br><i>Website is updated on a frequent basis</i>', 'Amnaj Indian Cuisine,Triq Alfred Pirel,Blue Grotto,Qrendi', 'info@amnajcuisine.com', '+35621337246', '+35699456293', 'Mr. Baljeet Amnaj was a fisherman from Gujarat who was always fond of his local traditions and more especially the cuisine, and one day wondered, \"Why not introduce other countries to our regional diets and flavours?\" Having a very small capital, he started selling street food in India until he had saved enough money to commit to his dream and open \"Amnaj\'s Indian Cuisine\" in Malta, so that this tiny nation could taste the wonders of Gujarat\'s delicacies too. After 30 years of successful operation, the restaurant was passed down to Amnaj\'s son Faisal, who operates the restaurant to this day.', 'We promise you, our highly esteemed customers, an exceptional service with a smile that will keep you coming back for every new dishes that we introduce to our menu on a seasonal basis, such as the Paneer Manchurian and the well sought after Gulab Jamun.     We promise you, that every item on the menu is prepared in the same fashion as is prepared and served back in Gujarat, thanks to our highly qualified cooks and waiting staff. We also promise you, that our menu will always have something for everyone, whether you\'re seeking healthier alternatives or wanting to abide by a vegetarian diet, as well as for many other dietary and religious restrictions, to ensure that the every person can be well catered with a dish that matches exactly with their expectations.', 1);
+('Welcome to Amnaj Indian Cuisine\'s online website<br>All you need is just a click away!<br><i>Website is updated on a frequent basis</i>', 'Amnaj Indian Cuisine,Triq Alfred Pirel,Blue Grotto,Qrendi', 'amnajcuisine@gmail.com', '+35621337246', '+35699456293', 'Mr. Baljeet Amnaj was a fisherman from Gujarat who was always fond of his local traditions and more especially the cuisine, and one day wondered, \"Why not introduce other countries to our regional diets and flavours?\" Having a very small capital, he started selling street food in India until he had saved enough money to commit to his dream and open \"Amnaj\'s Indian Cuisine\" in Malta, so that this tiny nation could taste the wonders of Gujarat\'s delicacies too. After 30 years of successful operation, the restaurant was passed down to Amnaj\'s son Faisal, who operates the restaurant to this day.', 'We promise you, our highly esteemed customers, an exceptional service with a smile that will keep you coming back for every new dishes that we introduce to our menu on a seasonal basis, such as the Paneer Manchurian and the well sought after Gulab Jamun.     We promise you, that every item on the menu is prepared in the same fashion as is prepared and served back in Gujarat, thanks to our highly qualified cooks and waiting staff. We also promise you, that our menu will always have something for everyone, whether you\'re seeking healthier alternatives or wanting to abide by a vegetarian diet, as well as for many other dietary and religious restrictions, to ensure that the every person can be well catered with a dish that matches exactly with their expectations.', 1);
 
 CREATE TABLE `team_details` (
   `teamid` int(3) NOT NULL,
@@ -157,7 +160,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `users` (`id`, `email`, `pword`, `name`, `surname`, `usergroup`) VALUES
-(6, 'smithc@gmail.com', '$2y$10$NlIOsRWe2eS67/jpq4QwbOeMNlV2hS/6SEhXheZzC.plEOXZy1dva', 'John', 'Ommok', 1);
+(6, 'smithj@gmail.com', '$2y$10$NlIOsRWe2eS67/jpq4QwbOeMNlV2hS/6SEhXheZzC.plEOXZy1dva', 'John', 'Smith', 1);
 
 ALTER TABLE `allergies`
   ADD PRIMARY KEY (`allergyid`);
@@ -194,25 +197,25 @@ ALTER TABLE `users`
   ADD KEY `usergroup_fk` (`usergroup`);
 
 ALTER TABLE `allergies`
-  MODIFY `allergyid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `allergyid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `menu`
-  MODIFY `dishid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `dishid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `opening_hours`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `restaurant_details`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `team_details`
-  MODIFY `teamid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `teamid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `types`
-  MODIFY `typeid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `typeid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `usergroups`
-  MODIFY `groupID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `groupID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 ALTER TABLE `users`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
