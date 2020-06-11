@@ -5,6 +5,28 @@
 
     $db = new Db();
 
+    if(isset($_POST['favBtn'])){
+        if(isset($_SESSION['id']) && isset($_POST['menuid'])){
+            $favmenuID = $_POST['menuid'];
+            $currUser = $_SESSION['id'];
+
+            $sel = "SELECT dishID FROM favourites WHERE dishID=".$favmenuID." AND userID=".$currUser;
+            $query = $db->query($sel);
+
+            //If it does not already exist within the user's Favourites List
+            if (!$query->num_rows > 0) {        
+                $sql = $db->query("INSERT INTO favourites(userID, dishID) VALUES ($currUser, $favmenuID)");
+            }else{
+                echo $twig->render('404.html');
+            }
+            
+            header("Location: menudetails.php?dish=$favmenuID");
+        }else{
+            //User is not logged in and therefore cannot access items in 'My Favourites'
+            echo $twig->render('404.html');
+        }
+    }
+
     if(isset($_GET['dish'])){
         $isAdded = true;
         
@@ -27,12 +49,6 @@
         //gets result of the select query
         $result = $db->select("SELECT dishid AS id, dishname, dishdesc, t.type AS dishtype, menu.dishtype AS dishtypeid, ingredients, price, dishphoto, serving FROM menu INNER JOIN types t ON (menu.dishtype = t.typeid) WHERE dishid = ".$dishIDquoted);
         $resultallergy = $db->select("SELECT al.name, al.allergyicon FROM allergies al INNER JOIN hasallergies ha ON (ha.allerID = al.allergyid) WHERE dishid = ".$dishIDquoted);
-
-        //gets the largest id of the menu
-        $largestIDresult = $db->select("SELECT max(dishid) as maxid FROM menu");
-
-        //converts the 2D associative array to a single string
-        $largestID = $largestIDresult[0]['maxid'];
         
         //check to see if SQL query returns a result
         if(count($result) > 0){
@@ -50,28 +66,6 @@
     } else {
         header("Location: menu.php?error=invalidID");
         exit;
-    }
-
-    if(isset($_POST['favBtn'])){
-        if(isset($_SESSION['id']) && isset($_POST['menuid'])){
-            $favmenuID = $_POST['menuid'];
-            $currUser = $_SESSION['id'];
-
-            $sel = "SELECT dishID FROM favourites WHERE dishID=".$favmenuID." AND userID=".$currUser;
-            $query = $db->query($sel);
-
-            //If it does not already exist within the user's Favourites List
-            if (!$query->num_rows > 0) {        
-                $sql = $db->query("INSERT INTO favourites(userID, dishID) VALUES ($currUser, $favmenuID)");
-            }else{
-                echo $twig->render('404.html');
-            }
-            
-            header("Location: menudetails.php?dish=$favmenuID");
-        }else{
-            //User is not logged in and therefore cannot access items in 'My Favourites'
-            echo $twig->render('404.html');
-        }
     }
 
     
