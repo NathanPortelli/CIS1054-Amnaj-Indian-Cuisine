@@ -32,12 +32,6 @@
 
     <form action="favourites.mail.php" method="POST">
         <div class="form-container">
-            {% for items in result %}
-                <input name="menuname" type="hidden" value="{{items.dishname}}">
-                <input name="menudesc" type="hidden" value="{{items.dishdesc}}">
-                <input name="menuingr" type="hidden" value="{{items.ingredients}}">
-                <input name="menupric" type="hidden" value="{{items.price}}">
-            {% endfor %}
             <input class="form-element" name="email" type="email" aria-label="Email" placeholder="Email*" autocomplete="email" required>
 
             {% if isEmpty == true %}

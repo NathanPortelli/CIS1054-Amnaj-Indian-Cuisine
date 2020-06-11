@@ -64,5 +64,3 @@
         header("Location: menu.php?error=invalidID");
         exit;
     }
-
-    
