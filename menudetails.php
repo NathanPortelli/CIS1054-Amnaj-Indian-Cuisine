@@ -52,9 +52,6 @@
         
         //check to see if SQL query returns a result
         if(count($result) > 0){
-            //removes quotes around the dishID
-            $dishID = str_replace("'", "", $dishIDquoted);
-
             //Price is formatted below
             $result[0]['price'] = '€'.number_format($result[0]['price'], 2, ".", ",");
             
