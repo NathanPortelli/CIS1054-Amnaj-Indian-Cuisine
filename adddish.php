@@ -60,14 +60,8 @@
 				if($photo['size'] !== 0){
 					$upload = $himg->upload($photo['name'], $photo['tmp_name'], $photo['size'], $photo['error'], 'dishes');
 
-					if($upload === 0){
-						$validations['photo'] = "Invalid file extension";
-					}else if($upload === 1){
-						$validations['photo'] = "Upload Error";
-					}else if($upload === 2){
-						$validations['photo'] = "File too big";
-					}else if($upload === 3){
-						$validations['photo'] = "Upload Error";
+					if(strpos($upload, $photo['name']) === false){
+						$validations['photo'] = $upload;
 					}
 				}else{
 					$validations['photo'] = "Please upload a photo";

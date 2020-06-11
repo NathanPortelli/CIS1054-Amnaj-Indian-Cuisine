@@ -13,19 +13,19 @@ class HandleImages{
 					$dest = dirname(__DIR__).'/images/'.$directory.'/'.$pName;
 					$uCheck = move_uploaded_file($pTempName, $dest);
 					if(!$uCheck){
-						return 3;
+						return "Upload Error";
 					}else{
 						$dest = 'resources/images/'.$directory.'/'.$pName;
 						return $dest;
 					}
 				}else{
-					return 2;
+					return "File too big";
 				}
 			}else{
-				return 1;
+				return "Upload Error";
 			}
 		}else{
-			return 0;
+			return "Invalid file extension";
 		}
 	}
 }
