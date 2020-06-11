@@ -6,23 +6,22 @@
     <form action="signup.php" method="POST">
         <div class="input-section"> 
             <h1 class="forms">SIGN UP</h1>
-            <p class="error">{{validations.name}}</p>
             <div class="form-div">
                 <input class="input-line" aria-label="First Name" type="text" name="name" placeholder="First Name*" autocomplete="name" maxlength="20" value="{{formvalues.name}}" required>
             </div>
-            <p class="error">{{validations.surname}}</p>
+            <p class="error">{{validations.name}}</p>
             <div class="form-div">
                 <input class="input-line" aria-label="Last Name" type="text" name="surname" placeholder="Last Name*" autocomplete="family-name" maxlength="20" value="{{formvalues.surname}}" required>
             </div>
-            <p class="error">{{validations.email}}</p>
+            <p class="error">{{validations.surname}}</p>
             <div class="form-div">
                 <input class="input-line" aria-label="Email" type="text" name="email" placeholder="Email Address*" autocomplete="email" maxlength="255" value="{{formvalues.email}}" required>
             </div>
-            <p class="error">{{validations.password}}</p>
+            <p class="error">{{validations.email}}</p>
             <div class="form-div">
                 <input id="password" class="input-line" aria-label="Password" type="password" name="password" placeholder="Password*" autocomplete="new-password" minlength="8" maxlength="20" required>
             </div>
-            
+            <p class="error">{{validations.password}}</p>
             <div class="form-div">
                 <input id="confirmpassword" class="input-line" aria-label="Confirm Password" type="password" name="confirmpassword" placeholder="Confirm Password*" autocomplete="new-password" minlength="8" maxlength="20" required>
             </div>
